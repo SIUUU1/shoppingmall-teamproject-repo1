@@ -5,4 +5,4 @@
 <%response.setStatus(HttpServletResponse.SC_OK);%> 
 
 <title>500에러 페이지</title>
-<img src="http://localhost:9999/shoppingmall/error/error.jpg">
+<img src="http://localhost:9999/ClothsMall/error/error.jpg">
