@@ -8,12 +8,12 @@
 			src="</images/logo.png" /><!--images 폴더 생성및 아미지 추가하고 경로 확인해주세요.-->
 	</div>
 	<div id="auth" class="box">
-		<c:if test="${type == 0}">
+		<%-- <c:if test="${type == 0}">
 			<jsp:include page="mngr/logon/mLoginForm.jsp" />
 		</c:if>
 		<c:if test="${type == 1}">
 			<jsp:include page="member/loginForm.jsp" />
-		</c:if>
+		</c:if> --%>
 	</div>
 </div>
 <div id="content" class="box2">
