@@ -329,6 +329,7 @@ public class MngrDBBean {
 			pstmt.setString(8, cloth.getCloth_image());
 			pstmt.setString(9, cloth.getCloth_content());
 			pstmt.setInt(10, cloth.getDiscount_rate());
+			//pstmt.setTimestamp(11, cloth.getReg_date());
 			pstmt.setInt(11, cloth_id);
 			pstmt.executeUpdate();
 		} catch (Exception ex) {

@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-	// [책등록] 버튼 클릭
+	// [옷등록] 버튼 클릭
 	let registButton = document.getElementById('regist');
 	registButton.addEventListener('click', function() {
 		window.location.href = "/ClothsMall/mg/clothRegisterForm.do";

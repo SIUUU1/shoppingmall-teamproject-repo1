@@ -14,7 +14,7 @@ public class ClothUpdateFormAction implements CommandAction {
 		String cloth_category = request.getParameter("cloth_category");
 		String cloth_gender = request.getParameter("cloth_gender");
 		String cloth_size = request.getParameter("cloth_size");
-		// DB 연동 book_id 에 해당하는 상품을 얻내서 book 에 저장
+		// DB 연동 cloth_id 에 해당하는 상품을 얻내서 cloth 에 저장
 		MngrDBBean clothProcess = MngrDBBean.getInstance();
 		MngrDataBean cloth = clothProcess.getCloth(cloth_id);
 		request.setAttribute("cloth_id", cloth_id);

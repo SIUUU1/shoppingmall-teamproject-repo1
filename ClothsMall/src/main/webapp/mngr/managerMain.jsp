@@ -2,10 +2,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <meta name="viewport" content="width=device-width,initial-scale=1.0" />
 <link rel="stylesheet" href="<%=request.getContextPath()%>/mngr/css/style.css" />
-<script src="<%=request.getContextPath()%>/mngr/managermain.js"></script>
+<script src="<%=request.getContextPath()%>/mngr/managerMain.js"></script>
 <c:if test="${empty sessionScope.id}">
 	<div id="mList">
-		<p>로그인 하세요.
+		<p>로그인 하세요.<P>	
 	</div>
 </c:if>
 <c:if test="${!empty sessionScope.id}">

@@ -17,30 +17,33 @@ public class ClothUpdateProAction implements CommandAction {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
-		request.setCharacterEncoding("utf-8");// 한글 인코딩
-		String filename = "";
-		String realFolder = "";// 웹 어플리케이션상의 절대 경로 저장
-		String saveFolder = "/clothImage"; // 파일 업로드 폴더 지정
-		String encType = "utf-8"; // 인코딩타입
-		int maxSize = 50 * 1024 * 1024; // 최대 업로될 파일크기 50Mb
-		MultipartRequest imageUp = null;
-		// 웹 어플리케이션상의 절대 경로를 구함
-		ServletContext context = request.getSession().getServletContext();
-		realFolder = context.getRealPath(saveFolder);
-		try {
-			// 파일 업로드를 수행하는 MultipartRequest 객체 생성
-			imageUp = new MultipartRequest(request, realFolder, maxSize, encType, new DefaultFileRenamePolicy());
-			// <input type="file">인 모든 파라미터를 얻어냄
-			Enumeration<?> files = imageUp.getFileNames();
-			while (files.hasMoreElements()) {
-				String name = (String) files.nextElement();
-				filename = imageUp.getFilesystemName(name);
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+        request.setCharacterEncoding("utf-8"); // 한글 인코딩
+        String filename = "";
+        String realFolder = ""; // 웹 어플리케이션상의 절대 경로 저장
+        String saveFolder = "/clothImage"; // 파일 업로드 폴더 지정
+        String encType = "utf-8"; // 인코딩타입
+        int maxSize = 50 * 1024 * 1024; // 최대 업로될 파일크기 50Mb
+        MultipartRequest imageUp = null;
+
+        // 웹 어플리케이션상의 절대 경로를 구함
+        ServletContext context = request.getSession().getServletContext();
+        realFolder = context.getRealPath(saveFolder);
+
+        try {
+            // 파일 업로드를 수행하는 MultipartRequest 객체 생성
+            imageUp = new MultipartRequest(request, realFolder, maxSize, encType, new DefaultFileRenamePolicy());
+            // <input type="file">인 모든 파라미터를 얻어냄
+            Enumeration<?> files = imageUp.getFileNames();
+            while (files.hasMoreElements()) {
+                String name = (String) files.nextElement();
+                filename = imageUp.getFilesystemName(name);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
 		MngrDataBean cloth = new MngrDataBean();
-		int cloth_id= Integer.parseInt( imageUp.getParameter("cloth_id"));
+		int cloth_id= Integer.parseInt(imageUp.getParameter("cloth_id"));
 		String cloth_category = imageUp.getParameter("cloth_category");
 		String cloth_gender = imageUp.getParameter("cloth_gender");
 		String cloth_name = imageUp.getParameter("cloth_name");
@@ -50,6 +53,7 @@ public class ClothUpdateProAction implements CommandAction {
 		String cloth_brand = imageUp.getParameter("cloth_brand");
 		String cloth_content = imageUp.getParameter("cloth_content");
 		String discount_rate = imageUp.getParameter("discount_rate");
+		
 		cloth.setCloth_category(cloth_category);
 		cloth.setCloth_gender(cloth_gender);
 		cloth.setCloth_name(cloth_name);
@@ -63,6 +67,8 @@ public class ClothUpdateProAction implements CommandAction {
 		cloth.setReg_date(new Timestamp(System.currentTimeMillis()));
 		
 		//DB 연동해서 상품 수정 처리
+		MngrDBBean clothProcess = MngrDBBean.getInstance();
+		clothProcess.updateCloth(cloth, cloth_id);
 		request.setAttribute("cloth_category", cloth_category);
 		return "/mngr/productProcess/clothUpdatePro.jsp";
 	}

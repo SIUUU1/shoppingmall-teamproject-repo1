@@ -45,7 +45,7 @@
 			<input id="cloth_count" name="cloth_count" type="text" size="10" placeholder="수량" maxlength="5">개
 			<li><label for="cloth_brand">브랜드</label> 
 			<input id="cloth_brand" name="cloth_brand" type="text" size="50" placeholder="브랜드" maxlength="50">
-			<li><label for="cloth_image">책 이미지</label> 
+			<li><label for="cloth_image">옷 이미지</label> 
 			<input id="cloth_image" name="cloth_image" type="file">
 			<li><label for="cloth_content">내용</label>
 			<textarea id="cloth_content" name="cloth_content" rows="13" cols="50"></textarea>

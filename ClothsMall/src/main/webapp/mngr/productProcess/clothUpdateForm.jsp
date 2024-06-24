@@ -19,11 +19,11 @@
 		<ul>
 			<li><label for="cloth_category">분류선택</label> 
 			<select id="cloth_category" name="cloth_category">
-					<option value="1000" <c:if test="${cloth_category == 'top'}">selected</c:if>>상의</option>
-					<option value="2000" <c:if test="${cloth_category == 'bottom'}">selected</c:if>>하의</option>
-					<option value="3000" <c:if test="${cloth_category == 'outer'}">selected</c:if>>아우터</option>
-					<option value="4000" <c:if test="${cloth_category == 'shoes'}">selected</c:if>>신발</option>
-					<option value="5000" <c:if test="${cloth_category == 'accessory'}">selected</c:if>>패션소품</option>
+					<option value="1000" <c:if test="${cloth_category == '1000'}">selected</c:if>>상의</option>
+					<option value="2000" <c:if test="${cloth_category == '2000'}">selected</c:if>>하의</option>
+					<option value="3000" <c:if test="${cloth_category == '3000'}">selected</c:if>>아우터</option>
+					<option value="4000" <c:if test="${cloth_category == '4000'}">selected</c:if>>신발</option>
+					<option value="5000" <c:if test="${cloth_category == '5000'}">selected</c:if>>패션소품</option>
 			</select>
 			<li><label for="cloth_gender">성별선택</label> 
 			<select id="cloth_gender" name="cloth_gender">
@@ -57,7 +57,8 @@
 			<li><label for="discount_rate">할인율</label> 
 			<input id="discount_rate" name="discount_rate" type="text" size="5" placeholder="10" maxlength="2" 
 			value="${cloth.discount_rate}">
-			<li class="label2"> <input type="submit" id="registCloth" value="옷등록">
+			<li class="label2"> 
+			<input type="submit" id="updateCloth" value="옷수정">
 		</ul>
 	</div>
 </form>
