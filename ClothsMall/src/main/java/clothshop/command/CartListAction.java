@@ -14,14 +14,14 @@ public class CartListAction implements CommandAction {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		request.setCharacterEncoding("utf-8");
 		
-		String buyer = request.getParameter("buyer");
+		String member_id = request.getParameter("member_id");
 		List<CartDataBean> cartLists = null;
 		int quantity = 0;
 		CartDBBean clothProcess = CartDBBean.getInstance();
 		
-		quantity = clothProcess.getListCount(buyer);
+		quantity = clothProcess.getListCount(member_id);
 		if (quantity > 0) {
-			cartLists = clothProcess.getCart(buyer, quantity);
+			cartLists = clothProcess.getCart(member_id, quantity);
 			request.setAttribute("cartLists", cartLists);
 		}
 		request.setAttribute("quantity", Integer.valueOf(quantity));

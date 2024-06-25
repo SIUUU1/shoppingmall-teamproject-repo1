@@ -16,8 +16,8 @@ public class DeleteCartAction implements CommandAction {
 
 		// all 장바구니 비우기
 		if (list.equals("all")) {
-			String buyer = request.getParameter("buyer");
-			clothProcess.deleteAll(buyer);
+			String member_id = request.getParameter("member_id");
+			clothProcess.deleteAll(member_id);
 			msg = "장바구니가 모두 비워졌습니다.";
 			
 		// cart 삭제

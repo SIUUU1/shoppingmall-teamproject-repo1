@@ -24,12 +24,12 @@
 	<button id="shopMain">메인으로</button>
 </div>
 <div id="cartList">
-	<c:if test="${quantity == 0}">
+	<c:if test="${count == 0}">
 		<ul>
 			<li>장바구니에 담긴 물품이 없습니다.
 		</ul>
 	</c:if>
-	<c:if test="${quantity > 0}">
+	<c:if test="${count > 0}">
 		<table>
 			<tr>
 				<td width="350">상품명</td>
@@ -51,27 +51,27 @@
 					<td width="100">
 						<c:set var="price" value="${cloth.getBuy_price()}" />
 						<c:set var="rate" value="${cloth.getDiscount_rate()}" />
-						<c:set var="cal" value="${price*(100.0-rate)/100}" />
-						<fmt:formatNumber var="vPrice" value="${cal}" type="currency" />
-						<!-- ㄴ view Price 판매가 원화 표시 -->
-						<fmt:formatNumber var="rPrice" value="${cal}" maxFractionDigits="0" />
+						<fmt:parseNumber var="rPrice" value="${price*(100.0-rate)/100}"/>
 						<!-- ㄴ real Price 판매가 number 값 표시 -->
 						정가&nbsp;
 						<fmt:formatNumber value="${price}" type="currency" />
 						<br>
 						<span style="color: red">-${rate}%</span>
 						<br>
-						<b>판매가&nbsp;${vPrice}</b>
+						<b>판매가&nbsp;<fmt:formatNumber value="${rPrice}" type="currency" /></b>
+						<!-- ㄴ view Price 판매가 원화 표시 -->
 					</td>
 					<td width="150">
+						<!-- 수정 -->
 						<input type="text" name="quantity" size="5" value="${cart.getQuantity()}">
 						<button id="updateSu" name="${cart.getCart_id()},${cart.getQuantity()}" onclick="editSu(this)">수정</button>
 					</td>
 					<td align="center" width="150">
 						<c:set var="amount" value="${cart.getQuantity()*rPrice}" />
 						<c:set var="total" value="${total+amount}" />
-						<fmt:formatNumber value="${amount}" type="number" pattern="#,##0" />
-						원
+						<!-- 합계 / 총액 연산 -->
+						합계&nbsp;
+						<fmt:formatNumber value="${amount}" type="currency" />
 						<button id="deleteList" name="${cart.getCart_id()}" onclick="delList(this)">삭제</button>
 					</td>
 				</tr>
@@ -89,14 +89,14 @@
 							<tr>
 								<td>
 									<form id="cartForm" method="post" action="<%=request.getContextPath()%>/buyForm.do">
-										<input type="hidden" name="buyer" value="${sessionScope.id}">
+										<input type="hidden" name="member_id" value="${sessionScope.id}">
 										<input type="submit" value="구매하기">
 									</form>
 								</td>
 								<td>
 									<form id="cartClearForm" method="post" action="<%=request.getContextPath()%>/deleteCart.do">
 										<input type="hidden" name="list" value="all">
-										<input type="hidden" name="buyer" value="${sessionScope.id}">
+										<input type="hidden" name="member_id" value="${sessionScope.id}">
 										<input type="submit" value="장바구니비우기">
 									</form>
 								</td>

@@ -2,7 +2,7 @@ package clothshop.bean;
 
 public class CartDataBean {
 	private int cart_id;
-	private String buyer;
+	private String member_id;
 	private int cloth_id;
 	private String cloth_category;
 	private String cloth_name;
@@ -21,12 +21,12 @@ public class CartDataBean {
 		this.cart_id = cart_id;
 	}
 
-	public String getBuyer() {
-		return buyer;
+	public String getMember_id() {
+		return member_id;
 	}
 
-	public void setBuyer(String buyer) {
-		this.buyer = buyer;
+	public void setMember_id(String member_id) {
+		this.member_id = member_id;
 	}
 
 	public int getCloth_id() {

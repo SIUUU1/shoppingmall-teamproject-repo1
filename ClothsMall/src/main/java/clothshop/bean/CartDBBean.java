@@ -34,13 +34,13 @@ public class CartDBBean {
 
 		try {
 			conn = DBUtil.getConnection();
-			sql = "insert into cart (cart_id, buyer, cloth_id, cloth_category, cloth_name, cloth_size, "
+			sql = "insert into cart (cart_id, member_id, cloth_id, cloth_category, cloth_name, cloth_size, "
 					+ "cloth_price, cloth_brand, cloth_image, discount_rate, quantity)"
 					+ "values (cart_seq.NEXTVAL,?,?,?,?,?,?,?,?,?,?)";
 			pstmt = conn.prepareStatement(sql);
 
 			pstmt.setInt(1, cart.getCart_id());
-			pstmt.setString(2, cart.getBuyer());
+			pstmt.setString(2, cart.getMember_id());
 			pstmt.setInt(3, cart.getCloth_id());
 			pstmt.setString(4, cart.getCloth_category());
 			pstmt.setString(5, cart.getCloth_name());
@@ -77,7 +77,7 @@ public class CartDBBean {
 		int x = 0;
 		try {
 			conn = DBUtil.getConnection();
-			pstmt = conn.prepareStatement("select count(*) from cart where buyer = ?");
+			pstmt = conn.prepareStatement("select count(*) from cart where member_id = ?");
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
@@ -106,7 +106,7 @@ public class CartDBBean {
 	}
 
 	// 3. 구매자 일치 카트 호출
-	public List<CartDataBean> getCart(String id, int quantity) throws Exception {
+	public List<CartDataBean> getCart(String id, int count) throws Exception {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -116,13 +116,13 @@ public class CartDBBean {
 
 		try {
 			conn = DBUtil.getConnection();
-			sql = "select * from cart where buyer = ?";
+			sql = "select * from cart where member_id = ?";
 			pstmt = conn.prepareStatement(sql);
 
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
 
-			lists = new ArrayList<CartDataBean>(quantity);
+			lists = new ArrayList<CartDataBean>(count);
 			while (rs.next()) {
 				cart = new CartDataBean();
 				cart.setCart_id(rs.getInt("cart_id"));
@@ -223,7 +223,7 @@ public class CartDBBean {
 
 		try {
 			conn = DBUtil.getConnection();
-			pstmt = conn.prepareStatement("delete from cart where buyer = ?");
+			pstmt = conn.prepareStatement("delete from cart where member_id = ?");
 			pstmt.setString(1, id);
 
 			pstmt.executeUpdate();
