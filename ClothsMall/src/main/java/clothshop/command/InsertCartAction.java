@@ -15,11 +15,8 @@ public class InsertCartAction implements CommandAction {
 		String buyer = request.getParameter("buyer");
 		int cloth_id = Integer.parseInt(request.getParameter("cloth_id"));
 		String cloth_category = request.getParameter("cloth_category");
-		String cloth_gender = request.getParameter("cloth_gender");
 		String cloth_name = request.getParameter("cloth_name");
 		String cloth_size = request.getParameter("cloth_size");
-		
-		// cloth_price 를 정가로 취급할 지, 할인율이 적용된 가격인 지 결정 후 취급
 		int cloth_price = (int) Float.parseFloat(request.getParameter("cloth_price"));
 		String cloth_brand = request.getParameter("cloth_brand");
 		String cloth_image = request.getParameter("cloth_image");
@@ -30,7 +27,6 @@ public class InsertCartAction implements CommandAction {
 		
 		cart.setCloth_id(cloth_id);
 		cart.setCloth_category(cloth_category);
-		cart.setCloth_gender(cloth_gender);
 		cart.setCloth_name(cloth_name);
 		cart.setCloth_size(cloth_size);
 		cart.setCloth_price(cloth_price);

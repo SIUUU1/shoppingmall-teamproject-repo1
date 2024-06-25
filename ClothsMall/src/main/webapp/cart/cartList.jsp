@@ -35,7 +35,6 @@
 				<td width="350">상품명</td>
 				<td width="100">카테고리</td>
 				<td width="100">브랜드</td>
-				<td width="80">M/W</td>
 				<td width="80">사이즈</td>
 				<td width="100">금액</td>
 				<td width="150">수량</td>
@@ -48,7 +47,6 @@
 						<img src="<%=request.getContextPath()%>/clothImage/${cart.getCloth_image()}" class="cartimage">${cart.getCloth_name()}</td>
 					<td width="100">${cart.getCloth_category()}</td>
 					<td width="100">${cart.getCloth_brand()}</td>
-					<td width="80">${cart.getCloth_gender()}</td>
 					<td width="80">${cart.getCloth_size()}</td>
 					<td width="100">
 						<c:set var="price" value="${cloth.getBuy_price()}" />

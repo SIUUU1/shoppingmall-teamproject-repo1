@@ -16,15 +16,15 @@ public class CartListAction implements CommandAction {
 		
 		String buyer = request.getParameter("buyer");
 		List<CartDataBean> cartLists = null;
-		int count = 0;
+		int quantity = 0;
 		CartDBBean clothProcess = CartDBBean.getInstance();
 		
-		count = clothProcess.getListCount(buyer);
-		if (count > 0) {
-			cartLists = clothProcess.getCart(buyer, count);
+		quantity = clothProcess.getListCount(buyer);
+		if (quantity > 0) {
+			cartLists = clothProcess.getCart(buyer, quantity);
 			request.setAttribute("cartLists", cartLists);
 		}
-		request.setAttribute("count", Integer.valueOf(count));
+		request.setAttribute("quantity", Integer.valueOf(quantity));
 		request.setAttribute("type", Integer.valueOf(1));
 		return "/cart/cartList.jsp";
 	}

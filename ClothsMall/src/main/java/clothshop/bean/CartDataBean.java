@@ -5,7 +5,6 @@ public class CartDataBean {
 	private String buyer;
 	private int cloth_id;
 	private String cloth_category;
-	private String cloth_gender;
 	private String cloth_name;
 	private String cloth_size;
 	private int cloth_price;
@@ -44,14 +43,6 @@ public class CartDataBean {
 
 	public void setCloth_category(String cloth_category) {
 		this.cloth_category = cloth_category;
-	}
-
-	public String getCloth_gender() {
-		return cloth_gender;
-	}
-
-	public void setCloth_gender(String cloth_gender) {
-		this.cloth_gender = cloth_gender;
 	}
 
 	public String getCloth_name() {

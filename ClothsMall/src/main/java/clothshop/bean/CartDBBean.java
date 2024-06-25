@@ -34,23 +34,22 @@ public class CartDBBean {
 
 		try {
 			conn = DBUtil.getConnection();
-			sql = "insert into cart (cart_id, buyer, cloth_id, cloth_category, cloth_gender, cloth_name, cloth_size, "
+			sql = "insert into cart (cart_id, buyer, cloth_id, cloth_category, cloth_name, cloth_size, "
 					+ "cloth_price, cloth_brand, cloth_image, discount_rate, quantity)"
-					+ "values (cart_seq.NEXTVAL,?,?,?,?,?,?,?,?,?,?,?)";
+					+ "values (cart_seq.NEXTVAL,?,?,?,?,?,?,?,?,?,?)";
 			pstmt = conn.prepareStatement(sql);
 
 			pstmt.setInt(1, cart.getCart_id());
 			pstmt.setString(2, cart.getBuyer());
 			pstmt.setInt(3, cart.getCloth_id());
 			pstmt.setString(4, cart.getCloth_category());
-			pstmt.setString(5, cart.getCloth_gender());
-			pstmt.setString(6, cart.getCloth_name());
-			pstmt.setString(7, cart.getCloth_size());
-			pstmt.setInt(8, cart.getCloth_price());
-			pstmt.setString(9, cart.getCloth_brand());
-			pstmt.setString(10, cart.getCloth_image());
-			pstmt.setInt(11, cart.getDiscount_rate());
-			pstmt.setInt(12, cart.getQuantity());
+			pstmt.setString(5, cart.getCloth_name());
+			pstmt.setString(6, cart.getCloth_size());
+			pstmt.setInt(7, cart.getCloth_price());
+			pstmt.setString(8, cart.getCloth_brand());
+			pstmt.setString(9, cart.getCloth_image());
+			pstmt.setInt(10, cart.getDiscount_rate());
+			pstmt.setInt(11, cart.getQuantity());
 
 			pstmt.executeUpdate();
 		} catch (Exception e) {
@@ -107,7 +106,7 @@ public class CartDBBean {
 	}
 
 	// 3. 구매자 일치 카트 호출
-	public List<CartDataBean> getCart(String id, int count) throws Exception {
+	public List<CartDataBean> getCart(String id, int quantity) throws Exception {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -123,13 +122,12 @@ public class CartDBBean {
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
 
-			lists = new ArrayList<CartDataBean>(count);
+			lists = new ArrayList<CartDataBean>(quantity);
 			while (rs.next()) {
 				cart = new CartDataBean();
 				cart.setCart_id(rs.getInt("cart_id"));
 				cart.setCloth_id(rs.getInt("cloth_id"));
 				cart.setCloth_category(rs.getString("cloth_category"));
-				cart.setCloth_gender(rs.getString("cloth_gender"));
 				cart.setCloth_name(rs.getString("cloth_name"));
 				cart.setCloth_size(rs.getString("cloth_size"));
 				cart.setCloth_price(rs.getInt("cloth_price"));
@@ -163,14 +161,14 @@ public class CartDBBean {
 	}
 
 	// 4. 카트 옷 수량 수정
-	public void updateCount(int cart_id, byte count) throws Exception {
+	public void updateCount(int cart_id, byte quantity) throws Exception {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 
 		try {
 			conn = DBUtil.getConnection();
 			pstmt = conn.prepareStatement("update cart set quantity = ? where cart_id = ?");
-			pstmt.setInt(1, count);
+			pstmt.setInt(1, quantity);
 			pstmt.setInt(2, cart_id);
 
 			pstmt.executeUpdate();
