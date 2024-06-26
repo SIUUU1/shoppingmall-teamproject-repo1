@@ -316,7 +316,7 @@ public class MngrDBBean {
 			conn = DBUtil.getConnection();
 			String sql = "update cloth set cloth_category=?, cloth_gender=?, cloth_name=?";
 			sql += ", cloth_size=?, cloth_price=?, cloth_count=?, cloth_brand=?";
-			sql += ", cloth_image=?, cloth_content=?, discount_rate=?";
+			sql += ", cloth_image=?, cloth_content=?, discount_rate=?, reg_date=?";
 			sql += " where cloth_id=?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, cloth.getCloth_category());
@@ -329,8 +329,8 @@ public class MngrDBBean {
 			pstmt.setString(8, cloth.getCloth_image());
 			pstmt.setString(9, cloth.getCloth_content());
 			pstmt.setInt(10, cloth.getDiscount_rate());
-			//pstmt.setTimestamp(11, cloth.getReg_date());
-			pstmt.setInt(11, cloth_id);
+			pstmt.setTimestamp(11, cloth.getReg_date());
+			pstmt.setInt(12, cloth_id);
 			pstmt.executeUpdate();
 		} catch (Exception ex) {
 			ex.printStackTrace();
@@ -339,7 +339,7 @@ public class MngrDBBean {
 		}
 	}
 
-	// cloth_id 에 해당하는 책의 정보를 삭제시 사용하는 메소드
+	// cloth_id 에 해당하는 옷의 정보를 삭제시 사용하는 메소드
 	public void deleteCloth(int cloth_id) throws Exception {
 		Connection conn = null;
 		PreparedStatement pstmt = null;

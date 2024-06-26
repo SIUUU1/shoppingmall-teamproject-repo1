@@ -4,7 +4,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-<link rel="stylesheet" href="<%=request.getContextPath()%>/mngr/css/style.css" />
+<link rel="stylesheet" href="<%=request.getContextPath()%>/mngr/css/style.css?v=1" />
 <script src="<%=request.getContextPath()%>/mngr/productProcess/clothList.js?ver=<%=new Date().getTime()%>"></script>
 
 <c:if test="${empty sessionScope.id}">
@@ -16,6 +16,7 @@
 		등록된 상품 목록(전체 상품:${count})
 		<button id="regist">상품 등록</button>
 		<button id="clothMain">관리자 메인으로</button>
+	</p>
 </div>
 <div id="cloths">
 	<c:if test="${count == 0}">
@@ -27,16 +28,16 @@
 		<table>
 			<tr class="title">
 				<td align="center" width="30">번호</td>
-				<td align="center" width="30">카테고리</td>
-				<td align="center" width="30">성별</td>
-				<td align="center" width="30">사이즈</td>
-				<td align="center" width="100">옷이름</td>
-				<td align="center" width="50">가격</td>
-				<td align="center" width="50">수량</td>
-				<td align="center" width="70">브랜드</td>
-				<td align="center" width="70">등록일</td>
-				<td align="center" width="50">옷이미지</td>
-				<td align="center" width="30">할인율</td>
+				<td align="center" width="80">카테고리</td>
+				<td align="center" width="40">성별</td>
+				<td align="center" width="50">사이즈</td>
+				<td align="center" width="200">옷이름</td>
+				<td align="center" width="80">가격</td>
+				<td align="center" width="80">수량</td>
+				<td align="center" width="150">브랜드</td>
+				<td align="center" width="150">등록일</td>
+				<td align="center" width="100">옷이미지</td>
+				<td align="center" width="50">할인율</td>
 				<td align="center" width="50">수정</td>
 				<td align="center" width="50">삭제</td>
 			</tr>
