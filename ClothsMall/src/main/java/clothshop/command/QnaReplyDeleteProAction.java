@@ -5,17 +5,16 @@ import javax.servlet.http.HttpServletResponse;
 
 import clothshop.bean.QnaDBBean;
 
-public class QnaDeleteProAction implements CommandAction {
+public class QnaReplyDeleteProAction implements CommandAction {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
-		request.setCharacterEncoding("utf-8");
 		int qna_id = Integer.parseInt(request.getParameter("qna_id"));
 		
-		// qna_id 에 해당하는 qna 삭제
+		//DB 연동 - qna_id 에 해당하는 qna 및 답변 삭제
 		QnaDBBean qnaProcess = QnaDBBean.getInstance();
-		int check = qnaProcess.deleteArticle(qna_id);
-		request.setAttribute("check", Integer.valueOf(check));
-		return "/qna/qnaDeletePro.jsp";
+		qnaProcess.deleteArticle(qna_id);
+		return "/mngr/productProcess/qnaDeletePro.jsp";
 	}
+ 
 }

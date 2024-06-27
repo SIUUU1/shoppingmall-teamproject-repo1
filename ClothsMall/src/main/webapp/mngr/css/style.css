@@ -130,7 +130,7 @@ button {
 	padding: 5px 3px;
 }
 /* qna */
-#qnaHeader {
+#qnaHeader, #writeForm, #editForm {
 	width: 600px;
 	margin: 0 auto;
 	text-align: right;
@@ -140,4 +140,20 @@ button {
 	width: 600px;
 	margin: 30px auto;
 	border-top: 1px solid rgb(172, 170, 170);
+}
+
+#writeForm table {
+	width: 100%;
+}
+
+#replyBDiv, #editBDiv {
+	width: 600px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 20px;
+}
+
+#editForm table {
+	width: 100%;
 }

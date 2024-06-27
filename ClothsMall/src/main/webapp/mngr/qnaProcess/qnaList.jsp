@@ -33,8 +33,9 @@
       <c:if test="${qna.getQora()==2}">
             <p><b>${qna.getQna_content()}</b></p>
             <p><c:if test="${qna.getQna_writer()=='manager'}">관리자</c:if>
-             <small class="date">(${qna.getReg_date()})</small>
+            <small class="date">(${qna.getReg_date()})</small>
             <button id="editReply" name="${qna.getQna_id()}" onclick="edit(this)">수정</button>
+            <button id="deleteReply" name="${qna.getQna_id()}" onclick="del(this)">삭제</button>
             </p>
       </c:if>
     <hr>

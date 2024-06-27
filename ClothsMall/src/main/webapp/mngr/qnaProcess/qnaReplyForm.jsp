@@ -15,13 +15,20 @@
 <input type="hidden" id="qora" value="${qora}">
 
 <div id="writeForm" class="box">
-   <ul>
-      <li><p>[${cloth_name}] 의 QnA </p>
-          <p>QnA내용:${qna_content}</p>
-      <li><label for="rContent">답변</label>
-          <textarea id="rContent" rows="13" cols="50"></textarea>
-      <li class="label2">
-          <button id="replyPro">답변하기</button>
-          <button id="cancle">취소</button> 
-   </ul>
+   <table>
+   	<tr>
+   	<td colspan="2">[${cloth_name}] 의 QnA </td>
+   	</tr>
+   	<tr>
+   	<td colspan="2">QnA내용:${qna_content}</td>
+   	</tr>
+   	<tr>
+   	<td><label for="rContent">답변</label></td>
+   	<td><textarea id="rContent" rows="13" cols="75"></textarea></td>
+   	</tr>
+   </table>
+   <div id="replyBDiv">
+     <button id="cancle">취소</button> 
+     <button id="replyPro">답변하기</button>
+   </div>
 </div>

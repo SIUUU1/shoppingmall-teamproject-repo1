@@ -8,33 +8,25 @@
 <c:if test="${empty sessionScope.id}">
   <meta http-equiv="Refresh" content="0;url=/ClothsMall/index.do">
 </c:if>
-<head>
-    <title>Q&A Form</title>
-    <script src="qnaForm.js"></script>
-</head>
-<body>
-    <h1>Register Q&A</h1>
-    <form id="registForm">
-        <input type="hidden" id="cloth_id" value="${cloth_id}">
+
+        <input type="text" id="qna_writer" value="${sessionScope.id}">
         <input type="hidden" id="cloth_category" value="${cloth_category}">
-        <label for="qna_writer">Writer:</label>
-        <input type="text" id="qna_writer" name="qna_writer"><br>
-        <label for="cloth_title">Title:</label>
-        <input type="text" id="cloth_name" name="cloth_name"><br>
-        <label for="qnaCont">Content:</label>
-        <textarea id="qnaCont" name="qna_content" rows="4" cols="50"></textarea><br>
-        <input type="hidden" id="qora" value="Q">
-        <button type="button" id="regist">Register</button>
-        <button type="button" id="cancle">Cancel</button>
-    </form>
-</body>
+        <input type="hidden" id="cloth_id" value="${cloth_id}">
+        <input type="text" id="cloth_name" value="${cloth_name}">
+        <input type="hidden" id="qora" value="${qora}">
+        
 <div id="writeForm" class="box">
-   <ul>
-      <li>[${cloth_title}]에 대한 QnA
-      <li><label for="content">내용</label>
-          <textarea id="qnaCont" rows="13" cols="50"></textarea>
-      <li class="label2">
-          <button id="regist">등록</button>
-          <button id="cancle">취소</button> 
-   </ul>
+	<table>
+	<tr>
+	<td colspan="2">[${cloth_name}]에 대한 QnA</td>
+	</tr>
+	<tr>
+	<td><label for="content">내용</label></td>
+	<td><textarea id="qnaCont" rows="13" cols="75"></textarea></td>
+	</tr>
+	</table>
+	<div id="writeBDiv">
+    <button id="cancle">취소</button> 
+    <button id="regist">등록</button>
+	</div>
 </div>

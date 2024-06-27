@@ -20,7 +20,7 @@ public class QnaReplyProAction implements CommandAction {
         int cloth_id =  Integer.parseInt(request.getParameter("cloth_id"));
         String qna_writer =  request.getParameter("qna_writer");
 		String cloth_name =  request.getParameter("cloth_name");
-		String qna_content = "[답변]:"+request.getParameter("qna_content");
+		String qna_content = ">>[답변]: "+request.getParameter("qna_content");
 		Byte qora =  Byte.parseByte(request.getParameter("qora"));
 		byte reply = 1;//답변여부- 답변함
 		
