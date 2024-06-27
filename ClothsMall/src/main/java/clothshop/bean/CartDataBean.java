@@ -1,18 +1,20 @@
 package clothshop.bean;
 
 public class CartDataBean {
-	private int cart_id;
-	private String member_id;
-	private int cloth_id;
-	private String cloth_category;
-	private String cloth_name;
-	private String cloth_size;
-	private int cloth_price;
-	private String cloth_brand;
-	private String cloth_image;
-	private int discount_rate;
-	private int quantity;
+	private int cart_id;			// CART 아이디 (PK)
+	private String member_id;		// 구매자 아이디
+	private int cloth_id;			// 옷 아이디
+	private String cloth_category;	// 옷 카테고리
+	private String cloth_name;		// 옷 상품명
+	private String cloth_size;		// 옷 사이즈
+	private int cloth_price;		// 옷 정가(할인율 적용 전, 판매가 x)
+	private String cloth_brand;		// 옷 브랜드
+	private String cloth_image;		// 옷 이미지
+	private int discount_rate;		// 옷 할인율
+	private int quantity;			// 카트 내 옷 단일 상품 수량
 
+	
+	// GETTER, SETTER
 	public int getCart_id() {
 		return cart_id;
 	}
