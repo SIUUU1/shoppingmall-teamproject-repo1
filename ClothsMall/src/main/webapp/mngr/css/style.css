@@ -1,0 +1,143 @@
+@charset "UTF-8";
+
+body {
+	padding: 0;
+	margin: 0;
+}
+
+button {
+	cursor: pointer;
+	background-color: #eeeeee;
+	border-radius: 10px;
+	border: none;
+	padding: 5px;
+}
+
+#status {
+	margin: 50px auto;
+	width: 600px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	align-items: center;
+}
+
+#status input {
+	width: 300px;
+	height: 30px;
+	outline: none;
+	border: none;
+	border-bottom: 1px dotted black;
+	font-size: 16px
+}
+
+#status button {
+	width: 100px;
+}
+
+#status span {
+	color: lightgreen;
+	font-weight: 900;
+}
+
+#status p {
+	text-align: center;
+}
+
+#listHeader {
+	width: 600px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+}
+
+#listHeader p {
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
+
+#upForm1 {
+	width: 600px;
+	margin: 0 auto;
+}
+
+#mList {
+	width: 600px;
+	margin: 30px auto;
+	display: flex;
+	justify-content: space-between;
+	text-align: center;
+}
+
+#mList p {
+	margin: 0 auto;
+}
+
+#mList span {
+	color: lightgreen;
+	font-weight: 900;
+}
+
+#cloths table {
+	border: 1px solid #eeeeee;
+	border-collapse: collapse;
+	margin: 10px auto;
+	text-align: center;
+}
+
+#cloths tr, td {
+	border: 1px solid #eeeeee;
+	padding: 10px 0;
+}
+
+#updateCloth, #registCloth {
+	cursor: pointer;
+	background-color: #eeeeee;
+	border-radius: 10px;
+	border: none;
+	padding: 5px;
+}
+
+#updateBDiv, #registBDiv {
+	text-align: center;
+}
+
+#cloth_image::file-selector-button {
+	border: none;
+	cursor: pointer;
+	background-color: #eeeeee;
+	border-radius: 10px;
+	border: none;
+	padding: 5px;
+	outline: none;
+}
+
+#clothUpdateForm table {
+	width: 600px;
+	margin: 10px 0;
+}
+
+#clothRegistForm table {
+	width: 600px;
+	margin: 10px 0;
+}
+
+#clothUpdateForm tr, td {
+	padding: 5px 3px;
+}
+
+#clothRegistForm tr, td {
+	padding: 5px 3px;
+}
+/* qna */
+#qnaHeader {
+	width: 600px;
+	margin: 0 auto;
+	text-align: right;
+}
+
+#qnaList {
+	width: 600px;
+	margin: 30px auto;
+	border-top: 1px solid rgb(172, 170, 170);
+}

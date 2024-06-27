@@ -16,7 +16,7 @@
 
 <div id="writeForm" class="box">
    <ul>
-      <li><p>[${cloth_title}] 의 QnA </p>
+      <li><p>[${cloth_name}] 의 QnA </p>
           <p>QnA내용:${qna_content}</p>
       <li><label for="rContent">답변</label>
           <textarea id="rContent" rows="13" cols="50"></textarea>
