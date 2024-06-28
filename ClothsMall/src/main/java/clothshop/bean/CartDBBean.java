@@ -39,32 +39,22 @@ public class CartDBBean {
 					+ "values (cart_seq.NEXTVAL,?,?,?,?,?,?,?,?,?,?)";
 			pstmt = conn.prepareStatement(sql);
 
-			pstmt.setInt(1, cart.getCart_id());
-			pstmt.setString(2, cart.getMember_id());
-			pstmt.setInt(3, cart.getCloth_id());
-			pstmt.setString(4, cart.getCloth_category());
-			pstmt.setString(5, cart.getCloth_name());
-			pstmt.setString(6, cart.getCloth_size());
-			pstmt.setInt(7, cart.getCloth_price());
-			pstmt.setString(8, cart.getCloth_brand());
-			pstmt.setString(9, cart.getCloth_image());
-			pstmt.setInt(10, cart.getDiscount_rate());
-			pstmt.setInt(11, cart.getQuantity());
+			pstmt.setString(1, cart.getMember_id());
+			pstmt.setInt(2, cart.getCloth_id());
+			pstmt.setString(3, cart.getCloth_category());
+			pstmt.setString(4, cart.getCloth_name());
+			pstmt.setString(5, cart.getCloth_size());
+			pstmt.setInt(6, cart.getCloth_price());
+			pstmt.setString(7, cart.getCloth_brand());
+			pstmt.setString(8, cart.getCloth_image());
+			pstmt.setInt(9, cart.getDiscount_rate());
+			pstmt.setInt(10, cart.getQuantity());
 
 			pstmt.executeUpdate();
 		} catch (Exception e) {
 
 		} finally {
-			if (pstmt != null)
-				try {
-					pstmt.close();
-				} catch (SQLException e) {
-				}
-			if (conn != null)
-				try {
-					conn.close();
-				} catch (SQLException e) {
-				}
+			DBUtil.dbReleaseClose(pstmt, conn);
 		}
 
 	}
@@ -86,21 +76,7 @@ public class CartDBBean {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			if (rs != null)
-				try {
-					rs.close();
-				} catch (SQLException e) {
-				}
-			if (pstmt != null)
-				try {
-					pstmt.close();
-				} catch (SQLException e) {
-				}
-			if (conn != null)
-				try {
-					conn.close();
-				} catch (SQLException e) {
-				}
+			DBUtil.dbReleaseClose(rs, pstmt, conn);
 		}
 		return x;
 	}
@@ -141,21 +117,7 @@ public class CartDBBean {
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		} finally {
-			if (rs != null)
-				try {
-					rs.close();
-				} catch (SQLException ex) {
-				}
-			if (pstmt != null)
-				try {
-					pstmt.close();
-				} catch (SQLException ex) {
-				}
-			if (conn != null)
-				try {
-					conn.close();
-				} catch (SQLException ex) {
-				}
+			DBUtil.dbReleaseClose(rs, pstmt, conn);
 		}
 		return lists;
 	}
@@ -175,16 +137,7 @@ public class CartDBBean {
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		} finally {
-			if (pstmt != null)
-				try {
-					pstmt.close();
-				} catch (SQLException ex) {
-				}
-			if (conn != null)
-				try {
-					conn.close();
-				} catch (SQLException ex) {
-				}
+			DBUtil.dbReleaseClose(pstmt, conn);
 		}
 	}
 
@@ -202,17 +155,7 @@ public class CartDBBean {
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		} finally {
-
-			if (pstmt != null)
-				try {
-					pstmt.close();
-				} catch (SQLException ex) {
-				}
-			if (conn != null)
-				try {
-					conn.close();
-				} catch (SQLException ex) {
-				}
+			DBUtil.dbReleaseClose(pstmt, conn);
 		}
 	}
 
@@ -230,16 +173,7 @@ public class CartDBBean {
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		} finally {
-			if (pstmt != null)
-				try {
-					pstmt.close();
-				} catch (SQLException ex) {
-				}
-			if (conn != null)
-				try {
-					conn.close();
-				} catch (SQLException ex) {
-				}
+			DBUtil.dbReleaseClose(pstmt, conn);
 		}
 	}
 }
