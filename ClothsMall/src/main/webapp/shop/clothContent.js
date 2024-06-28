@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
 	let insertCartButton = document.getElementById('insertCart');
 	insertCartButton.addEventListener('click', function() {
+		let member_id =document.getElementById('member_id').value;
 		let query = {
 			cloth_id: document.getElementById('cloth_id').value,
 			quantity: document.getElementById('quantity').value,
@@ -12,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			cloth_category: document.getElementById('cloth_category').value,
 			discount_rate: document.getElementById('discount_rate').value,
 			cloth_brand: document.getElementById('cloth_brand').value,
-			member_id: document.getElementById('member_id').value
+			member_id: member_id
 		};
 		let xhr = new XMLHttpRequest();
 		xhr.open('POST', '/ClothsMall/insertCart.do', true);
@@ -20,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		xhr.onreadystatechange = function() {
 			if (xhr.readyState === 4 && xhr.status === 200) {
 				alert('장바구니에 담겼습니다.');
-				window.location.href = '/ClothsMall/cartList.do';
+				window.location.href = `/ClothsMall/cartList.do?member_id=${member_id}`;
 			} else if (xhr.readyState !== 4) {
 				console.error('Error:', xhr.statusText);
 			}
