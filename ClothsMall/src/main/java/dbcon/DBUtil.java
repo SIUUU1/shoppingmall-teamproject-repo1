@@ -1,6 +1,7 @@
 package dbcon;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -83,5 +84,36 @@ public class DBUtil {
 		} finally {
 			conn = null;
 		}
+	}
+
+	public static void dbReleaseClose(ResultSet rs, PreparedStatement pstmt, Connection conn) {
+		if (rs != null)
+			try {
+				rs.close();
+			} catch (SQLException ex) {
+			}
+		if (pstmt != null)
+			try {
+				pstmt.close();
+			} catch (SQLException ex) {
+			}
+		if (conn != null)
+			try {
+				conn.close();
+			} catch (SQLException ex) {
+			}
+	}
+
+	public static void dbReleaseClose(PreparedStatement pstmt, Connection conn) {
+		if (pstmt != null)
+			try {
+				pstmt.close();
+			} catch (SQLException ex) {
+			}
+		if (conn != null)
+			try {
+				conn.close();
+			} catch (SQLException ex) {
+			}
 	}
 }

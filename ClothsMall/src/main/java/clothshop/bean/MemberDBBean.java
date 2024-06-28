@@ -384,13 +384,13 @@ public class MemberDBBean {
 			conn = DBUtil.getConnection();
 			sql = "select count(*) from member";
 			stmt = conn.createStatement();
-			rs= stmt.executeQuery(sql);
-			if(rs.next()) {
+			rs = stmt.executeQuery(sql);
+			if (rs.next()) {
 				count = rs.getInt(1);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			DBUtil.dbReleaseClose(rs, stmt, conn);
 		}
 
@@ -410,7 +410,7 @@ public class MemberDBBean {
 			conn = DBUtil.getConnection();
 			sql = "select * from member";
 			stmt = conn.createStatement();
-			rs= stmt.executeQuery(sql);
+			rs = stmt.executeQuery(sql);
 
 			memberList = new ArrayList<LogonDataBean>(count);
 			while (rs.next()) {
@@ -425,6 +425,8 @@ public class MemberDBBean {
 				member.setMember_tel(rs.getString("member_tel"));
 				member.setMember_gender(rs.getString("member_gender"));
 				member.setMember_grade(rs.getString("member_grade"));
+				member.setMileage(rs.getInt("mileage"));
+				member.setPoint(rs.getInt("point"));
 
 				memberList.add(member);
 			}
@@ -435,27 +437,34 @@ public class MemberDBBean {
 		}
 		return memberList;
 	}
-	
-	// 3. delete
-	
+
+	// 3. member_id 배열 받아 삭제하는 함수
+	@SuppressWarnings("resource")
+	public int delMember(String[] delMemberIdList) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String sql = null;
+		int delCount = 0;
+		try {
+			if(delMemberIdList.length==0||delMemberIdList==null) {
+				return 0;
+			}else {
+			conn = DBUtil.getConnection();
+			sql = "delete from member where member_id = ?";
+			pstmt = conn.prepareStatement(sql);
+			// 삭제 배열 해당 아이디 삭제
+			for (String member_id : delMemberIdList) {
+				pstmt.setString(1, member_id);
+				pstmt.executeUpdate();
+				delCount++;
+			}
+		}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBUtil.dbReleaseClose(pstmt, conn);
+		}
+		return delCount;
+	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

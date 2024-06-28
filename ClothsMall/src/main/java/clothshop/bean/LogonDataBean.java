@@ -13,6 +13,8 @@ public class LogonDataBean {
 	private String member_tel; 				//전화번호
 	private String member_gender; 			//성별
 	private String member_grade; 			//고객 등급
+	private int mileage;					//마일리지
+	private int	point;						//포인트
 	
 	public String getMember_id() {
 		return member_id;
@@ -73,6 +75,18 @@ public class LogonDataBean {
 	}
 	public void setMember_grade(String member_grade) {
 		this.member_grade = member_grade;
+	}
+	public int getMileage() {
+		return mileage;
+	}
+	public void setMileage(int mileage) {
+		this.mileage = mileage;
+	}
+	public int getPoint() {
+		return point;
+	}
+	public void setPoint(int point) {
+		this.point = point;
 	}
 	
 	
