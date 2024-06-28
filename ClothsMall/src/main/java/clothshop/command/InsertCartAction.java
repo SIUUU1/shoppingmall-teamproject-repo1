@@ -11,7 +11,8 @@ public class InsertCartAction implements CommandAction {
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		request.setCharacterEncoding("utf-8");
-
+		
+		String member_id = request.getParameter("member_id");
 		int cloth_id = Integer.parseInt(request.getParameter("cloth_id"));
 		String cloth_category = request.getParameter("cloth_category");
 		String cloth_name = request.getParameter("cloth_name");
@@ -23,7 +24,8 @@ public class InsertCartAction implements CommandAction {
 		byte quantity = Byte.parseByte(request.getParameter("quantity"));
 		// 카트 객체 생성
 		CartDataBean cart = new CartDataBean();
-
+		
+		cart.setMember_id(member_id);
 		cart.setCloth_id(cloth_id);
 		cart.setCloth_category(cloth_category);
 		cart.setCloth_name(cloth_name);

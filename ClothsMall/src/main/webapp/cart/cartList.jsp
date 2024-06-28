@@ -51,7 +51,7 @@
 					<td width="100">
 						<c:set var="price" value="${cloth.getBuy_price()}" />
 						<c:set var="rate" value="${cloth.getDiscount_rate()}" />
-						<fmt:parseNumber var="rPrice" value="${price*(100.0-rate)/100}"/>
+						<fmt:parseNumber var="rPrice" value="${price*(100.0-rate)/100}" />
 						<!-- ㄴ real Price 판매가 number 값 표시 -->
 						정가&nbsp;
 						<fmt:formatNumber value="${price}" type="currency" />
