@@ -14,7 +14,7 @@
 	<div id="mList">
 		<button id="registProduct">상품등록</button>
 		<button id="updateProduct">상품수정/삭제</button>
-		<button id="updateMember">회원수정/삭제</button>
+		<button id="updateMember">회원관리</button>
 		<button id="orderedProduct">전체구매목록 확인</button>
 		<button id="qna">상품 QnA답변</button>
 	</div>
