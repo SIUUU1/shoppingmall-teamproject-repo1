@@ -6,18 +6,12 @@
 <link rel="stylesheet" href="<%=request.getContextPath()%>/shop/css/style.css"/>
 <div id="cata" class="box2">
 	<ul>
-		<li><a
-			href="<%=request.getContextPath()%>/list.do?cloth_category=1000">상의</a>
-		<li><a
-			href="<%=request.getContextPath()%>/list.do?cloth_category=2000">하의</a>
-		<li><a
-			href="<%=request.getContextPath()%>/list.do?cloth_category=3000">아우터</a>
-		<li><a
-			href="<%=request.getContextPath()%>/list.do?cloth_category=4000">신발</a>
-		<li><a
-			href="<%=request.getContextPath()%>/list.do?cloth_category=5000">패션소품</a>
-		<li><a
-			href="<%=request.getContextPath()%>/list.do?cloth_category=all">전체</a>
+		<li><a href="<%=request.getContextPath()%>/list.do?cloth_category=1000">상의</a>
+		<li><a href="<%=request.getContextPath()%>/list.do?cloth_category=2000">하의</a>
+		<li><a href="<%=request.getContextPath()%>/list.do?cloth_category=3000">아우터</a>
+		<li><a href="<%=request.getContextPath()%>/list.do?cloth_category=4000">신발</a>
+		<li><a href="<%=request.getContextPath()%>/list.do?cloth_category=5000">패션소품</a>
+		<li><a href="<%=request.getContextPath()%>/list.do?cloth_category=all">전체</a>
 	</ul>
 </div>
 <div id="shop" class="box2">
@@ -66,8 +60,8 @@
 					<c:set var="price" value="${cloth.getCloth_price()}" /> 
 					<c:set var="rate" value="${cloth.getDiscount_rate()}" /> 정가 : 
 					<fmt:formatNumber value="${price}" type="number" pattern="#,##0" />원<br> 
-							<strong class="bred">판매가:<fmt:formatNumber value="${price*((100.0-rate)/100)}" type="number" pattern="#,##0" />원
-							</strong></td>
+					<strong class="bred">판매가:<fmt:formatNumber value="${price*((100.0-rate)/100)}" type="number" pattern="#,##0" />원
+					</strong></td>
 				</tr>
 			</table>
 		</c:forEach>

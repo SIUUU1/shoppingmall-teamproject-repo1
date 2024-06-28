@@ -38,6 +38,6 @@ document.addEventListener('DOMContentLoaded', function() {
 	// [취소] 버튼 클릭
 	let cancelButton = document.getElementById('cancle');
 	cancelButton.addEventListener('click', function() {
-		window.location.href = "/ClothsMall/mg/managerMain.do";
+		window.location.href = "/ClothsMall/mg/qnaList.do";
 	});
 });

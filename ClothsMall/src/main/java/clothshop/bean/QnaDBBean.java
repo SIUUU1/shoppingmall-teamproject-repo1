@@ -290,15 +290,22 @@ public class QnaDBBean {
 	}
 
 	// QnA글 삭제
-	public int deleteArticle(int qna_id) {
+	public int deleteArticle(int qna_id, int group_id, int qora) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		int x = -1;
 		try {
 			conn = DBUtil.getConnection();
-
-			pstmt = conn.prepareStatement("delete from qna where qna_id=?");
-			pstmt.setInt(1, qna_id);
+			String sql ="";
+			if(qora==2) {	//답변 삭제일때 답변만 삭제
+				sql ="delete from qna where qna_id=?";
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setInt(1, qna_id);
+			}else {	//qna 삭제일때 답변까지 삭제
+				sql ="delete from qna where group_id=?";
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setInt(1, group_id);
+			}
 			pstmt.executeUpdate();
 			x = 1; // 글삭제 성공
 		} catch (Exception ex) {

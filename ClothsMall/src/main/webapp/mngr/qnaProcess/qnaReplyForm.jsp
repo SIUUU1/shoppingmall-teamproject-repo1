@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <link rel="stylesheet" href="/ClothsMall/mngr/css/style.css"/>
-<script src="/ClothsMall/mngr/qnaProcess/qnawrite.js?ver=1"></script>
+<script src="/ClothsMall/mngr/qnaProcess/qnawrite.js?ver=2"></script>
 
 <c:if test="${empty sessionScope.id}">
   <meta http-equiv="Refresh" content="0;url=/ClothsMall/mg/managerMain.do" >

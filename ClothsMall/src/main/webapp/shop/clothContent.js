@@ -1,21 +1,17 @@
 document.addEventListener('DOMContentLoaded', function() {
 	let insertCartButton = document.getElementById('insertCart');
 	insertCartButton.addEventListener('click', function() {
-		alert("장바구니에 담았습니다.2");
-		let buyer = document.getElementById('buyer').value;
-		let cloth_category = document.getElementById('cloth_category').value;
-		let cloth_size = document.getElementById('cloth_size');
-		let cloth_size_option = cloth_size.options[select.selectedIndex];
+		alert("장바구니에 담았습니다.");
 		let query = {
 			cloth_id: document.getElementById('cloth_id').value,
-			buy_count: document.getElementById('buy_count').value,
+			quantity: document.getElementById('quantity').value,
 			cloth_image: document.getElementById('cloth_image').value,
 			cloth_name: document.getElementById('cloth_name').value,
 			cloth_gender: document.getElementById('cloth_gender').value,
-			buy_price: document.getElementById('buy_price').value,
-			cloth_size: cloth_size_option,
-			cloth_category: cloth_category,
-			buyer: buyer
+			cloth_price: document.getElementById('cloth_price').value,
+			cloth_size: document.getElementById('cloth_size').value,
+			cloth_category: document.getElementById('cloth_category').valu,
+			member_id: document.getElementById('member_id').value
 		};
 		let xhr = new XMLHttpRequest();
 		xhr.open('POST', '/ClothsMall/insertCart.do', true);
@@ -23,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		xhr.onreadystatechange = function() {
 			if (xhr.readyState === 4 && xhr.status === 200) {
 				alert('장바구니에 담겼습니다.');
-			} else if (xhr.readyState === 4) {
+			} else if (xhr.readyState !== 4) {
 				console.error('Error:', xhr.statusText);
 			}
 		};
@@ -65,10 +61,14 @@ function edit(editBtn) { // [수정] 버튼 클릭
 }
 // [삭제] 버튼 클릭
 function del(delBtn) {
-	alert("삭제진행 2");
+	alert("qna 삭제 진행");
 	let rStr = delBtn.name;
 	let arr = rStr.split(',');
-	let query = { qna_id: arr[0] };
+	let query = { 
+		qna_id: arr[0],
+		group_id: arr[3],
+		qora: arr[4]
+		 };
 	let xhr = new XMLHttpRequest();
 	xhr.open('POST', '/ClothsMall/qnaDeletePro.do', true);
 	xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
@@ -87,12 +87,19 @@ function del(delBtn) {
 			} else {
 				alert('QnA 삭제 실패');
 			}
-		} else if (xhr.readyState === 4) {
+		} else if (xhr.readyState !== 4) {
 			console.error('Error:', xhr.statusText);
 		}
 	};
 	xhr.onerror = function() {
 		console.error('Request failed');
 	};
-	xhr.send("qna_id" + '=' + encodeURIComponent(query.qna_id));
+	
+	let queryString = Object.keys(query)
+            .map(function(key) {
+                return encodeURIComponent(key) + '=' + encodeURIComponent(query[key]);
+            })
+            .join('&');
+
+    xhr.send(queryString);
 }

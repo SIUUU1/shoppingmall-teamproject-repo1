@@ -1,5 +1,4 @@
 function login() {
-	alert("로그인");
 	let query = {
 		id: document.getElementById("id").value,
 		passwd: document.getElementById("passwd").value

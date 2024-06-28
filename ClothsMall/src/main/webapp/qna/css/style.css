@@ -11,9 +11,11 @@
 	align-items: center;
 	margin-top: 20px;
 }
+
 #writeForm table {
 	width: 100%;
 }
+
 #editForm table {
 	width: 100%;
 }

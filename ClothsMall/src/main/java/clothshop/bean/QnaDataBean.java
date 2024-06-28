@@ -4,12 +4,12 @@ import java.sql.Timestamp;
 
 public class QnaDataBean {
 	private int qna_id;// qna글번호
-	private int cloth_id;// 책의 등록번호
-	private String cloth_name;// 책이름
+	private int cloth_id;// 옷의 등록번호
+	private String cloth_name;// 옷이름
 	private String qna_writer;// qna작성자
 	private String qna_content;// qna내용
 	private int group_id;// qna그룹아이디
-	private int qora;// qna그룹내의 순서
+	private int qora;// qora==1 qna, qora==2 답변
 	private int reply;// 답변여부
 	private Timestamp reg_date;// qna작성일
 
