@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', function() {
 			cloth_price: document.getElementById('cloth_price').value,
 			cloth_size: document.getElementById('cloth_size').value,
 			cloth_category: document.getElementById('cloth_category').value,
+			discount_rate: document.getElementById('discount_rate').value,
+			cloth_brand: document.getElementById('cloth_brand').value,
 			member_id: document.getElementById('member_id').value
 		};
 		let xhr = new XMLHttpRequest();
@@ -18,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		xhr.onreadystatechange = function() {
 			if (xhr.readyState === 4 && xhr.status === 200) {
 				alert('장바구니에 담겼습니다.');
+				window.location.href = '/ClothsMall/cartList.do';
 			} else if (xhr.readyState !== 4) {
 				console.error('Error:', xhr.statusText);
 			}

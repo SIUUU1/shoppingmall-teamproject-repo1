@@ -13,8 +13,8 @@ public class LogonDataBean {
 	private String member_tel; 				//전화번호
 	private String member_gender; 			//성별
 	private String member_grade; 			//고객 등급
-	private int mileage;					//마일리지
-	private int	point;						//포인트
+	private int mileage;					//적립금
+	private int	point;						//충전머니
 	
 	public String getMember_id() {
 		return member_id;

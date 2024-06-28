@@ -35,7 +35,6 @@ public class InsertCartAction implements CommandAction {
 		cart.setCloth_image(cloth_image);
 		cart.setDiscount_rate(discount_rate);
 		cart.setQuantity(quantity);
-
 		// 장바구니에 추가
 		CartDBBean clothProcess = CartDBBean.getInstance();
 		clothProcess.insertCart(cart);

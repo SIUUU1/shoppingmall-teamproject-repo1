@@ -53,11 +53,13 @@ pageEncoding="UTF-8"%>
 		수량 : <input type="text" size="5" id="quantity" value="1"> 개
 		</c:if>
 		<input type="hidden" id="cloth_id" value="${cloth_id}">
-		<input type="hidden" id="cloth_image" value="${cloth.getBook_image()}">
+		<input type="hidden" id="cloth_image" value="${cloth.getCloth_image()}">
 		<input type="hidden" id="cloth_name" value="${cloth.getCloth_name()}">
 		<input type="hidden" id="cloth_price" value="${rPrice}">
 		<input type="hidden" id="cloth_category" value="${cloth_category}">
 		<input type="hidden" id="cloth_gender" value="${cloth.getCloth_gender()}">
+		<input type="hidden" id="discount_rate" value="${cloth.getDiscount_rate()}">
+		<input type="hidden" id="cloth_brand" value="${cloth.getCloth_brand()}">
 		<input type="hidden" id="member_id" value="${sessionScope.id}">
 		<button id="insertCart">장바구니에 담기</button>
 		</c:if>

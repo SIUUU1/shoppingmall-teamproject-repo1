@@ -49,8 +49,8 @@
 					<td width="100">${cart.getCloth_brand()}</td>
 					<td width="80">${cart.getCloth_size()}</td>
 					<td width="100">
-						<c:set var="price" value="${cloth.getBuy_price()}" />
-						<c:set var="rate" value="${cloth.getDiscount_rate()}" />
+						<c:set var="price" value="${cart.getCloth_price()}" />
+						<c:set var="rate" value="${cart.getDiscount_rate()}" />
 						<fmt:parseNumber var="rPrice" value="${price*(100.0-rate)/100}" />
 						<!-- ㄴ real Price 판매가 number 값 표시 -->
 						정가&nbsp;

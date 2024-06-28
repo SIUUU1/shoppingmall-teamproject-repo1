@@ -31,12 +31,9 @@ public class CartDBBean {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		String sql = "";
-
 		try {
 			conn = DBUtil.getConnection();
-			sql = "insert into cart (cart_id, member_id, cloth_id, cloth_category, cloth_name, cloth_size, "
-					+ "cloth_price, cloth_brand, cloth_image, discount_rate, quantity)"
-					+ "values (cart_seq.NEXTVAL,?,?,?,?,?,?,?,?,?,?)";
+			sql = "insert into cart values (cart_seq.NEXTVAL,?,?,?,?,?,?,?,?,?,?)";
 			pstmt = conn.prepareStatement(sql);
 
 			pstmt.setString(1, cart.getMember_id());
@@ -52,7 +49,7 @@ public class CartDBBean {
 
 			pstmt.executeUpdate();
 		} catch (Exception e) {
-
+			e.printStackTrace();
 		} finally {
 			DBUtil.dbReleaseClose(pstmt, conn);
 		}
