@@ -44,9 +44,9 @@
 								${member.getMember_detailed_address()}
 							</td>
 							<td>${member.getMember_tel()}</td>
-							<td>${member.getMember_grade}</td>
-							<td>마일리지&nbsp;${member.getPoint}
-							<br>포인트&nbsp;${member.getPoint}</td>
+							<td>${member.getMember_grade()}</td>
+							<td>마일리지&nbsp;${member.getPoint()}
+							<br>포인트&nbsp;${member.getPoint()}</td>
 						</tr>
 					</c:forEach>
 				</table>
