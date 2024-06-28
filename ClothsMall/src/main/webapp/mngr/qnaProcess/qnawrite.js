@@ -1,6 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
+
 	let replyProButton = document.getElementById('replyPro');
 	replyProButton.addEventListener('click', function() {
+		//답변내용이 없는 경우
+		if (document.getElementById('rContent').value === '') {
+			alert('답변내용을 입력하세요.');
+			document.getElementById('rContent').focus();
+			return;
+		}
 		let query = {
 			qna_content: document.getElementById('rContent').value,
 			qna_writer: document.getElementById('qna_writer').value,
@@ -25,14 +32,14 @@ document.addEventListener('DOMContentLoaded', function() {
 		xhr.onerror = function() {
 			console.error('Request failed');
 		};
-		
-		let queryString = Object.keys(query)
-            .map(function(key) {
-                return encodeURIComponent(key) + '=' + encodeURIComponent(query[key]);
-            })
-            .join('&');
 
-    xhr.send(queryString);
+		let queryString = Object.keys(query)
+			.map(function(key) {
+				return encodeURIComponent(key) + '=' + encodeURIComponent(query[key]);
+			})
+			.join('&');
+
+		xhr.send(queryString);
 	});
 
 	// [취소] 버튼 클릭

@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
 	let insertCartButton = document.getElementById('insertCart');
 	insertCartButton.addEventListener('click', function() {
-		alert("장바구니에 담았습니다.");
 		let query = {
 			cloth_id: document.getElementById('cloth_id').value,
 			quantity: document.getElementById('quantity').value,
@@ -10,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			cloth_gender: document.getElementById('cloth_gender').value,
 			cloth_price: document.getElementById('cloth_price').value,
 			cloth_size: document.getElementById('cloth_size').value,
-			cloth_category: document.getElementById('cloth_category').valu,
+			cloth_category: document.getElementById('cloth_category').value,
 			member_id: document.getElementById('member_id').value
 		};
 		let xhr = new XMLHttpRequest();

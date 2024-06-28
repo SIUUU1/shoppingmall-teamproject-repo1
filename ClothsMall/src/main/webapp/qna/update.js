@@ -2,6 +2,12 @@ document.addEventListener('DOMContentLoaded', function() {
     let updateButton = document.getElementById('update');
     updateButton.addEventListener('click', function() {
         // [수정] 버튼 클릭
+        // 보내기 전에 입력내용 점검
+		if (document.getElementById('updateCont').value === '') {
+			alert('내용을 입력하세요.');
+			document.getElementById('updateCont').focus();
+			return;
+		}
         let cloth_id = document.getElementById('cloth_id').value;
         let cloth_category = document.getElementById('cloth_category').value;
 

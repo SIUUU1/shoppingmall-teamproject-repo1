@@ -1,6 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
 	let updateButton = document.getElementById('update');
 	updateButton.addEventListener('click', function() {
+		//답변내용이 없는 경우
+		if (document.getElementById('uRContent').value === '') {
+			alert('답변내용을 입력하세요.');
+			document.getElementById('uRContent').focus();
+			return;
+		}
 		let query = {
 			qna_content: document.getElementById('uRContent').value,
 			qna_id: document.getElementById('qna_id').value
