@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0" />
 <script src="${pageContext.request.contextPath}/backmain/memberList.js"></script>
 
-<c:if test="${empty sessionScope.id}">
+<c:if test="${empty sessionScope.managerId}">
 	<meta http-equiv="Refresh" content="0;url=${pageContext.request.contextPath}/mg/managerMain.do">
 </c:if>
 

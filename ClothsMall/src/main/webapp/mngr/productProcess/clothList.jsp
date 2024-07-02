@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="<%=request.getContextPath()%>/mngr/css/style.css?v=1" />
 <script src="<%=request.getContextPath()%>/mngr/productProcess/clothList.js?ver=<%=new Date().getTime()%>"></script>
 
-<c:if test="${empty sessionScope.id}">
+<c:if test="${empty sessionScope.managerId}">
 	<meta http-equiv="Refresh" content="0;url=<%=request.getContextPath()%>/mg/managerMain.do">
 </c:if>
 

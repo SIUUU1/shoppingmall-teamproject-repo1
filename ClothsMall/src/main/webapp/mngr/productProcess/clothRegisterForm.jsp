@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0" />
 <link rel="stylesheet" href="<%=request.getContextPath()%>/mngr/css/style.css?v=2" />
 <script	src="<%=request.getContextPath()%>/mngr/productProcess/clothregist.js?v=1"></script>
-<c:if test="${empty sessionScope.id}">
+<c:if test="${empty sessionScope.managerId}">
 	<meta http-equiv="Refresh" content="0;url=<%=request.getContextPath()%>/mg/managerMain.do">
 </c:if>
 

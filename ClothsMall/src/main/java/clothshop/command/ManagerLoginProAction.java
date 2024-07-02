@@ -18,7 +18,7 @@ public class ManagerLoginProAction implements CommandAction {
 		int check = dbPro.userCheck(id, passwd);
 		// 해당 뷰(응답페이지)로 보낼 내용을 request속성에 지정
 		request.setAttribute("check", check);
-		request.setAttribute("id", id);
+		request.setAttribute("managerId", id);
 		request.setAttribute("type", 0);
 		return "/mngr/logon/mLoginPro.jsp";
 	}

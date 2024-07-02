@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="/ClothsMall/mngr/css/style.css"/>
 <script src="/ClothsMall/mngr/qnaProcess/qnawrite.js?ver=2"></script>
 
-<c:if test="${empty sessionScope.id}">
+<c:if test="${empty sessionScope.managerId}">
   <meta http-equiv="Refresh" content="0;url=/ClothsMall/mg/managerMain.do" >
 </c:if>
 

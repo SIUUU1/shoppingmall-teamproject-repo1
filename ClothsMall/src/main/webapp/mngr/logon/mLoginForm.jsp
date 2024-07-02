@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="<%=request.getContextPath()%>/mngr/css/style.css"/>
 <script src="<%=request.getContextPath()%>/mngr/logon/mlogin.js?ver=1"></script>
 
-<c:if test="${empty sessionScope.id}">
+<c:if test="${empty sessionScope.managerId}">
 <div id="status">
 <input id="id" name="id" type="text" size="20" maxlength="50" placeholder="아이디">
 <input id="passwd" name="passwd" type="password" size="20" placeholder="비밀번호" maxlength="16">
@@ -12,7 +12,7 @@
 </div>
 </c:if>
 
-<c:if test="${!empty sessionScope.id}">
+<c:if test="${!empty sessionScope.managerId}">
 <div id="status">
 <p>관리자님 환영합니다. <br>
 오늘도 <span>CRUELLA</span>에서 일해주시는 관리자님께 감사드리며 좋은 하루 보내세요.</p>

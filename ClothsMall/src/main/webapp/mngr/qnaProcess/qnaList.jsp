@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="/ClothsMall/mngr/css/style.css?v=2"/>
 <script src="/ClothsMall/mngr/qnaProcess/qnalist.js"></script>
 
-<c:if test="${empty sessionScope.id}">
+<c:if test="${empty sessionScope.managerId}">
   <meta http-equiv="Refresh" content="0;url=/ClothsMall/mg/managerMain.do" >
 </c:if>
 

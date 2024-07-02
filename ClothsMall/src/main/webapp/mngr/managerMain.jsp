@@ -4,13 +4,15 @@
 <link rel="stylesheet" href="<%=request.getContextPath()%>/mngr/css/style.css?v=1" />
 <script src="<%=request.getContextPath()%>/mngr/managerMain.js"></script>
 
-<c:if test="${empty sessionScope.id}">
+<c:if test="${empty sessionScope.managerId}">
 	<div id="mList">
 		<p><span>CRUELLA</span> 관리자 페이지입니다.</P>
 	</div>
 </c:if>
 
-<c:if test="${!empty sessionScope.id}">
+
+
+<c:if test="${!empty sessionScope.managerId}">
 	<div id="mList">
 		<button id="registProduct">상품등록</button>
 		<button id="updateProduct">상품수정/삭제</button>
