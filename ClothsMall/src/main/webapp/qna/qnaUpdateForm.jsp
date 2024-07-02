@@ -2,10 +2,10 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-<link rel="stylesheet" href="/ClothsMall/qna/css/style.css" />
+<link rel="stylesheet" href="/ClothsMall/qna/style.css"/>
 <script src="/ClothsMall/qna/update.js"></script>
 
-<c:if test="${empty sessionScope.id}">
+<c:if test="${!empty sessionScope.id}">
  <meta http-equiv="Refresh" content="0;url=/ClothsMall/index.do">
 </c:if>
 
