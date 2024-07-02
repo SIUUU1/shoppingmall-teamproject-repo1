@@ -3,12 +3,12 @@ package clothshop.bean;
 import java.sql.Timestamp;
 
 public class ReceiptDataBean {
-	private int recipt_id;
-	private int price;
+	private Long receipt_id;
+	private int price;//주문 금액
 	private int grade_discount;
 	private Timestamp buy_date;
 	private int use_mileage;
-	private int total_price;
+	private int total_price; //최종 금액
 	
 	private String member_id;
 	private String delivery_name;
@@ -19,12 +19,13 @@ public class ReceiptDataBean {
 	
 	private String state;
 
-	public int getRecipt_id() {
-		return recipt_id;
+
+	public Long getReceipt_id() {
+		return receipt_id;
 	}
 
-	public void setRecipt_id(int recipt_id) {
-		this.recipt_id = recipt_id;
+	public void setReceipt_id(Long receipt_id) {
+		this.receipt_id = receipt_id;
 	}
 
 	public int getPrice() {

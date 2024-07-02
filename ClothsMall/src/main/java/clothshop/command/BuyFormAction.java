@@ -21,7 +21,7 @@ public class BuyFormAction implements CommandAction {
 		List<String> accountLists = null;
 		LogonDataBean member = null;
 		int count = 0;
-		int discount=0;
+		double discount=0;
 //해당 member_id 의 장바구니 목록의 수를 얻어냄
 		CartDBBean bookProcess = CartDBBean.getInstance();
 

@@ -7,7 +7,7 @@ public class PointDataBean {
 	private String member_id; 		// 구매자 아이디
 	private int point; 				// 증감된 포인트
 	private String type; 			// + or -
-	private int account; 			// 출금될 계좌 번호
+	private String account; 			// 출금될 계좌 번호
 	private String bank; 			// 출금될 계좌 은행명
 	private Timestamp point_date; 	// 변동 날짜
 	
@@ -36,10 +36,11 @@ public class PointDataBean {
 	public void setType(String type) {
 		this.type = type;
 	}
-	public int getAccount() {
+
+	public String getAccount() {
 		return account;
 	}
-	public void setAccount(int account) {
+	public void setAccount(String account) {
 		this.account = account;
 	}
 	public String getBank() {

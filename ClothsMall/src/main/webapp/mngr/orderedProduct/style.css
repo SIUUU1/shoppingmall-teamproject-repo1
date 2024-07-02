@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+table.buy, table.buylist {
+	width: 80%;
+	margin: 0 auto;
+	border: 1px solid black;
+	border-collapse: collapse;
+	padding: 5px;
+	text-align: center;
+}
+table.buy, .button{
+	width: 50%;
+}
+table.buy td,table.buy th,
+table.buylist td, table.buylist th{
+	border: 1px solid black;
+	border-collapse: collapse;
+
+}
+table.buy td{
+	text-align: right;
+}
+
+p{
+	font-size:30px;
+	text-align: center;
+	font-weight: bold;
+}
+table.buy input{
+	width: 100%;
+	border: 0px;
+	text-align: right;
+	font-size: 20px;
+}
+
+span.info{
+	font-size: 20px;
+}
+.button{
+	margin: 0 auto 6px auto;
+	text-align: right;
+}
