@@ -39,7 +39,6 @@ public class LogonDBBean {
 			conn = DBUtil.getConnection();
 
 			String orgPass = member.getMember_passwd();
-			System.out.println("member.getPasswd()=" + member.getMember_passwd());
 			String shaPass = sha.getSha256(orgPass.getBytes());
 			String bcPass = BCrypt.hashpw(shaPass, BCrypt.gensalt());
 
@@ -211,27 +210,24 @@ public class LogonDBBean {
 
 			String orgPass = member.getMember_passwd();
 			String shaPass = sha.getSha256(orgPass.getBytes());
+			String bcPass = BCrypt.hashpw(shaPass, BCrypt.gensalt());
 
-			pstmt = conn.prepareStatement("select member_passwd from member where member_id = ?");
+			pstmt = conn.prepareStatement("select * from member where member_id = ?");
 			pstmt.setString(1, member.getMember_id());
 			rs = pstmt.executeQuery();
 
 			if (rs.next()) {// 해당 아이디가 있으면 수행
-				String dbpasswd = rs.getString("member_passwd");
-				if (BCrypt.checkpw(shaPass, dbpasswd)) {
-					pstmt = conn.prepareStatement(
-							"update member set member_passwd=?,member_address=?,member_postal_code=?,member_detailed_address=?,member_tel=? "
-									+ "where member_id=?");
-					pstmt.setString(1, member.getMember_passwd());
-					pstmt.setString(2, member.getMember_address());
-					pstmt.setString(3, member.getMember_postal_code());
-					pstmt.setString(4, member.getMember_detailed_address());
-					pstmt.setString(5, member.getMember_tel());
-					pstmt.setString(6, member.getMember_id());
-					pstmt.executeUpdate();
-					x = 1;// 회원정보 수정 처리 성공
-				} else
-					x = 0;// 회원정보 수정 처리 실패
+				pstmt = conn.prepareStatement(
+						"update member set member_passwd=?,member_address=?,member_name=?,member_postal_code=?,member_detailed_address=?,member_tel=? "
+								+ "where member_id=?");
+				pstmt.setString(1, bcPass);
+				pstmt.setString(2, member.getMember_address());
+				pstmt.setString(3, member.getMember_name());
+				pstmt.setString(4, member.getMember_postal_code());
+				pstmt.setString(5, member.getMember_detailed_address());
+				pstmt.setString(6, member.getMember_tel());
+				pstmt.setString(7, member.getMember_id());
+				x=pstmt.executeUpdate();// 1: 회원정보 수정 처리 성공, 0: 회원정보 수정 처리 실패
 			}
 		} catch (Exception ex) {
 			ex.printStackTrace();
@@ -243,37 +239,20 @@ public class LogonDBBean {
 
 	// 회원 정보를 삭제하는 메소드
 	@SuppressWarnings("resource")
-	public int deleteMember(String id, String passwd) {
+	public int deleteMember(String id) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-		ResultSet rs = null;
 		int x = -1;
 
-		SHA256 sha = SHA256.getInsatnce();
 		try {
 			conn = DBUtil.getConnection();
-
-			String orgPass = passwd;
-			String shaPass = sha.getSha256(orgPass.getBytes());
-
-			pstmt = conn.prepareStatement("select member_passwd from member where member_id = ?");
+			pstmt = conn.prepareStatement("delete from member where member_id=?");
 			pstmt.setString(1, id);
-			rs = pstmt.executeQuery();
-
-			if (rs.next()) {
-				String dbpasswd = rs.getString("member_passwd");
-				if (BCrypt.checkpw(shaPass, dbpasswd)) {
-					pstmt = conn.prepareStatement("delete from member where member_id=?");
-					pstmt.setString(1, id);
-					pstmt.executeUpdate();
-					x = 1;// 회원탈퇴처리 성공
-				} else
-					x = 0;// 회원탈퇴 처리 실패
-			}
+			x = pstmt.executeUpdate();// 1=회원탈퇴처리 성공, 0=회원탈퇴 처리 실패
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		} finally {
-			DBUtil.dbReleaseClose(rs, pstmt, conn);
+			DBUtil.dbReleaseClose(null, pstmt, conn);
 		}
 		return x;
 	}

@@ -8,7 +8,21 @@ document.addEventListener('DOMContentLoaded', function() {
 	// [로그인] 버튼 클릭
 	let uLoginButton = document.getElementById('uLogin');
 	uLoginButton.addEventListener('click', function() {
-		alert("login start2");
+		
+		let idValue = document.getElementById('member_id').value;
+		if (idValue === "") {
+			alert(`아이디를 입력해주세요.`);
+			document.getElementById('member_id').focus();
+			return;
+		}
+		
+		let pwValue = document.getElementById('member_passwd').value;
+		if (pwValue === "") {
+			alert(`비밀번호를 입력해주세요.`);
+			document.getElementById('member_passwd').focus();
+			return;
+		}
+		
 		let query = {
 			id: document.getElementById('member_id').value,
 			passwd: document.getElementById('member_passwd').value
@@ -27,10 +41,10 @@ document.addEventListener('DOMContentLoaded', function() {
 				if (check == '1') {
 					window.location.href = '/ClothsMall/index.do';
 				} else if (check == '0') {
-					alert('비밀번호 틀림');
+					alert('비밀번호를 잘못 입력하셨습니다.');
 					document.getElementById('member_passwd').value = '';
 				} else {
-					alert('아이디 틀림');
+					alert('아이디를 잘못 입력하셨습니다.');
 					document.getElementById('member_id').value = '';
 					document.getElementById('member_passwd').value = '';
 				}
@@ -50,7 +64,6 @@ document.addEventListener('DOMContentLoaded', function() {
 	
 // [회원 정보 변경] 버튼 클릭
 function uUpdate(){
-	alert("회원 정보 변경");
 	window.location.href = '/ClothsMall/modify.do';
 }
 
@@ -67,7 +80,3 @@ function uLogout(){
 			console.error('Error:', error);
 		});
 }
-
-
-
-	

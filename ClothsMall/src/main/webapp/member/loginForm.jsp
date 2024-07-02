@@ -11,10 +11,10 @@
      <ul>
         <li><label for="member_id">아이디</label>
             <input id="member_id" name="member_id" type="text" size="20" 
-              maxlength="50" placeholder="example">
+              maxlength="50">
             <label for="member_passwd">비밀번호</label>
             <input id="member_passwd" name="member_passwd" type="password" 
-              size="20" placeholder="6~16자 숫자/문자" maxlength="16">
+              size="20" maxlength="16">
             <button id="uLogin">로그인</button>
             <button id="uRes">회원가입</button>
      </ul>
