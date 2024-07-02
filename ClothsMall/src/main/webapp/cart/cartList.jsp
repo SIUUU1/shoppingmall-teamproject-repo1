@@ -63,8 +63,11 @@
 					</td>
 					<td width="150">
 						<!-- 수정 -->
-						<input type="text" name="quantity" size="5" value="${cart.getQuantity()}">
-						<button id="updateSu" name="${cart.getCart_id()},${cart.getQuantity()}" onclick="editSu(this)">수정</button>
+						<form action="<%=request.getContextPath()%>/cartUpdatePro.do">
+							<input type="hidden" name="cart_id" value="${cart.getCart_id()}">
+							<input type="text" name="quantity" size="5" value="${cart.getQuantity()}">
+							<button type="submit">수정</button>
+						</form>
 					</td>
 					<td align="center" width="150">
 						<c:set var="amount" value="${cart.getQuantity()*rPrice}" />

@@ -11,15 +11,8 @@ document.addEventListener('DOMContentLoaded', function() {
 	});
 });
 
-// 2. cart 의 quantity 수정
-function editSu(editBtn) {
-	var rStr = editBtn.name;
-	var arr = rStr.split(",");
-	var query = "/ClothsMall/cartUpdateForm.do?cart_id=" + arr[0];
-	query += "&quantity=" + arr[1];
-	window.location.href = query;
-}
-// 3. cart 삭제
+
+// 2. cart 삭제
 function delList(delBtn) {
 	var rStr = delBtn.name;
 	var query = "/ClothsMall/deleteCart.do?list=" + rStr;

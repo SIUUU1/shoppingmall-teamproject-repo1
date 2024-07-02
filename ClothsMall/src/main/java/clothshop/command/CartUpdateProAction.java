@@ -12,9 +12,9 @@ public class CartUpdateProAction implements CommandAction {
 		request.setCharacterEncoding("utf-8");
 		int cart_id = Integer.parseInt(request.getParameter("cart_id"));
 		byte quantity = Byte.parseByte(request.getParameter("quantity"));
-		
-		CartDBBean clothProcess = CartDBBean.getInstance();
-		clothProcess.updateCount(cart_id, quantity);
+
+		CartDBBean process = CartDBBean.getInstance();
+		process.updateCount(cart_id, quantity);
 		request.setAttribute("type", Integer.valueOf(1));
 		return "/cart/cartUpdatePro.jsp";
 	}
