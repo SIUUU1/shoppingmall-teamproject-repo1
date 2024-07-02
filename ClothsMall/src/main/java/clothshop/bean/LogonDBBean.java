@@ -1,5 +1,6 @@
 package clothshop.bean;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -13,6 +14,7 @@ import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
 import dbcon.DBUtil;
+import oracle.jdbc.OracleTypes;
 import work.crypt.SHA256;
 import work.crypt.BCrypt;
 
@@ -138,7 +140,7 @@ public class LogonDBBean {
 			if (rs.next()) {// 해당 아이디에 대한 레코드가 존재
 				member = new LogonDataBean();// 데이터저장빈 객체생성
 				member.setMember_id(rs.getString("member_id"));
-				member.setMember_name(rs.getString(0));
+				member.setMember_name(rs.getString("member_name"));
 				member.setReg_date(rs.getTimestamp("reg_date"));
 				member.setMember_address(rs.getString("member_address"));
 				member.setMember_postal_code(rs.getString("member_postal_code"));
@@ -146,6 +148,9 @@ public class LogonDBBean {
 				member.setMember_tel(rs.getString("member_tel"));
 				member.setMember_gender(rs.getString("member_gender"));
 				member.setMember_grade(rs.getString("member_grade"));
+				member.setPoint(Integer.parseInt(rs.getString("point")));
+				member.setMileage(Integer.parseInt(rs.getString("mileage")));
+				System.out.println(rs.getString("member_name"));
 			}
 		} catch (Exception ex) {
 			ex.printStackTrace();
@@ -187,6 +192,8 @@ public class LogonDBBean {
 					member.setMember_tel(rs.getString("member_tel"));
 					member.setMember_gender(rs.getString("member_gender"));
 					member.setMember_grade(rs.getString("member_grade"));
+					member.setMileage(rs.getInt("mileage"));
+					member.setPoint(rs.getInt("point"));
 				}
 			}
 		} catch (Exception ex) {
@@ -369,5 +376,33 @@ public class LogonDBBean {
 			DBUtil.dbReleaseClose(pstmt, conn);
 		}
 		return delCount;
+	}
+
+	public double getDiscount(String member_id) {
+		Connection conn = null;
+		CallableStatement cstmt = null;
+		ResultSet rs = null;
+		double discount = 0;
+
+		try {
+			conn = DBUtil.getConnection();
+			String sql = "{call get_member_discount_trigger(?, ?)}";
+			cstmt = conn.prepareCall(sql);
+			cstmt.setString(1, member_id);
+			cstmt.registerOutParameter(2, OracleTypes.NUMBER);
+
+			cstmt.execute();
+
+			discount = cstmt.getDouble(2);
+
+		} catch (SQLException ex) {
+			ex.printStackTrace();
+		} finally {
+			DBUtil.dbReleaseClose(null, cstmt, conn);
+		}
+
+		System.out.println("member_id: " + member_id);
+		System.out.println("discount: " + discount);
+		return discount;
 	}
 }

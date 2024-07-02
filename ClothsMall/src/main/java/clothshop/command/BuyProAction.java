@@ -27,12 +27,17 @@ public class BuyProAction implements CommandAction {
 		
 		//구매 처리에 필요한 정보를 파라미터에서 얻어냄
 		ReceiptDataBean receipt = new ReceiptDataBean();
-		receipt.setMember_id(member_id);
 		receipt.setPrice(Integer.parseInt(request.getParameter("price")));
-		receipt.setGrade_discount(Integer.parseInt(request.getParameter("gadeDiscount")));
+
+		double gradeDiscount = Double.parseDouble(request.getParameter("gadeDiscount"));
+		receipt.setGrade_discount((int) gradeDiscount);
 		receipt.setUse_mileage(Integer.parseInt(request.getParameter("useMileage")));
-		receipt.setTotal_price(Integer.parseInt(request.getParameter("totalPrice")));
+		double totalPrice = Double.parseDouble(request.getParameter("totalPrice"));
+		receipt.setTotal_price((int) totalPrice);
+
+		receipt.setMember_id(member_id);
 		receipt.setDelivery_name(request.getParameter("member_name"));
+		System.out.println("request.getParameter(\"member_name\")"+request.getParameter("member_name"));
 		receipt.setDelivery_address(request.getParameter("member_address"));
 		receipt.setDelivery_postal_code(request.getParameter("member_postal_code"));
 		receipt.setDelivery_detailed_address(request.getParameter("member_detailed_address"));
@@ -43,6 +48,7 @@ public class BuyProAction implements CommandAction {
 		//영수증 테이블에 추가
 		ReceiptDBBean receiptPro =ReceiptDBBean.getInstance();
 		receiptPro.regReceipt(receipt);
+
 		
 		
 		//구매처리를 위해 장바구니의 목록을 얻어냄
@@ -54,7 +60,12 @@ public class BuyProAction implements CommandAction {
 		
 		//포인트 사용한거 테이블에 추가 (member에 point는 트리거로 수정됨)
 		PointDBBean pointPro = PointDBBean.getInstance();
-		pointPro.decreasePoint(Integer.parseInt(request.getParameter("useMileage")),member_id);
+		String usePointstr=request.getParameter("usePoint");
+		int usePoint=0;
+		if(usePointstr.length()>1) {
+			usePoint=Integer.parseInt(usePointstr);
+		}
+		pointPro.decreasePoint(usePoint,member_id);
 		
 		BuyDBBean buyProcess = BuyDBBean.getInstance();
 		buyProcess.insertBuy(cartLists,member_id);

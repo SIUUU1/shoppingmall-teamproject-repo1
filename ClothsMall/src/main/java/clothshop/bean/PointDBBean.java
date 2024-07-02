@@ -23,12 +23,12 @@ public class PointDBBean {
 			conn = DBUtil.getConnection();
 
 			pstmt = conn.prepareStatement(
-					"insert into point (point_id, member_id, point,type,bank,account) values(point_seq.nextval?,?,?,?,?)");
+					"insert into point (point_id, member_id, point,type,bank,account) values(point_seq.nextval,?,?,?,?,?)");
 			pstmt.setString(1, point.getMember_id());
 			pstmt.setInt(2, point.getPoint());
 			pstmt.setString(3, "INCREASE");
 			pstmt.setString(4, point.getBank());
-			pstmt.setInt(5, point.getAccount());
+			pstmt.setString(5, point.getAccount());
 			pstmt.executeUpdate();
 		} catch (Exception ex) {
 			ex.printStackTrace();
