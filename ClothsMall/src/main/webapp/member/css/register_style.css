@@ -1,0 +1,107 @@
+/* register_style.css */
+
+#regForm input {
+	outline: none;
+	width: 300px;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	background-image: url(../image/cloth.jpg);
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.box {
+	background-color: rgba(255, 255, 255, 0.5);
+	border-radius: 8px;
+	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+	width: 80%;
+	max-width: 800px;
+	margin: auto;
+	padding: 30px;
+}
+
+.box form {
+	display: table;
+	width: 100%;
+}
+
+.box table {
+	width: 100%;
+}
+
+.box td {
+	padding: 10px 5px;
+	width: 300px;
+	height: 40px;
+}
+
+.box label {
+	text-align: right;
+	margin-bottom: 5px;
+}
+
+.box input[type="text"], .box input[type="password"], .box input[type="email"],
+.box input[type="tel"] {
+	width: 100%;
+	padding: 8px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	font-size: 14px;
+}
+
+.box input[type="radio"] {
+	width: 10px;
+	margin-right: 10px; /* 여백 조정 */
+	display: inline; /* inline으로 설정하여 라디오 버튼과 라벨이 한 줄에 나타나게 함 */
+}
+
+.box button {
+	padding: 12px 24px;
+	border: none;
+	background-color: #4CAF50;
+	color: white;
+	border-radius: 4px;
+	cursor: pointer;
+	margin-left: 10px;
+}
+
+.box button#searchAddress {
+	background-color: #2196F3;
+}
+
+.box button#checkId {
+	background-color: #ffc107;
+}
+
+.box button:hover {
+	opacity: 0.8;
+}
+
+.box .label2 {
+	text-align: center;
+}
+
+#male, #female{
+	width: 20px;
+}
+
+.radioDiv {
+    display: inline-flex; /* Use inline-flex for better alignment */
+    align-items: center; /* Align items vertically */
+}
+.box input[type="radio"] {
+    width: auto; /* Adjust width as needed */
+    margin: 0 5px 0 0; /* Adjust margin to reduce space around radio buttons */
+    display: inline-block; /* Use inline-block instead of inline for better spacing */
+}
