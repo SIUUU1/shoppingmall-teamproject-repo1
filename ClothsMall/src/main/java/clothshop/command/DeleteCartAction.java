@@ -23,7 +23,7 @@ public class DeleteCartAction implements CommandAction {
 		// cart 삭제
 		} else {
 			clothProcess.deleteList(Integer.parseInt(list));
-			msg = "지정한 항목이 삭제되었습니다..";
+			msg = "선택하신 상품 장바구니가 삭제되었습니다.";
 		}
 		request.setAttribute("msg", msg);
 		request.setAttribute("type", Integer.valueOf(1));

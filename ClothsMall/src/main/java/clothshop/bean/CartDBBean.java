@@ -173,4 +173,40 @@ public class CartDBBean {
 			DBUtil.dbReleaseClose(pstmt, conn);
 		}
 	}
+
+	// 7. 일치 카트 조회
+	public String checkCart(CartDataBean cart) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "";
+		String msg = "";
+		try {
+			conn = DBUtil.getConnection();
+			sql = "select * from cart where member_id=? and cloth_id=? and cloth_size=?";
+			pstmt = conn.prepareStatement(sql);
+
+			pstmt.setString(1, cart.getMember_id());
+			pstmt.setInt(2, cart.getCloth_id());
+			pstmt.setString(3, cart.getCloth_size());
+			rs = pstmt.executeQuery();
+
+			if (rs.next()) {
+				int cart_id = rs.getInt("cart_id");
+				byte quantity = (byte) (cart.getQuantity() + rs.getInt("quantity"));
+				updateCount(cart_id, quantity);
+				msg = "수정";
+			} else {
+				insertCart(cart);
+				msg = "신규";
+			}
+		} catch (
+
+		Exception ex) {
+			ex.printStackTrace();
+		} finally {
+			DBUtil.dbReleaseClose(rs, pstmt, conn);
+		}
+		return msg;
+	}
 }

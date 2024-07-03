@@ -15,6 +15,7 @@ public class CartUpdateProAction implements CommandAction {
 
 		CartDBBean process = CartDBBean.getInstance();
 		process.updateCount(cart_id, quantity);
+		request.setAttribute("msg", quantity);
 		request.setAttribute("type", Integer.valueOf(1));
 		return "/cart/cartUpdatePro.jsp";
 	}
