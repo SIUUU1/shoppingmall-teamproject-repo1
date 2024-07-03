@@ -15,7 +15,7 @@
 				<td><label for="member_id">아이디</label></td>
 				<td><input id="member_id" name="member_id" type="text"
 					size="20" maxlength="10" placeholder="example" autofocus></td>
-				<td><button id="checkId">ID CHECK</button></td>
+				<td><button type="button" id="checkId">ID CHECK</button></td>
 			</tr>
 			<tr>
 				<td><label for="member_passwd">비밀번호</label></td>
@@ -73,7 +73,7 @@
 			<tr class="label2">
 				<td colspan="3">
 					<button id="process" onclick="process()">가입하기</button>
-					<button id="cancel">취소</button>
+					<button type="button" id="cancel">취소</button>
 				</td>
 			</tr>
 		</table>
