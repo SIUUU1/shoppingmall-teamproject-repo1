@@ -6,9 +6,9 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0" />
 <link rel="stylesheet" href="/ClothsMall/mngr/orderedProduct/style.css" />
 
-<%-- <c:if test="${empty sessionScope.id}">
+<c:if test="${empty sessionScope.id}">
 	<meta http-equiv="Refresh" content="0;url=/ClothsMall/mg/managerMain.do">
-</c:if> --%>
+</c:if>
 <form name="orderForm" method="post" action="/ClothsMall/mg/orderStateUpdatePro.do">
 <div id="listHeader">
 	<p>

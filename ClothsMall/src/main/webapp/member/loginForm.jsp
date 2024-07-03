@@ -37,6 +37,11 @@
 					<button type="submit" name="buy">구매내역</button>
 				</form>
 			</div>
+			<div>
+				<form id="point" method="post" action="/ClothsMall/increasePoint.do">
+                   <input type="hidden" name="member_id" value="${sessionScope.id}">
+                   <button type="submit" name="buy" value="포인트충전"></form>
+			</div>
 		</div>
 	</div>
 </c:if>

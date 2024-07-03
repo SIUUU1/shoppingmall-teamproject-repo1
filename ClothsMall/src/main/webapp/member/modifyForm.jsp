@@ -29,7 +29,7 @@
 	<table>
 		<tr>
 			<td colspan="2">
-				<p class="center">회원 정보 수정</p>
+				<p class="center">내 정보</p>
 			</td>
 		</tr>
 		<tr>

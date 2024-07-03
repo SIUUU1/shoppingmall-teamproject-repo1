@@ -40,3 +40,23 @@ span.info{
 	margin: 0 auto 6px auto;
 	text-align: right;
 }
+button,
+input[type="button"],
+input[type="submit"] {
+    background-color: #4c6aa2;
+    border: none;
+    color: white;
+    padding: 3px 15px;
+    text-align: center;
+    text-decoration: none;
+    margin: 4px;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+
+button:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover {
+    background-color: rgb(130, 167, 236);
+}
