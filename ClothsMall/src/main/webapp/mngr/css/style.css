@@ -51,6 +51,18 @@ button {
 	justify-content: space-between;
 }
 
+#memlistHeader {
+	width: 1000px;
+	margin: 10px auto;
+	text-align: right;
+}
+
+#memlistFooter {
+	width: 1000px;
+	margin: 20px auto;
+	text-align: center;
+}
+
 #listHeader p {
 	margin: 0 auto;
 	margin-bottom: 20px;
@@ -58,6 +70,11 @@ button {
 
 #upForm1 {
 	width: 600px;
+	margin: 0 auto;
+}
+
+#memberList {
+	width: 1000px;
 	margin: 0 auto;
 }
 
@@ -156,4 +173,13 @@ button {
 
 #editForm table {
 	width: 100%;
+}
+
+#memberList form {
+	width: 100%;
+}
+
+#memberList table {
+	width: 100%;
+	text-align: center;
 }

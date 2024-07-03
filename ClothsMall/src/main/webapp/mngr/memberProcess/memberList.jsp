@@ -1,19 +1,24 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-<script src="${pageContext.request.contextPath}/backmain/memberList.js"></script>
-
+<script src="${pageContext.request.contextPath}/mngr/memberProcess/memberList.js"></script>
 <c:if test="${empty sessionScope.managerId}">
-	<meta http-equiv="Refresh" content="0;url=${pageContext.request.contextPath}/mg/managerMain.do">
+	<meta http-equiv="Refresh"
+		content="0;url=${pageContext.request.contextPath}/mg/managerMain.do">
 </c:if>
 
 <div id="memberList">
-	<form method="post" action="${pageContext.request.contextPath}/mg/memberDeletePro.do">
+	<form method="post"
+		action="${pageContext.request.contextPath}/mg/memberDeletePro.do">
 		<c:choose>
 			<c:when test="${count == 0}">
 				<span>등록된 회원 수가 없습니다</span>
 			</c:when>
 			<c:otherwise>
+				<div id="memlistHeader">
+					<button type="button" id="clothMain">관리자메인으로</button>
+				</div>
 				<table>
 					<tr>
 						<td>아이디</td>
@@ -38,13 +43,13 @@
 							<td>${member.getMember_tel()}</td>
 							<td>${member.getMember_grade()}</td>
 							<td>${member.getPoint()}/${member.getPoint()}</td>
-							<td>
-								<input type="checkbox" name="delMemberIdList" value="${member.getMember_id()}">
-							</td>
+							<td><input type="checkbox" name="delMemberIdList" value="${member.getMember_id()}"></td>
 						</tr>
 					</c:forEach>
 				</table>
-				<input type="submit" value="선택항목 삭제">
+				<div id="memlistFooter">
+					<button type="submit">회원삭제</button>
+				</div>
 			</c:otherwise>
 		</c:choose>
 	</form>

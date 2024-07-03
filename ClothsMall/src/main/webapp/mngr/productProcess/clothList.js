@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', function() {
 		window.location.href = "/ClothsMall/mg/clothRegisterForm.do";
 	});
 	// [관리자 메인으로] 버튼 클릭
-	let bookMainButton = document.getElementById('clothMain');
-	bookMainButton.addEventListener('click', function() {
+	let clothMain = document.getElementById('clothMain');
+	clothMain.addEventListener('click', function() {
 		window.location.href = "/ClothsMall/mg/managerMain.do";
 	});
 });
