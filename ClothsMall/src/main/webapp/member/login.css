@@ -28,6 +28,7 @@ a {
   display: flex;
   justify-content: space-between;
   width: 1200px; /* Adjust the width as needed */
+  height: 60px;
 }
 
 #login {

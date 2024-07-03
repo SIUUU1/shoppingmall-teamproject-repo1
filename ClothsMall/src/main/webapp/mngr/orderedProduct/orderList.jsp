@@ -5,15 +5,15 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <meta name="viewport" content="width=device-width,initial-scale=1.0" />
 <link rel="stylesheet" href="/ClothsMall/mngr/orderedProduct/style.css" />
-
-<c:if test="${empty sessionScope.id}">
+<script src="/ClothsMall/mngr/orderedProduct/orderedList.js"></script>
+<c:if test="${empty sessionScope.managerId}">
 	<meta http-equiv="Refresh" content="0;url=/ClothsMall/mg/managerMain.do">
 </c:if>
 <form name="orderForm" method="post" action="/ClothsMall/mg/orderStateUpdatePro.do">
 <div id="listHeader">
 	<p>
 		주문 목록(전체 주문:${count})
-		<button id="clothMain">관리자 메인으로</button>
+		<button type="button" id="clothMain">관리자 메인으로</button>
 		<button id="updateStatus">배송 상태 수정</button>
 </div>
 <c:if test="${count == 0}">
@@ -39,7 +39,8 @@
 			<table class="buyList">
 				<tr>
 					<th width="150">주문번호</th>
-					<th width="300">상품명</th>
+					<th width="150">상품</th>
+					<th width="150">상품명</th>
 					<th width="200">판매가격</th>
 					<th width="200">사이즈</th>
 					<th width="50">수량</th>
@@ -47,9 +48,10 @@
 				</tr>
 				<tr>
 					<td width="150">${buylist.receipt_id}</td>
-					<td width="300"><img
+					<td width="150"><img
 						src="/ClothsMall/clothImage/${buylist.cloth_image}"
-						class="cartimage">${buylist.cloth_name}</td>
+						class="cartimage" width="120px" height="200px"></td>
+						<td>${buylist.cloth_name}</td>
 					<td width="200"><c:set var="price"
 							value="${buylist.cloth_price}" /> <c:set var="rate"
 							value="${buylist.discount_rate}" /> <fmt:parseNumber

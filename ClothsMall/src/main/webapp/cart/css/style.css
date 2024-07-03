@@ -3,9 +3,29 @@
 body {
 	font-family: Arial, sans-serif;
 	background-color: #f4f4f4;
-	margin: 0 auto;
-	width: 60%;
+	margin: 0;
 	padding: 0;
+	min-width: 950px;
+}
+
+header {
+	background-color: white;
+	color: black;
+	padding: 20px 0;
+}
+
+section {
+	margin: 0 auto;
+	max-width: 1200px;
+}
+
+#shopName {
+	margin: 0 auto;
+	text-align: center;
+}
+
+#shopName a:hover {
+	color: grey;
 }
 
 #category {
@@ -13,32 +33,33 @@ body {
 }
 
 #category ul {
+	list-style-type: none;
+	margin-top: 40px;
+	margin-bottom: 30px;
+	padding: 0;
 	display: flex;
-	flex-direction: row;
-	justify-content: space-evenly;
-	list-style: none;
-	margin: 0;
+	justify-content: center;
 	padding: 0;
 }
 
 #category li {
-	width: 16%;
 	text-align: center;
-	padding: 5px 0;
+	padding: 10px;
 }
 
 #category a {
-	font-size: 1.5em;
-	font-weight: 700;
+	font-weight: 500;
 	text-decoration: none;
-	border-radius: 20px;
+	border-radius: 10px;
 	padding: 10px;
-	color: black;
+	background-color: black;
+	color: white;
 	text-decoration: none;
+	color: white;
 }
 
 #category a:hover {
-	background-color: black;
+	background-color: #6A24FE;
 	color: white;
 }
 
@@ -86,13 +107,19 @@ body {
 	font-size: 1em;
 	font-weight: 900;
 }
-#listMenu td{
+
+#listMenu td {
 	padding-bottom: 30px;
 }
 
 /* listView */
 #cartList #listView {
 	font-size: 0.8em;
+}
+
+#listView img {
+	width: 150px;
+	height: 200px;
 }
 
 #cartList>table {
@@ -139,4 +166,38 @@ body {
 #cartInteract input:hover {
 	background-color: #df3278;
 	color: white;
+}
+
+/* 푸터 스타일 */
+footer {
+	/* height: 15%; */
+	/* height: 100px; */
+	/* padding: 10px 100px 10px 100px; */
+	font-size: 14px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.footer:nth-child(1) {
+	/* border: 1px dotted blue; */
+	/* height: 50%; */
+	padding: 10px 100px 10px 100px;
+	/* display: flex; */
+	/* justify-content: space-around; */
+	/* align-items: center; */
+	/* margin: 0 auto; */
+	border-bottom: 2px solid rgb(194, 194, 194);
+}
+
+.footer.content1>a {
+	/* color: blue; */
+	/* margin: 0 auto; */
+	padding-right: 20px;
+}
+
+.footer:nth-child(2) {
+	/* border: 1px dotted blue; */
+	/* height: 50%; */
+	/* height: 100px; */
+	padding: 10px 100px 10px 100px;
 }

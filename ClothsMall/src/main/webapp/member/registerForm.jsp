@@ -3,13 +3,12 @@
 	pageEncoding="UTF-8"%>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="stylesheet" href="/ClothsMall/member/css/register_style.css" />
-<script src="/ClothsMall/member/register.js?ver=1"></script>
+<script src="/ClothsMall/member/register.js?ver=2"></script>
 <script
 	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 
 
 <div id="regForm" class="box">
-	<form action="register.jsp" method="post">
 		<table>
 			<tr>
 				<td><label for="member_id">아이디</label></td>
@@ -77,5 +76,4 @@
 				</td>
 			</tr>
 		</table>
-	</form>
 </div>
