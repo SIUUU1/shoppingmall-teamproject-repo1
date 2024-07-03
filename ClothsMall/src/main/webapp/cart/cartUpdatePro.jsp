@@ -4,6 +4,6 @@
 	<meta http-equiv="Refresh" content="0;url=<%=request.getContextPath()%>/index.do">
 </c:if>
 <script type="text/javascript">
-	alert("수정 완료");
+	alert(`상품의 수량이 ${msg}개로 수정되었습니다.`);
 </script>
 <meta http-equiv="Refresh" content="0;url=<%=request.getContextPath()%>/cartList.do?member_id=${sessionScope.id}" />

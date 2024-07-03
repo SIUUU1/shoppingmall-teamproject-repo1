@@ -1,0 +1,106 @@
+@charset "UTF-8";
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Container to center align content */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Category menu styling */
+.category-menu ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.category-menu li {
+    margin: 0 10px;
+    
+}
+
+.category-menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.category-menu a:hover {
+    color: #007bff;
+}
+
+/* Shop display styling */
+.shop-display {
+    width: 100%;
+    max-width: 1200px;
+}
+
+.category-display {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Table styling for product listing */
+.vhcenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    
+}
+
+.table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.listimage {
+    max-width: 100px;
+    height: auto;
+}
+
+.b {
+    font-weight: bold;
+    color: #333;
+}
+
+.b:hover {
+    color: #007bff;
+}
+
+/* Branding and pricing */
+.bred {
+    color: red;
+    font-weight: bold;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .category-menu ul {
+        flex-direction: column;
+    }
+
+    .category-menu li {
+        margin: 5px 0;
+    }
+
+    .table {
+        display: block;
+        overflow-x: auto;
+    }
+}

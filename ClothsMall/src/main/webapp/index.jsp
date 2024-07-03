@@ -3,9 +3,6 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0" />
 <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css" />
 <div id="header">
-	<div id="logo" class="box">
-		<!-- <img class="noborder" id="logo" src="</images/logo.png" /> -->
-	</div>
 	<div id="auth" class="box">
 		<c:if test="${type == 0}">
 			<jsp:include page="mngr/logon/mLoginForm.jsp" />
