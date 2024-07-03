@@ -73,7 +73,7 @@
 			</tr>
 			<tr>
 			<td><label for="cloth_image">옷 이미지</label> </td>
-			<td><input id="cloth_image" name="cloth_image" type="file">${cloth.cloth_image}</td>
+			<td><input id="cloth_image" name="cloth_image" type="file" value="${cloth.cloth_image}">${cloth.cloth_image}</td>
 			</tr>
 			<tr>
 			<td><label for="cloth_content">내용</label></td>

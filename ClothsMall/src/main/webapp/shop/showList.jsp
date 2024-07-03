@@ -3,12 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-<link rel="stylesheet" href="showList.css">
-
-
-<!-- 중앙 정렬을 위한 컨테이너 -->
-<div class="container">
-    
+<link rel="stylesheet" href="<%=request.getContextPath()%>/shop/showList.css"/>
 
     <div id="shop" class="box2 shop-display">
         <c:if test="${cloth_category=='1000'}">
@@ -35,7 +30,6 @@
         </c:if>
         <p class="category-display">${display} : (${count}개)</p>
 
-        
             <c:forEach var="cloth" items="${clothList}">
             <table class="vhcenter">
             <tr height="30">
@@ -64,4 +58,3 @@
     </table>
     </c:forEach>
     </div>
-</div>
