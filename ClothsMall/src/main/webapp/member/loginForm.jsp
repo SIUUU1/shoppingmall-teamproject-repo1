@@ -7,18 +7,19 @@
 <script src="/ClothsMall/member/login.js?ver=5"></script>
 
 <c:if test="${empty sessionScope.id}">
+<div class="header-fix">&nbsp;</div>
 	<div id="lStatus">
-
 		<label for="member_id">아이디</label> <input id="member_id"
 			name="member_id" type="text" size="20" maxlength="50"> <label
 			for="member_passwd">비밀번호</label> <input id="member_passwd"
 			name="member_passwd" type="password" size="20" maxlength="16">
 		<button id="uLogin">로그인</button>
 		<button id="uRes">회원가입</button>
-
 	</div>
 </c:if>
+
 <c:if test="${!empty sessionScope.id}">
+<div class="header-fix">&nbsp;</div>
 	<div id="lStatus">
 		<div class="user-actions">
 			<div id="logout-box">
