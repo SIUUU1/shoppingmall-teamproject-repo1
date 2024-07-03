@@ -27,7 +27,7 @@ public class BuyProAction implements CommandAction {
 		
 		//구매 처리에 필요한 정보를 파라미터에서 얻어냄
 		ReceiptDataBean receipt = new ReceiptDataBean();
-		receipt.setPrice(Integer.parseInt(request.getParameter("price")));
+		receipt.setPrice((int)Double.parseDouble(request.getParameter("price")));
 
 		double gradeDiscount = Double.parseDouble(request.getParameter("gadeDiscount"));
 		receipt.setGrade_discount((int) gradeDiscount);

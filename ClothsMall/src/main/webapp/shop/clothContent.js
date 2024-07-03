@@ -1,37 +1,7 @@
-let slideIndex = 1;
-showSlides(slideIndex);
-
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-}
-
-
-
-
-
 document.addEventListener('DOMContentLoaded', function() {
 	let insertCartButton = document.getElementById('insertCart');
 	insertCartButton.addEventListener('click', function() {
+		let member_id = document.getElementById('member_id').value;
 		let query = {
 			cloth_id: document.getElementById('cloth_id').value,
 			quantity: document.getElementById('quantity').value,
@@ -41,7 +11,9 @@ document.addEventListener('DOMContentLoaded', function() {
 			cloth_price: document.getElementById('cloth_price').value,
 			cloth_size: document.getElementById('cloth_size').value,
 			cloth_category: document.getElementById('cloth_category').value,
-			member_id: document.getElementById('member_id').value
+			discount_rate: document.getElementById('discount_rate').value,
+			cloth_brand: document.getElementById('cloth_brand').value,
+			member_id: member_id
 		};
 		let xhr = new XMLHttpRequest();
 		xhr.open('POST', '/ClothsMall/insertCart.do', true);
@@ -49,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		xhr.onreadystatechange = function() {
 			if (xhr.readyState === 4 && xhr.status === 200) {
 				alert('장바구니에 담겼습니다.');
+				window.location.href = `/ClothsMall/cartList.do?member_id=${member_id}`;
 			} else if (xhr.readyState !== 4) {
 				console.error('Error:', xhr.statusText);
 			}
@@ -64,6 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			.join('&');
 		xhr.send(queryString);
 	});
+
 	// [상품 QnA쓰기] 버튼 클릭
 	let writeQnaButton = document.getElementById('writeQna');
 	writeQnaButton.addEventListener('click', function() {
@@ -74,12 +48,6 @@ document.addEventListener('DOMContentLoaded', function() {
 		window.location.href = query;
 	});
 });
-function showCategory(category) {
-		// JavaScript function to handle category display logic
-		alert('Category selected: ' + category);
-		// Here, add the logic to dynamically update the content based on the selected category.
-		// For example, you can use AJAX to load content without refreshing the page.
-	}
 //[목록으로]버튼 클릭
 function list() {
 	window.location.href = '/ClothsMall/list.do?cloth_category=all';
@@ -100,11 +68,11 @@ function del(delBtn) {
 	alert("qna 삭제 진행");
 	let rStr = delBtn.name;
 	let arr = rStr.split(',');
-	let query = { 
+	let query = {
 		qna_id: arr[0],
 		group_id: arr[3],
 		qora: arr[4]
-		 };
+	};
 	let xhr = new XMLHttpRequest();
 	xhr.open('POST', '/ClothsMall/qnaDeletePro.do', true);
 	xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
@@ -130,12 +98,39 @@ function del(delBtn) {
 	xhr.onerror = function() {
 		console.error('Request failed');
 	};
-	
-	let queryString = Object.keys(query)
-            .map(function(key) {
-                return encodeURIComponent(key) + '=' + encodeURIComponent(query[key]);
-            })
-            .join('&');
 
-    xhr.send(queryString);
+	let queryString = Object.keys(query)
+		.map(function(key) {
+			return encodeURIComponent(key) + '=' + encodeURIComponent(query[key]);
+		})
+		.join('&');
+
+
+	xhr.send(queryString);
+}
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+	showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+	showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+	let i;
+	let slides = document.getElementsByClassName("mySlides");
+	let dots = document.getElementsByClassName("dot");
+	if (n > slides.length) { slideIndex = 1 }
+	if (n < 1) { slideIndex = slides.length }
+	for (i = 0; i < slides.length; i++) {
+		slides[i].style.display = "none";
+	}
+	for (i = 0; i < dots.length; i++) {
+		dots[i].className = dots[i].className.replace(" active", "");
+	}
+	slides[slideIndex - 1].style.display = "block";
+	dots[slideIndex - 1].className += " active";
 }

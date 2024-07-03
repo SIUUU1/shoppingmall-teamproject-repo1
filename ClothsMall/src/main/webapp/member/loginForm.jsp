@@ -7,7 +7,6 @@
 <script src="/ClothsMall/member/login.js?ver=5"></script>
 
 <c:if test="${empty sessionScope.id}">
-<div class="header-fix">&nbsp;</div>
 	<div id="lStatus">
 		<label for="member_id">아이디</label> <input id="member_id"
 			name="member_id" type="text" size="20" maxlength="50"> <label
@@ -19,7 +18,6 @@
 </c:if>
 
 <c:if test="${!empty sessionScope.id}">
-<div class="header-fix">&nbsp;</div>
 	<div id="lStatus">
 		<div class="user-actions">
 			<div id="logout-box">
@@ -41,7 +39,8 @@
 			<div>
 				<form id="point" method="post" action="/ClothsMall/increasePoint.do">
                    <input type="hidden" name="member_id" value="${sessionScope.id}">
-                   <button type="submit" name="buy" value="포인트충전"></form>
+                 	<button type="submit" name="buy">포인트충전</button>
+                </form>
 			</div>
 		</div>
 	</div>

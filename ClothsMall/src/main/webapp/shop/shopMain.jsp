@@ -11,7 +11,7 @@
   <script src="https://kit.fontawesome.com/3842b33e0f.js" crossorigin="anonymous"></script>
 </head>
 <body>
-<div class="header-fix">&nbsp;</div>
+<div id="header-fix">&nbsp;</div>
  <header>
     <h1 class="logo-bar con-min-width">
       <div class="text-align-center con">
@@ -35,9 +35,9 @@
         <div class="dropdown">
           <button class="dropbtn">OUTER</button>
           <div class="dropdown-content">
-            <a href="<%=request.getContextPath()%>/list.do?cloth_category=2000">JUMPER</a>
-            <a href="<%=request.getContextPath()%>/list.do?cloth_category=2000">JARCET</a>
-            <a href="<%=request.getContextPath()%>/list.do?cloth_category=2000">COURT</a>
+            <a href="<%=request.getContextPath()%>/list.do?cloth_category=3000">JUMPER</a>
+            <a href="<%=request.getContextPath()%>/list.do?cloth_category=3000">JARCET</a>
+            <a href="<%=request.getContextPath()%>/list.do?cloth_category=3000">COURT</a>
           </div>
         </div>
       </li>
@@ -45,9 +45,9 @@
         <div class="dropdown">
           <button class="dropbtn">BOTTOM</button>
           <div class="dropdown-content">
-            <a href="<%=request.getContextPath()%>/list.do?cloth_category=3000">SLACKS</a>
-            <a href="<%=request.getContextPath()%>/list.do?cloth_category=3000">LEGGINGS</a>
-            <a href="<%=request.getContextPath()%>/list.do?cloth_category=3000">DENNING</a>
+            <a href="<%=request.getContextPath()%>/list.do?cloth_category=2000">SLACKS</a>
+            <a href="<%=request.getContextPath()%>/list.do?cloth_category=2000">LEGGINGS</a>
+            <a href="<%=request.getContextPath()%>/list.do?cloth_category=2000">DENNING</a>
           </div>
         </div>
       </li>
