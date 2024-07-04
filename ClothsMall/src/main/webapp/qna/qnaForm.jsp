@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="/ClothsMall/qna/style.css"/>
 <script src="/ClothsMall/qna/write.js"></script>
 
-<c:if test="${!empty sessionScope.id}">
+<c:if test="${empty sessionScope.id}">
   <meta http-equiv="Refresh" content="0;url=/ClothsMall/index.do">
 </c:if>
 

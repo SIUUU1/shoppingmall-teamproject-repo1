@@ -71,7 +71,7 @@
 			</tr>
 			<tr class="label2">
 				<td colspan="3">
-					<button id="process" onclick="process()">가입하기</button>
+					<button id="process" onclick="process()" type="button">가입하기</button>
 					<button type="button" id="cancel">취소</button>
 				</td>
 			</tr>

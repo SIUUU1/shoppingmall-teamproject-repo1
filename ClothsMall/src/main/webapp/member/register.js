@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		if (!idValue.match(userIdPettern)) {
 			alert(`아이디 4~10자 이내 알파벳와 숫자만 입력하세요.`);
 			document.getElementById('member_id').focus();
-			return;
+			flag = false;
 		}
 
 		if (idValue) {
@@ -18,23 +18,33 @@ document.addEventListener('DOMContentLoaded', function() {
 			xhr.open("POST", "/ClothsMall/confirmId.do", true);
 			xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 			xhr.onload = function() {
-				if (xhr.status === 200) {
-					let data = xhr.responseText;
-					if (data.trim() === '1') {
-						alert('사용할 수 없는 아이디입니다.');
+				if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+					var data = xhr.responseText;
+					var str1 = '<p id="ck">';
+					var loc = data.indexOf(str1);
+					var len = str1.length;
+					var check = data.substr(loc + len, 1);
+					if (check === '1') {
+						alert('사용할 수 없는 아이디 입니다.');
 						document.getElementById('member_id').value = '';
+						flag = false;
+						return;
 					} else {
+						alert('사용할 수 있는 아이디 입니다.');
 						flag = true;
-						alert('사용할 수 있는 아이디입니다.');
+						return;
 					}
 				} else {
-					alert('서버 오류가 발생했습니다. 잠시 후 다시 시도해주세요.');
 					console.error('Error:', xhr.statusText);
+					flag = false;
+					return;
 				}
 			};
 			xhr.send("member_id=" + encodeURIComponent(idValue));
-		} else {
-			alert('아이디를 입력해주세요.');
+
+		} else { // 아이디를 입력하지 않고 [ID중복확인] 버튼을 클릭한 경우 
+			alert('사용할 아이디를 입력해주세요');
+			document.getElementById('member_id').focus();
 		}
 	});
 
@@ -50,6 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function process() {
 	if (flag === false) {
 		alert('ID중복 확인 해주세요');
+		return;
 	}
 	//비밀번호 체크
 	let passwdValue = document.getElementById('member_passwd').value;
