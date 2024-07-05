@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+body {
+	margin: 0 auto;
+	text-align: center;
+}
+
+section {
+	margin: 0 auto;
+	text-align: center;
+}
+
+section table {
+	margin: 0 auto;
+	text-align: center;
+	border: 1px solid black;
+	text-align: center;
+}
