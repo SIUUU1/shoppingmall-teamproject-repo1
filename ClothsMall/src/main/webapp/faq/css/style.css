@@ -1,18 +1,70 @@
 @charset "UTF-8";
 
-body {
+header {
 	margin: 0 auto;
 	text-align: center;
+}
+
+#menu {
+	display: flex;
+	justify-content: center;
+}
+
+#mainBtn {
+	margin: 20px;
+}
+
+#search {
+	width: 400px;
+	height: 30px;
+	display: flex;
+	justify-content: space-evenly;
+	padding: 20px;
+}
+
+#search input {
+	flex: 1;
 }
 
 section {
 	margin: 0 auto;
+	margin-top: 30px;
 	text-align: center;
 }
 
 section table {
+	width: 1000px;
 	margin: 0 auto;
-	text-align: center;
 	border: 1px solid black;
+}
+
+section td {
+	text-align: center;
+	border: none;
+	border-bottom: 1px dotted grey;
+}
+
+#col td {
+	background-color: lightgrey;
+	padding: 5px;
+	border-bottom: 1px solid black;
+}
+
+section button {
+	font-size: 1em;
+	width: 600px;
+	padding: 5px;
+	margin: 0;
+	background-color: inherit;
+	border: none;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+section .faq_content {
+	display: none;
+	width: 100%;
+	margin: 10px auto;
+	background-color: lightgrey;
 	text-align: center;
 }

@@ -134,7 +134,7 @@
 			<a href="/mg/index.do" id="home" i class="fa-solid fa-house-chimney"></a>
 			<a href="#" id="mypage" class="fa-solid fa-user"></a>
 			<!-- <a href="shop/faqList.jsp" id="faq" i class="fa-solid fa-heart"></a> -->
-			<!-- 138~139 승훈 작업 -->
+			<!-- 136~138 승훈 작업  // 136 주석처리-->
 			<a href="<%=request.getContextPath()%>/faqList.do" id="faq" i class="fa-solid fa-heart"></a>
 		</div>
 
