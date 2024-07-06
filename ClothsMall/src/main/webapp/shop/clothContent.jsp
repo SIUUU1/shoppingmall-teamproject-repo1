@@ -4,9 +4,7 @@ pageEncoding="UTF-8"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<link rel="stylesheet" href="<%=request.getContextPath()%>/shop/css/style.css" />
 <script src="<%=request.getContextPath()%>/shop/clothContent.js"></script>
-
 
 <div id="cata" class="box2">
     <ul>
@@ -18,7 +16,6 @@ pageEncoding="UTF-8"%>
         <li><a href="<%=request.getContextPath()%>/list.do?cloth_category=all">전체</a>
     </ul>
 </div>
-
 
 <div id="showCloth">
     <table class="vhcenter">

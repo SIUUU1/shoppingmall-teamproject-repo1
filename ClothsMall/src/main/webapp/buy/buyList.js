@@ -9,6 +9,4 @@ document.addEventListener('DOMContentLoaded', function() {
 	shopMainButton.addEventListener('click', function() {
 		window.location.href = "/ClothsMall/index.do";
 	});
-	
-	
 });

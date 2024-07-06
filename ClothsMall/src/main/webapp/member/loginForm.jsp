@@ -3,45 +3,45 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-<link rel="stylesheet" href="/ClothsMall/member/login.css" />
 <script src="/ClothsMall/member/login.js?ver=5"></script>
 
 <c:if test="${empty sessionScope.id}">
-	<div id="lStatus">
-		<label for="member_id">아이디</label> <input id="member_id"
-			name="member_id" type="text" size="20" maxlength="50"> <label
-			for="member_passwd">비밀번호</label> <input id="member_passwd"
-			name="member_passwd" type="password" size="20" maxlength="16">
-		<button id="uLogin">로그인</button>
-		<button id="uRes">회원가입</button>
+	<div id="login-box-back">
+		<div id="login-box">
+			<div id="lStatus">
+				<h1 id="title">로그인</h1>
+				<div class="middle-top">
+					<input id="member_id" name="member_id" type="text" size="20"
+						maxlength="50" placeholder="아이디"> <input
+						id="member_passwd" name="member_passwd" type="password" size="20"
+						maxlength="16" placeholder="패스워드">
+				</div>
+				<div class="bottom">
+					<button id="uLogin">로그인</button>
+					<button id="uRes">회원가입</button>
+				</div>
+			</div>
+		</div>
 	</div>
 </c:if>
 
 <c:if test="${!empty sessionScope.id}">
-	<div id="lStatus">
-		<div class="user-actions">
-			<div id="logout-box">
-				<button id="uLogout" onclick="uLogout()">로그아웃</button>
-				<button id="uUpdate" onclick="uUpdate()">내 정보</button>
-			</div>
-			<div>
-				<form id="cartForm" method="post" action="/ClothsMall/cartList.do">
-					<input type="hidden" name="member_id" value="${sessionScope.id}">
-					<button type="submit" name="cart">장바구니</button>
-				</form>
-			</div>
-			<div>
-				<form id="buyForm" method="post" action="/ClothsMall/buyList.do">
-					<input type="hidden" name="member_id" value="${sessionScope.id}">
-					<button type="submit" name="buy">구매내역</button>
-				</form>
-			</div>
-			<div>
-				<form id="point" method="post" action="/ClothsMall/increasePoint.do">
-                   <input type="hidden" name="member_id" value="${sessionScope.id}">
-                 	<button type="submit" name="buy">포인트충전</button>
-                </form>
-			</div>
-		</div>
+<div id="mypage">
+	<h1 id="title">마이페이지</h1>
+	<div id="mypageBox">
+	<div>
+	 <a href="${pageContext.request.contextPath}/modify.do?member_id=${sessionScope.id}"><i class="fa-solid fa-user"></i><br><span>내정보/로그아웃</span></a>
 	</div>
+	<div>
+	 <a href="${pageContext.request.contextPath}/cartList.do?member_id=${sessionScope.id}"><i class="fa-solid fa-cart-shopping"></i><br><span>장바구니</span></a>
+	</div>
+	<div>
+	 <a href="${pageContext.request.contextPath}/buyList.do?member_id=${sessionScope.id}"><i class="fa-solid fa-truck"></i><br><span>구매내역</span></a>
+	</div>
+	<div>
+	 <a href="${pageContext.request.contextPath}/increasePoint.do?member_id=${sessionScope.id}"><i class="fa-solid fa-coins"></i><br><span>포인트충전</span></a>
+	</div>
+	<!-- <div>문의사항</div> -->
+	</div>
+</div>
 </c:if>

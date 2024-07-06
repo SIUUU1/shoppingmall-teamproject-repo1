@@ -4,7 +4,6 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-<link rel="stylesheet" href="/ClothsMall/buy/style.css" />
 <script src="/ClothsMall/buy/buyList.js"></script>
 
 <c:if test="${empty sessionScope.id}">

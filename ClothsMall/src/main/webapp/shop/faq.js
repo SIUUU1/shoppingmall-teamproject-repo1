@@ -1,12 +1,12 @@
 function searchFAQ() {
-    var input = document.getElementById('searchInput');
-    var filter = input.value.toUpperCase();
-    var ul = document.getElementsByClassName('qna')[0];
-    var li = ul.getElementsByTagName('li');
+    let input = document.getElementById('searchInput');
+    let filter = input.value.toUpperCase();
+    let ul = document.getElementsByClassName('qna')[0];
+    let li = ul.getElementsByTagName('li');
 
-    for (var i = 0; i < li.length; i++) {
-        var label = li[i].getElementsByTagName('label')[0];
-        var txtValue = label.textContent || label.innerText;
+    for (let i = 0; i < li.length; i++) {
+        let label = li[i].getElementsByTagName('label')[0];
+        let txtValue = label.textContent || label.innerText;
 
         if (txtValue.toUpperCase().indexOf(filter) > -1) {
             li[i].style.display = '';
