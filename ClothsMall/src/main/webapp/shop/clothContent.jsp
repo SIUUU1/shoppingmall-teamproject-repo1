@@ -7,32 +7,24 @@ pageEncoding="UTF-8"%>
 <script src="<%=request.getContextPath()%>/shop/clothContent.js"></script>
 
 <div id="showCloth">
-    <table class="vhcenter">
-    <tr height="30">
-        <td rowspan="6" width="150">
-        <img src="<%=request.getContextPath()%>/clothImage/${cloth.getCloth_image()}" class="contentimage"></td>
-        <td width="500"><b>${cloth.getCloth_name()}</b></td>
-    </tr>
-    <tr><td width="500">카테고리 : ${cloth.getCloth_category()}</td></tr>
-    <tr><td width="500">브랜드 : ${cloth.getCloth_brand()}</td></tr>
-    <tr><td width="500">사이즈선택 :
+        <img src="<%=request.getContextPath()%>/clothImage/${cloth.getCloth_image()}" class="contentimage">
+     	<div class="cloth-content">
+ 		${cloth.getCloth_brand()}<br>
+     	<b>${cloth.getCloth_name()}</b>
+	
+    <c:set var="price" value="${cloth.getCloth_price()}"/>
+    <c:set var="rate" value="${cloth.getDiscount_rate()}"/>
+    <span class="ratio">${rate}% </span>
+    <fmt:formatNumber value="${price}" type="number" pattern="#,##0"/>원<br>
+    <strong class="bred"><c:set var="rPrice" value="${price*((100.0-rate)/100)}"/>
+    <fmt:formatNumber value="${rPrice}" type="number" pattern="#,##0"/>원</strong>
+   	<label for="cloth_size">사이즈선택 :</label>
     <select id="cloth_size">
                     <option value="S">S</option>
                     <option value="M">M</option>
                     <option value="L">L</option>
                     <option value="XL">XL</option>
-    </select></td>
-    </tr>
-   
-    <tr><td width="500">
-    <c:set var="price" value="${cloth.getCloth_price()}"/>
-    <c:set var="rate" value="${cloth.getDiscount_rate()}"/>
-    정가 : <fmt:formatNumber value="${price}" type="number" pattern="#,##0"/>원<br>
-    <strong class="bred">판매가:<c:set var="rPrice" value="${price*((100.0-rate)/100)}"/>
-    <fmt:formatNumber value="${rPrice}" type="number" pattern="#,##0"/>원</strong>
-    <tr>
-        <td width="500">
-   
+    </select>
         <c:if test="${!empty sessionScope.id}">
         <c:if test="${cloth.getCloth_count()==0}">
         <p>일시품절
@@ -55,16 +47,10 @@ pageEncoding="UTF-8"%>
         <c:if test="${cloth.getCloth_count()==0}"><p>일시품절</c:if>
         <p>제품을 구매하시려면 로그인 하세요.
         </c:if>
-        <button id="list" onclick="list()" >목록으로</button>
-        <button id="shopMain" onclick="shopMain()" >메인으로</button>
-        </td>
-    </tr>
-    <tr class="ch">
-    <td colspan="2" class="hleft">${cloth.getCloth_content()}</td>
-    </tr>
-</table>
-<!-- qna -->
+		${cloth.getCloth_content()}
 </div>
+</div>
+<!-- qna -->
 <div id="showQna">
 <p class="b">상품 QnA
 <c:if test="${!empty sessionScope.id}">

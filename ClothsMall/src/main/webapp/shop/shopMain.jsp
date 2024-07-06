@@ -61,7 +61,7 @@
 			<a href="${pageContext.request.contextPath}/clothContent.do?cloth_id=${cloth.getCloth_id()}&cloth_category=${cloth.getCloth_category()}">
 			<img src="${pageContext.request.contextPath}/clothImage/${cloth.getCloth_image()}" class="listimage"></a><br>
 			<div class="vhcenter-info">
-			<span>${cloth.getCloth_brand()}</span><br>
+			<span class="brand">${cloth.getCloth_brand()}</span><br>
 			<a href="${pageContext.request.contextPath}/clothContent.do?cloth_id=${cloth.getCloth_id()}&cloth_category=${cloth.getCloth_category()}">
 			${cloth.getCloth_name()}</a><br>
 			<c:set var="price" value="${cloth.getCloth_price()}"/>
