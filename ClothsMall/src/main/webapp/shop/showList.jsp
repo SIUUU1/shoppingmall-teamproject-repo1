@@ -3,7 +3,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-<link rel="stylesheet" href="<%=request.getContextPath()%>/shop/showList.css"/>
 
     <div id="shop" class="box2 shop-display">
         <c:if test="${cloth_category=='1000'}">

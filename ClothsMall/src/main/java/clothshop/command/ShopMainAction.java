@@ -26,6 +26,8 @@ public class ShopMainAction implements CommandAction {
 		request.setAttribute("clothLists", clothLists);
 		// 사용자 화면을 의미하는 값을 설정
 		request.setAttribute("type", Integer.valueOf(1));
+		request.setAttribute("nav", Integer.valueOf(1));
+		request.setAttribute("footer", Integer.valueOf(1));
 		return "/shop/shopMain.jsp";
 	}
 }

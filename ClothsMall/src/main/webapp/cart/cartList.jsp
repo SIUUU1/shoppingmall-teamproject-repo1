@@ -3,10 +3,8 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-<link rel="stylesheet" href="<%=request.getContextPath()%>/cart/css/style.css" />
 <script src="<%=request.getContextPath()%>/cart/cartList.js"></script>
 <body>
-
 	<c:if test="${empty sessionScope.id}">
 		<meta http-equiv="Refresh" content="0;url=<%=request.getContextPath()%>/index.do">
 	</c:if>

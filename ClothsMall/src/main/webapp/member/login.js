@@ -62,10 +62,6 @@ document.addEventListener('DOMContentLoaded', function() {
 	});
 });
 	
-// [회원 정보 변경] 버튼 클릭
-function uUpdate(){
-	window.location.href = '/ClothsMall/modify.do';
-}
 
 // [로그아웃] 버튼 클릭
 function uLogout(){

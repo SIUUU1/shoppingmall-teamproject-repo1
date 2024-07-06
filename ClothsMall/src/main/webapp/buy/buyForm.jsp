@@ -4,15 +4,13 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-<link rel="stylesheet" href="/ClothsMall/buy/style.css" />
-<c:if test="${empty sessionScope.id}">
-	<meta http-equiv="Refresh" content="0;url=/ClothsMall/index.do">
-</c:if>
-
 <script src="/ClothsMall/buy/buyForm.js?ver=32"></script>
 <script
 	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 
+<c:if test="${empty sessionScope.id}">
+	<meta http-equiv="Refresh" content="0;url=/ClothsMall/index.do">
+</c:if>
 
 <div>
 	<form name="buyForm" method="post" action="/ClothsMall/buyPro.do">
