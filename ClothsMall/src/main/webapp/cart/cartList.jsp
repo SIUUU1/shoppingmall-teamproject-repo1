@@ -3,30 +3,14 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-<script src="<%=request.getContextPath()%>/cart/cartList.js"></script>
+<script src="${pageContext.request.contextPath}/cart/cartList.js"></script>
 <body>
 	<c:if test="${empty sessionScope.id}">
-		<meta http-equiv="Refresh" content="0;url=<%=request.getContextPath()%>/index.do">
+		<script>alert('로그인이 필요한 페이지입니다.');</script>
+  		<meta http-equiv="Refresh" content="0;url=/ClothsMall/loginForm.do?member_id=${sessionScope.id}">
 	</c:if>
-	<header>
-		<div id="shopName">
-			<h1>
-				<a href="<%=request.getContextPath()%>/index.do">Cruella</a>
-			</h1>
-		</div>
-		<div id="category" class="box2">
-			<ul>
-				<li><a href="<%=request.getContextPath()%>/list.do?cloth_category=1000">TOP</a>
-				<li><a href="<%=request.getContextPath()%>/list.do?cloth_category=2000">BOTTOM</a>
-				<li><a href="<%=request.getContextPath()%>/list.do?cloth_category=3000">OUTER</a>
-				<li><a href="<%=request.getContextPath()%>/list.do?cloth_category=4000">SHOE</a>
-				<li><a href="<%=request.getContextPath()%>/list.do?cloth_category=5000">ACCESSORY</a>
-				<li><a href="<%=request.getContextPath()%>/list.do?cloth_category=all">ALL</a>
-			</ul>
-		</div>
-	</header>
+	
 	<section>
-
 		<div id="goShop">
 			<button id="shopMain">&lt; 메인으로</button>
 			<button id="conShopping">쇼핑계속 &gt;</button>
@@ -125,21 +109,4 @@
 			</c:if>
 		</div>
 	</section>
-	  <footer>
-    <div class="footer content1">
-      <a href="">Download</a>
-      <a href="">Personal Information Processing Policy</a>
-      <a href="">Copyright Guidelines and Reporting</a>
-      <a href="">Refuse to collect email without permission</a>
-    </div>
-    <div class="footer content2">
-      <p>
-        Cruella : 4th Floor, Java 2-gil, Gangnam-gu, Seoul / Without a country code:118
-      </p>
-      <p>
-        Copyright <span>ⓒ</span> 2024 mrhi, Inc. All right reserved. Contact 
-        webmaster for more information. 118(Cyber terrorism)
-      </p>
-    </div>
-  </footer>
 </body>

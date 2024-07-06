@@ -7,7 +7,8 @@
 <script src="/ClothsMall/buy/buyList.js"></script>
 
 <c:if test="${empty sessionScope.id}">
-	<meta http-equiv="Refresh" content="0;url=/ClothsMall/index.do">
+	<script>alert('로그인이 필요한 페이지입니다.');</script>
+  	<meta http-equiv="Refresh" content="0;url=/ClothsMall/loginForm.do?member_id=${sessionScope.id}">
 </c:if>
 
 <div id="goShop">

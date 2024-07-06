@@ -22,6 +22,7 @@ public class FaqListAction implements CommandAction {
 			request.setAttribute("faqList", faqList);
 		}
 		request.setAttribute("type", Integer.valueOf(1));
+		request.setAttribute("footer", 1);
 		return "/faq/faqList.jsp";
 	}
 

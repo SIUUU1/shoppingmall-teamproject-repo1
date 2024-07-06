@@ -28,9 +28,24 @@
 <c:if test="${!empty sessionScope.id}">
 <div id="mypage">
 	<h1 id="title">마이페이지</h1>
+	<!--customerInfo-->
+	<h3>${m.getMember_name()}님 고객 정보</h3>
+	<table>
+		<tr>
+			<td>등급</td>
+			<td>마일리지</td>
+			<td>포인트</td>
+		</tr>
+		<tr>
+			<td>${m.getMember_grade()}</td>
+			<td>${m.getMileage()}</td>
+			<td>${m.getPoint()}</td>
+		</tr>
+	</table>
+	<!--middle-->
 	<div id="mypageBox">
 	<div>
-	 <a href="${pageContext.request.contextPath}/modify.do?member_id=${sessionScope.id}"><i class="fa-solid fa-user"></i><br><span>내정보/로그아웃</span></a>
+	 <a href="${pageContext.request.contextPath}/modify.do?member_id=${sessionScope.id}"><i class="fa-solid fa-user"></i><br><span>내정보수정/로그아웃</span></a>
 	</div>
 	<div>
 	 <a href="${pageContext.request.contextPath}/cartList.do?member_id=${sessionScope.id}"><i class="fa-solid fa-cart-shopping"></i><br><span>장바구니</span></a>
@@ -41,7 +56,6 @@
 	<div>
 	 <a href="${pageContext.request.contextPath}/increasePoint.do?member_id=${sessionScope.id}"><i class="fa-solid fa-coins"></i><br><span>포인트충전</span></a>
 	</div>
-	<!-- <div>문의사항</div> -->
 	</div>
 </div>
 </c:if>

@@ -5,6 +5,7 @@
 <script src="/ClothsMall/member/login.js?ver=5"></script>
 
 <c:if test="${empty sessionScope.id}">
+  <script>alert('로그인이 필요한 페이지입니다.');</script>
   <meta http-equiv="Refresh" content="0;url=/ClothsMall/loginForm.do">
 </c:if>
 
@@ -15,26 +16,12 @@
 </c:if>
 
 <div id="mStatus">
-<h3>${m.getMember_name()}님 고객 정보</h3>
-	<table>
-		<tr>
-			<td>등급</td>
-			<td>마일리지</td>
-			<td>포인트</td>
-		</tr>
-		<tr>
-			<td>${m.getMember_grade()}</td>
-			<td>${m.getMileage()}</td>
-			<td>${m.getPoint()}</td>
-		</tr>
-	</table>
-<h3>내 정보수정</h3>	
+<h3>재인증</h3>
+<p>개인정보를 안전하게 보호하기 위해<br> <span>인증 절차</span>가 필요해요.</p>	
    <form id="uForm" method="post" action="/ClothsMall/modifyForm.do">
             <input id="member_id" name="member_id" type="hidden" value="${sessionScope.id}">
-            <input id="member_passwd" name="member_passwd" type="password" 
-              size="20" maxlength="16" placeholder="패스워드 입력">
-            <input type="submit" id="modify" value="정보수정">
+            <input id="member_passwd" name="member_passwd" type="password" size="20" maxlength="16" placeholder=" 패스워드 입력">
+            <button type="submit" id="modify">정보수정</button>  
    </form>
-  <button id="uLogout" onclick="uLogout()">로그아웃</button> 
-  <button id="shopMain" onclick="window.location.href='/ClothsMall/index.do'">메인으로</button>
+   <button id="uLogout" onclick="uLogout()">로그아웃</button>
 </div>

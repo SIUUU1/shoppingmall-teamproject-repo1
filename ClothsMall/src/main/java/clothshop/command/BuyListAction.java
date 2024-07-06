@@ -40,7 +40,7 @@ public class BuyListAction implements CommandAction {
 					
 		}
 		
-	
+		request.setAttribute("footer", 1);
 		request.setAttribute("count", Integer.valueOf(count));
 		request.setAttribute("type", Integer.valueOf(1));
 		return "/buy/buyList.jsp";

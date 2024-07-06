@@ -5,11 +5,14 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <meta name="viewport" content="width=device-width,initial-scale=1.0" />
 <script src="/ClothsMall/point/increasePoint.js"></script>
+
 <c:if test="${empty sessionScope.id}">
-	<meta http-equiv="Refresh" content="0;url=/shoppingmall/index.do">
+	<script>alert('로그인이 필요한 페이지입니다.');</script>
+  	<meta http-equiv="Refresh" content="0;url=/ClothsMall/loginForm.do?member_id=${sessionScope.id}">
 </c:if>
 
 <form name="buyForm" method="post" action="/ClothsMall/increasePointPro.do">
+<input type="hidden" name="member_id" value="${sessionScope.id}">
 	<p>쇼핑 포인트 충전결제</p>
 	<table>
 		<tr>
@@ -38,7 +41,6 @@
 		<tr height="30px">
 			<td colspan="3"><span id="accountInfo"></span></td>
 		</tr>
-		<input type="hidden" name="member_id" value="${sessionScope.id}">
 	</table>
 </form>
 

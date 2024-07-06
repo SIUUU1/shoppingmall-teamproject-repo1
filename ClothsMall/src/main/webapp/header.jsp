@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,9 +31,9 @@
 				<a href="${pageContext.request.contextPath}/index.do"><li>HOME</li></a>
 				<a href="#"><li>CATEGORY</li></a>
 				<a href="#"><li>CART</li></a>
-				<a href="${pageContext.request.contextPath}/loginForm.do?member_id=${sessionScope.id}"><li>MY PAGE</li></a>
+				<a href="#"><li>MY PAGE</li></a>
 				<!--자주하는 질문-->
-				<a href="#"><li>CUSTOMER SERVICE</li></a>
+				<a href="${pageContext.request.contextPath}/faqList.do"><li>CUSTOMER SERVICE</li></a>
 			</ul>
 		</nav>
   <!-- main-menu-Content -->		
@@ -52,6 +53,12 @@
             <a href="${pageContext.request.contextPath}/buyList.do?member_id=${sessionScope.id}"><li>MY RECEIPT</li></a>
 			</ul>
 			<ul>
+			<a href="${pageContext.request.contextPath}/loginForm.do?member_id=${sessionScope.id}"><li>MY INFO</li></a>
+			
+			<c:if test="${!empty sessionScope.id}">
+			<a href="${pageContext.request.contextPath}/logout.do"><li>LOGOUT</li></a>
+			</c:if>
+			
 			</ul>
 			<ul>
 			</ul>

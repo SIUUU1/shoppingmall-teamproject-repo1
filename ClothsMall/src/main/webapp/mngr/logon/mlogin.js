@@ -1,4 +1,5 @@
 function login() {
+	alert('login');
 	let query = {
 		id: document.getElementById("id").value,
 		passwd: document.getElementById("passwd").value

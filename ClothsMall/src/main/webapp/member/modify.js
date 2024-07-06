@@ -76,9 +76,9 @@ document.addEventListener('DOMContentLoaded', function() {
 				break;
 			}
 		}
-
+		let idValue = document.getElementById('member_id').value;
 		let query = {
-			id: document.getElementById('member_id').value,
+			id: idValue,
 			passwd: document.getElementById('member_passwd').value,
 			name: document.getElementById('member_name').value,
 			address: document.getElementById('member_address').value,
@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
 				let check = data.substr(loc + len, 1);
 				if (check == '1') {
 					alert('회원정보가 수정되었습니다.');
-					window.location.href = '/ClothsMall/modify.do';
+					window.location.href = `/ClothsMall/loginForm.do?member_id=${idValue}`;
 				} else {
 					alert('비밀번호 틀림.');
 					document.getElementById('member_passwd').value = '';

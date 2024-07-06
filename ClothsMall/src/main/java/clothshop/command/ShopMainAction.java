@@ -18,8 +18,8 @@ public class ShopMainAction implements CommandAction {
 		MngrDBBean clothProcess = MngrDBBean.getInstance();// DB 연동
 
 		// 카테고리별 최신의 상품 3 개씩 얻어내서 List 에 저장
-		for (int i = 1; i <= 3; i++) {
-			clothList = clothProcess.getCloths(i + "000", 3);
+		for (int i = 1; i <= 5; i++) {
+			clothList = clothProcess.getCloths(i + "000", 4);
 			clothLists.add(clothList);
 		}
 		// 해당 페이지로 보낼 내용 설정

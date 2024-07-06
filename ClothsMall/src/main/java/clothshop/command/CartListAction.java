@@ -24,6 +24,7 @@ public class CartListAction implements CommandAction {
 			cartLists = clothProcess.getCart(member_id, count);
 			request.setAttribute("cartLists", cartLists);
 		}
+		request.setAttribute("footer", 1);
 		request.setAttribute("count", Integer.valueOf(count));
 		request.setAttribute("type", Integer.valueOf(1));
 		return "/cart/cartList.jsp";

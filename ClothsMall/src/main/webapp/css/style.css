@@ -102,7 +102,7 @@ div.top, div.userIcon {
 	width: 100%;
 	margin: 15px 0;
 	text-align: center;
-	font-size: 15px;
+	font-size: 18px;
 }
 
 #categoryGridTitle a {
@@ -120,7 +120,7 @@ div.top, div.userIcon {
 #categoryGridContent ul {
 	width: 25%;
 	text-align: center;
-	font-size: 12px;
+	font-size: 18px;
 	background-color: rgba(255, 255, 255, 0.8);
 }
 
@@ -132,9 +132,51 @@ div.top, div.userIcon {
 #categoryGridContent li:hover {
 	color: red;
 }
+/* shop main */
+.featured-products .b {
+	font-size: 28px;
+	padding: 0 60px;
+	margin-bottom: 10px;
+	font-weight: 600;
+}
+
+.vhcenter {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 60px;
+}
+
+.vhcenter img {
+	width: 250px;
+	height: 350px;
+}
+
+.vhcenter-info {
+	padding: 10px 0;
+	text-align: left;
+}
+
+.vhcenter-info span:nth-child(1) {
+	color: gray;
+	font-size: 16px;
+}
+
+.ratio {
+	color: #ff4664;
+	font-weight: 600;
+	font-size: 20px;
+}
+
+.vhcenter-info a {
+	font-size: 18px;
+}
+.vhcenter .bred {
+	font-size: 20px;
+}
 /* slide show */
 div.sildshow {
-	height: 500px;
+	height: 600px;
 	min-width: 960px;
 	background-color: black;
 	position: relative;
@@ -199,12 +241,23 @@ div.indicator a.active {
 	opacity: 0.8;
 }
 /* footer */
+footer {
+	background-color: #f7f8fa;
+	color: gray;
+	padding: 25px 30px;
+	text-align: left;
+	font-size: 18px;
+	line-height: 180%;
+}
 
+footer p {
+	text-align: left
+}
 /* loginForm */
 #login-box-back {
 	width: 100%;
 	height: 100%;
-	background-image: url(/ClothsMall/images/cloth.jpg);
+	background-image: url(/ClothsMall/images/cloth1.jpg);
 }
 
 #login-box {
@@ -219,7 +272,7 @@ div.indicator a.active {
 
 #lStatus {
 	background-color: white;
-	opacity: 0.96;
+	opacity: 0.9;
 	width: 550px;
 	height: 360px;
 	margin: 70px auto;
@@ -269,16 +322,34 @@ button {
 #mypage {
 	height: 430px;
 }
+
 #mypage #title {
-	margin: 40px 0 20px 20px;
+	margin: 40px 30px 20px 30px;
+}
+
+#mypage h3, table {
+	margin: 0 auto;
+	text-align: center;
+}
+
+#mypage h3 {
+	font-size: 27px;
+	font-weight: 500;
+	margin-bottom: 15px;
+}
+
+#mypage tr, td {
+	padding: 15px 50px;
+	text-align: center;
+	font-size: 20px;
 }
 
 #mypageBox {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin: 0 auto;
-	padding: 30px 20px;
+	margin: 30px auto;
+	padding: 30px;
 	text-align: center;
 }
 
@@ -287,6 +358,105 @@ button {
 	margin-bottom: 5px;
 	color: lightgray;
 }
+
 #mypageBox a {
 	color: gray;
+}
+/*modify*/
+#mStatus {
+	height: 350px;
+}
+
+#mStatus h3, p, form {
+	text-align: center;
+	margin: 0 auto;
+}
+
+#mStatus h3 {
+	margin: 40px auto;
+	font-size: 27px;
+	font-weight: 500;
+}
+
+#mStatus span {
+	color: #538dd6;
+	font-weight: 600;
+}
+
+#mStatus p {
+	font-weight: 500;
+	font-size: 20px;
+}
+
+#mStatus form {
+	margin-top: 70px;
+}
+
+#mStatus input {
+	margin: 5px 0;
+	height: 45px;
+	width: 250px;
+	border-radius: 5px;
+	border: 1px solid rgb(218, 217, 217);
+	outline: 0;
+}
+/*modifyForm*/
+.box {
+	background-color: rgba(255, 255, 255, 0.6);
+	border-radius: 8px;
+	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+	width: 80%;
+	max-width: 800px;
+	margin: 50px auto;
+	padding: 30px;
+}
+
+.box h3 {
+	font-size: 30px;
+	margin: 20px auto;
+	text-align: center;
+	font-weight: 500;
+}
+
+.box table {
+	width: 100%;
+}
+
+.box td {
+	padding: 10px 5px;
+}
+
+.box label {
+	text-align: right;
+	margin-right: 10px;
+	margin-bottom: 5px;
+	font-size: 18px;
+}
+
+.box input[type="text"], .box input[type="password"], .box input[type="tel"],
+	.box select {
+	width: 350px;
+	padding: 8px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	font-size: 14px;
+}
+
+.box button:hover {
+	opacity: 0.8;
+}
+
+.box .label2 {
+	text-align: center;
+	margin-top: 30px;
+}
+
+.input-group {
+	margin-left: 120px
+}
+/*registerForm*/
+#regForm .radioDiv {
+	display: inline-flex;
+	align-items: center;
+	padding: 0 20px;
 }

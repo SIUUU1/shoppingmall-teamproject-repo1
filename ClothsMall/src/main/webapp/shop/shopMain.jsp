@@ -1,233 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<<<<<<< HEAD
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cruella</title>
-<link rel="stylesheet" href="<%=request.getContextPath()%>/shop/css/style.css" />
-<script src="<%=request.getContextPath()%>/shop/clothContent.js"></script>
-<script src="https://kit.fontawesome.com/3842b33e0f.js" crossorigin="anonymous"></script>
-</head>
-<body>
-	<div id="header-fix">&nbsp;</div>
-	<header>
-		<h1 class="logo-bar con-min-width">
-			<div class="text-align-center con">
-				<span>Cruella</span>
-			</div>
-		</h1>
-		<section class="categories">
-			<div class="category-grid">
-				<ul>
-					<li>
-						<div class="dropdown">
-							<button class="dropbtn">TOP</button>
-							<div class="dropdown-content">
-								<a href="<%=request.getContextPath()%>/list.do?cloth_category=1000">SHIRTS</a>
-								<a href="<%=request.getContextPath()%>/list.do?cloth_category=1000">MTM</a>
-								<a href="<%=request.getContextPath()%>/list.do?cloth_category=1000">BLOUSE</a>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="dropdown">
-							<button class="dropbtn">OUTER</button>
-							<div class="dropdown-content">
-								<a href="<%=request.getContextPath()%>/list.do?cloth_category=3000">JUMPER</a>
-								<a href="<%=request.getContextPath()%>/list.do?cloth_category=3000">JARCET</a>
-								<a href="<%=request.getContextPath()%>/list.do?cloth_category=3000">COURT</a>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="dropdown">
-							<button class="dropbtn">BOTTOM</button>
-							<div class="dropdown-content">
-								<a href="<%=request.getContextPath()%>/list.do?cloth_category=2000">SLACKS</a>
-								<a href="<%=request.getContextPath()%>/list.do?cloth_category=2000">LEGGINGS</a>
-								<a href="<%=request.getContextPath()%>/list.do?cloth_category=2000">DENNING</a>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="dropdown">
-							<button class="dropbtn">SHOE</button>
-							<div class="dropdown-content">
-								<a href="<%=request.getContextPath()%>/list.do?cloth_category=4000">SANDLE</a>
-								<a href="<%=request.getContextPath()%>/list.do?cloth_category=4000">SNEAKERS</a>
-								<a href="<%=request.getContextPath()%>/list.do?cloth_category=4000">HIGH-HEEL</a>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="dropdown">
-							<button class="dropbtn">ACCESSORY</button>
-							<div class="dropdown-content">
-								<a href="<%=request.getContextPath()%>/list.do?cloth_category=5000">HAT</a>
-								<a href="<%=request.getContextPath()%>/list.do?cloth_category=5000">BELT</a>
-								<a href="<%=request.getContextPath()%>/list.do?cloth_category=5000">JEWELRY</a>
-							</div>
-						</div>
-					</li>
-				</ul>
-
-
-			</div>
-		</section>
-
-		<ul class="menu-bar con-min-width">
-
-			</nav>
-	</header>
-	<!-- Slideshow container -->
-	<div class="slideshow-container">
-
-		<!-- Full-width images with number and caption text -->
-		<div class="mySlides fade">
-			<div class="numbertext">1 / 4</div>
-			<img src="shop/images/shoe.jpg" width="100%" height="465">
-			<div class="text"></div>
-		</div>
-
-		<div class="mySlides fade">
-			<div class="numbertext">2 / 4</div>
-			<img src="shop/images/cloth.jpg" width="100%" height="465">
-			<div class="text"></div>
-		</div>
-
-		<div class="mySlides fade">
-			<div class="numbertext">3 / 4</div>
-			<img src="shop/images/woman.jpg" width="100%" height="465">
-			<div class="text"></div>
-		</div>
-
-		<div class="mySlides fade">
-			<div class="numbertext">4 / 4</div>
-			<img src="shop/images/accessory.jpg" width="100%" height="465">
-			<div class="text"></div>
-		</div>
-
-		<!-- Next and previous buttons -->
-		<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-		<a class="next" onclick="plusSlides(1)">&#10095;</a>
-	</div>
-	<br>
-
-	<!-- The dots/circles -->
-	<div style="text-align: center">
-		<span class="dot" onclick="currentSlide(1)"></span>
-		<span class="dot" onclick="currentSlide(2)"></span>
-		<span class="dot" onclick="currentSlide(3)"></span>
-		<span class="dot" onclick="currentSlide(4)"></span>
-	</div>
-	<aside class="side-bar">
-		<section class="side-bar__icon-box">
-			<section class="side-bar__icon-1">
-				<div></div>
-				<div></div>
-				<div></div>
-			</section>
-		</section>
-		<div id="mySidenav" class="sidenav">
-			<a href="shop/showList.jsp" id="category" i class="fa-solid fa-list"></a>
-			<a href="/mg/index.do" id="home" i class="fa-solid fa-house-chimney"></a>
-			<a href="#" id="mypage" class="fa-solid fa-user"></a>
-			<!-- <a href="shop/faqList.jsp" id="faq" i class="fa-solid fa-heart"></a> -->
-			<!-- 136~138 승훈 작업  // 136 주석처리-->
-			<a href="<%=request.getContextPath()%>/faqList.do" id="faq" i class="fa-solid fa-heart"></a>
-		</div>
-
-		<main>
-			<section class="hero">
-				<div class="hero-content">
-					<p>
-						<span>
-							<b>Cruella</b>
-						</span>
-						에서
-					<hr>
-					다양한 스타일을 경험해보세요.
-					</p>
-				</div>
-				<div class="hero-image">
-					<a href="list.do?cloth_category=1000">
-						<img src="shop/images/woman.jpg" width="200" height="200">
-					</a>
-					<hr>
-				</div>
-				<div class="hero-image">
-					<a href="list.do?cloth_category=4000">
-						<img src="shop/images/shoe.jpg" width="200" height="200">
-					</a>
-					<hr>
-				</div>
-				<div class="hero-image">
-					<a href="list.do?cloth_category=5000">
-						<img src="shop/images/accessory.jpg" width="200" height="200">
-					</a>
-					<hr>
-				</div>
-				<div class="hero-image">
-					<a href="list.do?cloth_category=5000">
-						<img src="shop/images/ring4.JPG" width="200" height="200">
-					</a>
-					<hr>
-				</div>
-				<div class="hero-image">
-					<a href="list.do?cloth_category=1000">
-						<img src="shop/images/cloth.jpg" width="200" height="200">
-					</a>
-					<hr>
-				</div>
-				<div class="hero-image">
-					<a href="list.do?cloth_category=4000">
-						<img src="shop/images/스니커즈4.JPG" width="200" height="200">
-					</a>
-					<hr>
-				</div>
-				<div class="hero-image">
-					<a href="list.do?cloth_category=5000">
-						<img src="shop/images/주얼리1.JPG" width="200" height="200">
-					</a>
-					<hr>
-				</div>
-			</section>
-
-
-			<section class="featured-products">
-				<h2></h2>
-				<div class="product-grid">
-					<!-- 인기 상품 목록 -->
-				</div>
-			</section>
-
-			<section class="categories">
-				<h2></h2>
-				<div class="category-grid">
-					<!-- 카테고리 목록 -->
-				</div>
-			</section>
-		</main>
-
-		<footer>
-			<div class="footer content1">
-				<a href="">Download</a>
-				<a href="">Personal Information Processing Policy</a>
-				<a href="">Copyright Guidelines and Reporting</a>
-				<a href="">Refuse to collect email without permission</a>
-			</div>
-			<div class="footer content2">
-				<p>Cruella : 4th Floor, Java 2-gil, Gangnam-gu, Seoul / Without a country code:118</p>
-				<p>
-					Copyright
-					<span>ⓒ</span>
-					2024 mrhi, Inc. All right reserved. Contact webmaster for more information. 118(Cyber terrorism)
-				</p>
-			</div>
-		</footer>
-=======
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cruella</title>
@@ -239,10 +15,10 @@
 <article class="slideshow-box">
 	<div class="sildshow">
 		<div class="slidshow_imgs">
-			<a href="#"><img src="${pageContext.request.contextPath}/images/woman.jpg" alt="slide1"></a>
-			<a href="#"><img src="${pageContext.request.contextPath}/images/shoe.jpg" alt="slide2"></a>
-			<a href="#"><img src="${pageContext.request.contextPath}/images/accessory.jpg" alt="slide3"></a>
-			<a href="#"><img src="${pageContext.request.contextPath}/images/cloth.jpg" alt="slide4"></a>
+			<a href="#"><img src="${pageContext.request.contextPath}/images/cloth1.jpg" alt="slide1"></a>
+			<a href="#"><img src="${pageContext.request.contextPath}/images/cloth2.jpg" alt="slide2"></a>
+			<a href="#"><img src="${pageContext.request.contextPath}/images/cloth3.jpg" alt="slide3"></a>
+			<a href="#"><img src="${pageContext.request.contextPath}/images/cloth4.jpg" alt="slide4"></a>
 		</div>
 		<div class="slidshow_nav">
 			<a href="#" id="prev"><i class="fa-solid fa-angles-left"></i></a> 
@@ -258,19 +34,47 @@
 </article>
  <!-- middle-->  
 <!-- 신상 상품 목록 -->
-    <section class="featured-products">
-      <h2>신상 모아보기</h2>
-      <div class="product-grid">
-        <!-- 인기 상품 목록 -->
-      </div>
-    </section>
- <!-- 카테고리 목록 -->
-    <section class="categories">
-      <h2></h2>
-      <div class="category-grid">
-        <!-- 카테고리 목록 -->
-      </div>
-    </section>
->>>>>>> layout
+<div class="featured-products">
+<c:forEach var="clothList" items="${clothLists}">
+<c:set var="cloth_category" value="${clothList[0].getCloth_category()}"/>
+		<c:if test="${cloth_category=='1000'}">
+			<c:set var="cloth_categoryName" value="상의" />
+		</c:if>
+		<c:if test="${cloth_category=='2000'}">
+			<c:set var="cloth_categoryName" value="하의" />
+		</c:if>
+		<c:if test="${cloth_category=='3000'}">
+			<c:set var="cloth_categoryName" value="아우터" />
+		</c:if>
+		<c:if test="${cloth_category=='4000'}">
+			<c:set var="cloth_categoryName" value="신발" />
+		</c:if>
+		<c:if test="${cloth_category=='5000'}">
+			<c:set var="cloth_categoryName" value="패션소품" />
+		</c:if>
+		<h3 class="b">${cloth_categoryName} 신상 보기</h3>
+		
+		<!-- 신상 상품 정보  -->
+		<div class="vhcenter">
+		<c:forEach var="cloth" items="${clothList}">
+		<div class="vhcenter-content">
+			<a href="${pageContext.request.contextPath}/clothContent.do?cloth_id=${cloth.getCloth_id()}&cloth_category=${cloth.getCloth_category()}">
+			<img src="${pageContext.request.contextPath}/clothImage/${cloth.getCloth_image()}" class="listimage"></a><br>
+			<div class="vhcenter-info">
+			<span>${cloth.getCloth_brand()}</span><br>
+			<a href="${pageContext.request.contextPath}/clothContent.do?cloth_id=${cloth.getCloth_id()}&cloth_category=${cloth.getCloth_category()}">
+			${cloth.getCloth_name()}</a><br>
+			<c:set var="price" value="${cloth.getCloth_price()}"/>
+		<c:set var="rate" value="${cloth.getDiscount_rate()}"/>
+		<span class="ratio">${rate}% </span>
+		<strong class="bred">
+		<fmt:formatNumber value="${price*((100.0-rate)/100)}" type="number" pattern="#,##0"/>원</strong>
+		</div>
+		</div>
+		</c:forEach>
+		</div>
+		
+</c:forEach>
+</div>
 </body>
 </html>

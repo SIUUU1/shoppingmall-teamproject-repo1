@@ -12,7 +12,6 @@
 <script src="<%=request.getContextPath()%>/faq/faqList.js"></script>
 </head>
 <body>
-	<header>
 		<h2>FAQ</h2>
 		<div id="menu">
 			<button id="mainBtn">메인으로</button>
@@ -23,7 +22,6 @@
 				<button id="eraseBtn">지우기</button>
 			</div>
 		</div>
-	</header>
 	<section>
 		<table>
 			<tr id="col">

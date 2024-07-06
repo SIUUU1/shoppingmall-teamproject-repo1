@@ -12,13 +12,13 @@ public class IncreasePointAction implements CommandAction{
 			HttpServletResponse response) throws Throwable {
 
 		request.setCharacterEncoding("utf-8");
-		
-
-        LogonDBBean dbPro2 = LogonDBBean.getInstance();
-        int point =dbPro2.getMember(request.getParameter("member_id")).getPoint();
-        request.setAttribute("point", Integer.valueOf(point));
-        request.setAttribute("type", Integer.valueOf(1));
-		
+		String member_id = request.getParameter("member_id");
+		if(!member_id.equals("")) {
+			LogonDBBean dbPro2 = LogonDBBean.getInstance();
+			int point =dbPro2.getMember(member_id).getPoint();
+			request.setAttribute("point", Integer.valueOf(point));
+			request.setAttribute("type", Integer.valueOf(1));
+		}
         return "/point/increasePointForm.jsp";
         
         

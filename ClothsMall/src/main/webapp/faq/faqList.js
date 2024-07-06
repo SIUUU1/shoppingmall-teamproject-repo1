@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function() {
 	})
 });
 
-
 // < 검색 >
 function searchFunc() {
 	let searchInput = document.getElementById('searchInput').value.toLowerCase();
@@ -28,12 +27,12 @@ function searchFunc() {
 		}
 	})
 }
+
 function enterFunc() {	// 엔터키
 	if (window.event.keyCode == 13) {
 		searchFunc();
 	};
 }
-
 
 // 게시글 제목 클릭시 답변 출력
 function showContent(e) {
@@ -100,4 +99,3 @@ function sortFaq(e) {
 
 	}
 }
-

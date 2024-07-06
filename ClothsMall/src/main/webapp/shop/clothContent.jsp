@@ -6,17 +6,6 @@ pageEncoding="UTF-8"%>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <script src="<%=request.getContextPath()%>/shop/clothContent.js"></script>
 
-<div id="cata" class="box2">
-    <ul>
-        <li><a href="<%=request.getContextPath()%>/list.do?cloth_category=1000">상의</a>
-        <li><a href="<%=request.getContextPath()%>/list.do?cloth_category=2000">하의</a>
-        <li><a href="<%=request.getContextPath()%>/list.do?cloth_category=3000">아우터</a>
-        <li><a href="<%=request.getContextPath()%>/list.do?cloth_category=4000">신발</a>
-        <li><a href="<%=request.getContextPath()%>/list.do?cloth_category=5000">패션소품</a>
-        <li><a href="<%=request.getContextPath()%>/list.do?cloth_category=all">전체</a>
-    </ul>
-</div>
-
 <div id="showCloth">
     <table class="vhcenter">
     <tr height="30">

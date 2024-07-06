@@ -24,6 +24,7 @@ public class ModifyFormAction implements CommandAction {
 		request.setAttribute("type", Integer.valueOf(1));
 		if (m == null) {
 			request.setAttribute("check", Integer.valueOf(0));
+			request.setAttribute("footer", 1);
 			return "/member/modify.jsp";
 		}
 		return "/member/modifyForm.jsp";
