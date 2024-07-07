@@ -22,16 +22,16 @@
 				</div> -->
 				<table>
 					<tr>
-						<td>아이디</td>
-						<td>이름</td>
-						<td>성별</td>
-						<td>가입날짜</td>
-						<td>우편번호</td>
-						<td>주소</td>
-						<td>전화번호</td>
-						<td>등급</td>
-						<td>마일리지/포인트&nbsp;</td>
-						<td>체크</td>
+						<th>아이디</th>
+						<th>이름</th>
+						<th>성별</th>
+						<th>가입날짜</th>
+						<th>우편번호</th>
+						<th>주소</th>
+						<th>전화번호</th>
+						<th>등급</th>
+						<th>마일리지/포인트&nbsp;</th>
+						<th>체크</th>
 					</tr>
 					<c:forEach var="member" items="${memberList}">
 						<tr>

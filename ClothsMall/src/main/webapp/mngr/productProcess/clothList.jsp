@@ -28,21 +28,21 @@
 		</ul>
 	</c:if>
 	<c:if test="${count > 0}">
-		<table>
+		<table id="clothsList">
 			<tr class="title">
-				<td align="center" width="30">번호</td>
-				<td align="center" width="80">카테고리</td>
-				<td align="center" width="40">성별</td>
-				<td align="center" width="50">사이즈</td>
-				<td align="center" width="200">옷이름</td>
-				<td align="center" width="80">가격</td>
-				<td align="center" width="80">수량</td>
-				<td align="center" width="150">브랜드</td>
-				<td align="center" width="150">등록일</td>
-				<td align="center" width="100">옷이미지</td>
-				<td align="center" width="50">할인율</td>
-				<td align="center" width="50">수정</td>
-				<td align="center" width="50">삭제</td>
+				<th align="center" width="30">번호</th>
+				<th align="center" width="80">카테고리</th>
+				<th align="center" width="40">성별</th>
+				<th align="center" width="50">사이즈</th>
+				<th align="center" width="200">옷이름</th>
+				<th align="center" width="80">가격</th>
+				<th align="center" width="80">수량</th>
+				<th align="center" width="150">브랜드</th>
+				<th align="center" width="150">등록일</th>
+				<th align="center" width="100">옷이미지</th>
+				<th align="center" width="50">할인율</th>
+				<th align="center" width="50">수정</th>
+				<th align="center" width="50">삭제</th>
 			</tr>
 			<c:set var="number" value="${0}" />
 			<c:forEach var="cloth" items="${clothList}">

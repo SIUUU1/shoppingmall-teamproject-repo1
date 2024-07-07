@@ -12,9 +12,9 @@
 <form name="orderForm" method="post" action="/ClothsMall/mg/orderStateUpdatePro.do">
 <div id="listHeader">
 	<!-- <p> -->
-		주문 목록(전체 주문:${count})
 		<!-- <button type="button" id="clothMain">관리자 메인으로</button> -->
-		<button id="updateStatus">배송 상태 수정</button>
+		<button id="updateStatus">배송 상태 수정</button><br>
+		주문 목록(전체 주문:${count})
 </div>
 <c:if test="${count == 0}">
 	<ul>

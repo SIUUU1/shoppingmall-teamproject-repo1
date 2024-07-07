@@ -22,7 +22,7 @@
 <c:if test="${count>0}">
 	<div id="qnaList">
 		<c:forEach var="qna" items="${qnaLists}">
-			<div>
+			<div class="qna">
 				<c:if test="${qna.getQora()==1}">
 					<p>
 						<b>[${qna.getCloth_name()}] 상품에 대한 QnA</b>&nbsp;&nbsp;${qna.getQna_writer()}<small

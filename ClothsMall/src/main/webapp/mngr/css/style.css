@@ -7,16 +7,24 @@ body {
 
 button {
 	cursor: pointer;
+	background-color: #fafafa;
+	border:  1.5px solid #999999;
+	border-radius: 3px;
+	padding: 3px 8px;
+}
+button:hover {
+	background-color: #333335;
+	color:white;
 }
 
 td {
 	padding: 5px;
-	border-bottom: 1px dotted grey;
+	border-bottom: 1.8px solid #999999;
 }
 /* 1. type = 0 : mLoginForm */
 header {
 	padding: 50px;
-	background-color: grey;
+	background-color: #222224;
 }
 
 header h1 {
@@ -25,11 +33,13 @@ header h1 {
 }
 
 #status {
-	background-color:lightgrey;
+	background-color:white;
 	display: flex;
 	justify-content: flex-end;
 	vertical-align: center;
 	padding: 10px 30px;
+	border-top: 	1px solid #aeaeae;
+	border-bottom: 	1px solid #aeaeae;
 }
 
 #loginForm {
@@ -52,8 +62,11 @@ header h1 {
 	border: 1px solid white;
 	border-radius: 5px;
 	font-size: 1em;
-	background-color: lightgreen;
+	background-color: #222224;
 	font-size: 1em;
+	padding: 4px 10px;
+	color:white;
+	font-weight: 600;
 }
 
 /* 2. managerMain.jsp */
@@ -65,17 +78,19 @@ header h1 {
 }
 
 #mList>button {
-	background-color: lightgrey;
-	border: none;
-	border-radius: 20px;
+	background-color: white;
+	border: 1.8px solid #999999;
+	border-radius: 8px;
 	margin: 10px;
 	padding: 10px;
 	font-size: 0.8em;
-	border: none;
+	color:black;
+	font-weight: 600;
 }
 
 #mList>button:hover {
-	background-color: lightgreen;
+	background-color: #333335;
+	color:white;
 }
 
 /* 3.상품 등록 : clothRegisterForm.jsp */
@@ -92,9 +107,16 @@ header h1 {
 #listHeader button {
 	font-size: 1em;
 	width: 600px;
-	border: 1px solid grey;
-	border-radius: 10px;
+	border: 1.8px solid #999999;
+	border-radius: 8px;
 	padding: 10px 0;
+	font-weight: 600;
+	background-color: #333335;
+	color:white;
+}
+
+#listHeader button:hover {
+	background-color: #808086;
 }
 
 #clothRegistForm {
@@ -112,7 +134,7 @@ header h1 {
 #clothRegistForm td select {
 	width: 100px;
 	font-size: 1em;
-	border-radius: 10px;
+	border-radius: 5px;
 }
 
 #clothRegistForm td input {
@@ -122,8 +144,13 @@ header h1 {
 #clothRegistForm #registCloth {
 	font-size: 1em;
 	padding: 5px 10px;
-	border: 1px solid grey;
-	border-radius: 10px;
+	border: 1px solid #333335;
+	border-radius: 5px;
+	background-color: #333335;
+	color:white;
+}
+#registCloth{
+	margin-bottom: 30px;
 }
 
 /* 4. 옷 목록 : clothList.jsp*/
@@ -135,6 +162,10 @@ header h1 {
 
 #cloths td {
 	text-align: center;
+}
+
+#clothsList{
+	width: 80%
 }
 /* 5. 옷 수정 :  */
 #clothUpdateForm {
@@ -152,7 +183,7 @@ header h1 {
 #clothUpdateForm td select {
 	width: 100px;
 	font-size: 1em;
-	border-radius: 10px;
+	border-radius: 5px;
 }
 
 #clothUpdateForm td input {
@@ -163,13 +194,17 @@ header h1 {
 	font-size: 1em;
 	padding: 5px 10px;
 	border: 1px solid grey;
-	border-radius: 10px;
+	border-radius: 8px;
 }
 /* 6. 멤버리스트 : memberList.jsp*/
 #memberList {
+	width: 80%;
 	margin: 20px auto;
 	display: flex;
 	justify-content: center;
+}
+#memberList form,#memberList table{
+	width: 100%;
 }
 
 #memberList td {
@@ -186,10 +221,11 @@ header h1 {
 	font-size: 1em;
 	padding: 5px 10px;
 	border: 1px solid grey;
-	border-radius: 10px;
+	border-radius: 8px;
 }
 /* 7. QnA : qnaReplyUpdsteForm.jsp */
 #qnaList {
+	width:40%;
 	margin: 0 auto;
 	text-align: center;
 	display: flex;
@@ -197,7 +233,9 @@ header h1 {
 	justify-content: center;
 	align-items: center;
 }
-
+.qna{
+	width: 100%;
+}
 #editForm {
 	padding-top: 20px;
 	margin: 0 auto;
@@ -216,7 +254,7 @@ header h1 {
 	font-size: 1em;
 	padding: 5px 10px;
 	border: 1px solid grey;
-	border-radius: 10px;
+	border-radius: 8px;
 }
 
 #writeForm {
@@ -237,5 +275,10 @@ header h1 {
 	font-size: 1em;
 	padding: 5px 10px;
 	border: 1px solid grey;
-	border-radius: 10px;
+	border-radius: 8px;
 }
+.buyList th, #receipt th, #clothsList th, #memberList th{
+    background-color: #464648;
+	color:white;
+}
+

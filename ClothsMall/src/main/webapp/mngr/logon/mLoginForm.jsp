@@ -10,7 +10,7 @@
 		<h1 style="color: white">CRUELLA MANAGER</h1>
 	</c:if>
 	<c:if test="${!empty sessionScope.managerId}">
-		<h1 style="color: lightgreen">CRUELLA MANAGER</h1>
+		<h1 style="color: white">CRUELLA MANAGER</h1>
 	</c:if>
 </header>
 <section>
@@ -30,7 +30,7 @@
 		<div id="status">
 			<div id="loginForm">
 				<div>
-					<span style="color: olive; font-weight: 900">관리자님</span> 환영합니다
+					<span style="color:#595959; font-weight: 900; font-size:1.1em;">관리자님</span> 환영합니다
 				</div>
 				<button id="logout" onclick="logout()">로그아웃</button>
 			</div>
