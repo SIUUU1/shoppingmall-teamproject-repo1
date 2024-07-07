@@ -25,6 +25,7 @@ public class QnaFormAction implements CommandAction {
 	    request.setAttribute("cloth_name", cloth_name);
 	    request.setAttribute("qora", Integer.valueOf(1));
 		request.setAttribute("type", Integer.valueOf(1));
+		request.setAttribute("footer", 1);
 		return "/qna/qnaForm.jsp";
 	}
 }

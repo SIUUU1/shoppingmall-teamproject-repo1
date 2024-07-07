@@ -8,16 +8,16 @@
   <meta http-equiv="Refresh" content="0;url=/ClothsMall/index.do">
 </c:if>
 
-        <input type="text" id="qna_writer" value="${sessionScope.id}">
+        <input type="hidden" id="qna_writer" value="${sessionScope.id}">
         <input type="hidden" id="cloth_category" value="${cloth_category}">
         <input type="hidden" id="cloth_id" value="${cloth_id}">
-        <input type="text" id="cloth_name" value="${cloth_name}">
+        <input type="hidden" id="cloth_name" value="${cloth_name}">
         <input type="hidden" id="qora" value="${qora}">
         
 <div id="writeForm" class="box">
 	<table>
 	<tr>
-	<td colspan="2">[${cloth_name}]에 대한 QnA</td>
+	<td colspan="2">[${cloth_name}] 상품에 대한 QnA 작성</td>
 	</tr>
 	<tr>
 	<td><label for="content">내용</label></td>

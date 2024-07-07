@@ -96,6 +96,7 @@
 			</table>
 		</div>
 		<br> <br>
+		
 		<div id="buyArea">
 			<p>주문자 정보</p>
 			<table class="buy">
@@ -120,8 +121,8 @@
 					<td>
 						<div class="mileage">
 							<input type="number" name="useMileage" id="useMileage"
-								onchange="useMileageCheck()" value="0"> <span
-								class="info" id="mileageInfo" style="color: red;"></span>
+								onchange="useMileageCheck()" value="0"> 
+								<span class="info" id="mileageInfo" style="color: red;"></span>
 						</div>
 					</td>
 				</tr>
@@ -171,10 +172,6 @@
 					</tr>
 				</table>
 				<p id="calPointInfo"></p>
-
-
-
-
 			</div>
 
 			<div class="button">
@@ -196,5 +193,7 @@
 			<input type="hidden" id="gradeDiscount_h" value="${discount}">
 			<input type="hidden" id="total_h"
 				value="${Math.floor(total-total*discount)}">
+			</div>
+			
 	</form>
 </div>

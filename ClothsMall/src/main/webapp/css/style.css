@@ -191,22 +191,123 @@ div.top, div.userIcon {
 	justify-content: space-between;
 }
 
-.cloth-content-box img {
-	padding-left:45px;
+.contentimage {
+	padding-left: 60px;
 }
 
 #showCloth img {
-	width: 500px;
-	height: 600px;
+	width: 40%;
+	height: 450px;
 }
 
 .cloth-content {
-	width:500px;
-	padding-right: 45px;
+	width: 45%;
+	padding: 10px 60px 10px 0;
 }
+
+.cloth-content .brand {
+	font-size: 20px;
+	color: black;
+}
+
+.cloth-content .brand i {
+	color: lightgray;
+}
+
+.cloth-content .cloth-name {
+	font-size: 35px;
+}
+
+.cloth-content .ratio, .cloth-content .bred, .cloth-content .origin {
+	font-size: 30px;
+}
+
+.cloth-content .origin {
+	font-size: 25px;
+	color: gray;
+	font-weight: lighter;
+}
+
+.cloth-content #cloth_size {
+	width: 90%;
+	height: 60px;
+	text-align: center;
+	border: 1px solid rgb(218, 217, 217);
+	border-radius: 10px;
+	font-size: 18px;
+	outline: none;
+}
+
+.cloth-content table {
+	border: 1px solid rgb(218, 217, 217);
+	border-radius: 5px;
+	height: 50px;
+}
+
+.cloth-content table td {
+	padding: 0 10px;
+	font-size: 40px;
+	font-weight: 200;
+}
+
+.cloth-content .nStock {
+	font-size: 18px;
+	color: gray;
+}
+
+.cloth-content table input {
+	width: 100px;
+	height: 20px;
+	text-align: center;
+	font-size: 18px;
+	border: none;
+}
+
+#insertCart {
+	width: 90%;
+	height: 60px;
+	background-color: #1e1e1e;
+	color: white;
+	font-size: 18px;
+	border-radius: 8px;
+}
+
 #showQna {
-	margin: 30px auto;
+	margin: 50px auto;
 }
+
+#showQna .qna-content {
+	margin: 0 auto;
+	text-align: center;
+}
+
+#showQna .qna-contentList {
+	margin-left: 60px;
+	font-size: 20px;
+}
+
+.qna-contentList button {
+	width: 50px;
+	margin-left: 5px;
+}
+
+#rightButton {
+	margin: 0 auto;
+	text-align: right;
+	padding: 0 50px;
+}
+/* qnaForm */
+#writeForm textarea {
+	border: 1px solid rgb(218, 217, 217);
+	border-radius: 8px;
+	outline: none;
+}
+
+#writeForm #writeBDiv {
+	margin: 20px auto;
+	text-align: center;
+}
+
 /* slide show */
 div.sildshow {
 	height: 600px;
@@ -281,6 +382,7 @@ footer {
 	text-align: left;
 	font-size: 18px;
 	line-height: 180%;
+	margin-top: 20px;
 }
 
 footer p {
@@ -337,10 +439,11 @@ div.bottom {
 }
 
 /* button */
-button {
+button, input[type="button"], input[type="submit"] {
 	background-color: #f4f4f4;
 	border: 1px solid lightgray;
 	border-radius: 5px;
+	cursor: pointer;
 	margin: 3px 10px;
 	width: 100px;
 	height: 30px;
@@ -351,6 +454,7 @@ button {
 	border: none;
 	color: white;
 }
+
 /* mypage */
 #mypage {
 	height: 430px;
@@ -492,4 +596,130 @@ button {
 	display: inline-flex;
 	align-items: center;
 	padding: 0 20px;
+}
+/*cartList*/
+#cartList {
+	margin: 50px auto;
+	min-height: 300px;
+}
+
+.clear-box {
+	width: 80%;
+	margin: 0 auto;
+	text-align: right;
+}
+
+.clear-box button {
+	margin-bottom: 10px;
+	padding: 0;
+}
+
+#cartList img {
+	width: 150px;
+	height: 200px;
+	padding: 20px 10px;
+}
+.cartItem-content-info {
+	padding: 20px 10px;
+}
+.cartItem {
+	border: 1px solid rgb(218, 217, 217);
+	border-radius: 15px;
+	width: 80%;
+	margin: 0 auto;
+}
+
+#cartList #title {
+	margin: 30px auto;
+	text-align: center;
+	font-size: 30px;
+}
+
+.clothBrand {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 20px;
+	height: 50px;
+	border-bottom: 1px solid rgb(218, 217, 217);
+	padding: 0 20px;
+}
+
+.clothBrand i {
+	color: gray;
+}
+
+.cartItem-content {
+	display: flex;
+}
+
+#cartInteract {
+	width: 80%;
+	margin: 30px auto;
+	text-align: center;
+}
+
+.amountT {
+	font-size: 20px;
+	height: 25px;
+	border-top: 1px solid rgb(218, 217, 217);
+	padding: 15px 20px;
+	text-align: center;
+}
+
+#cartInteract button {
+	width: 400px;
+	height: 45px;
+	background-color: #1e1e1e;
+	color: white;
+	font-size: 18px;
+	border-radius: 20px;
+}
+/*buyList*/
+#buyList {
+	margin: 50px auto;
+	min-height: 300px;
+}
+
+table.buy, table.buylist {
+	width: 80%;
+	margin: 0 auto;
+	border: 1px solid black;
+	border-collapse: collapse;
+	padding: 5px;
+	text-align: center;
+}
+
+table.buy, .button {
+	width: 50%;
+}
+
+table.buy td, table.buy th, table.buylist td, table.buylist th {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+table.buy td {
+	text-align: right;
+}
+
+/* p {
+	font-size: 30px;
+	text-align: center;
+	font-weight: bold;
+} */
+table.buy input {
+	width: 100%;
+	border: 0px;
+	text-align: right;
+	font-size: 20px;
+}
+
+#buyArea span.info {
+	font-size: 20px;
+}
+
+#cartArea .button, #buyArea .button {
+	margin: 0 auto 6px auto;
+	text-align: right;
 }

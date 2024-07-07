@@ -35,6 +35,7 @@ public class ProListAction implements CommandAction {
 		request.setAttribute("count", Integer.valueOf(count));
 		request.setAttribute("cloth_category", cloth_category);
 		request.setAttribute("type", Integer.valueOf(1));
+		request.setAttribute("footer", 1);
 		return "/shop/showList.jsp";
 	}
 }

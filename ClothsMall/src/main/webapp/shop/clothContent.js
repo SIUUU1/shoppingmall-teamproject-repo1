@@ -2,6 +2,11 @@ document.addEventListener('DOMContentLoaded', function() {
 	let insertCartButton = document.getElementById('insertCart');
 	insertCartButton.addEventListener('click', function() {
 		let member_id = document.getElementById('member_id').value;
+		let cloth_size = document.getElementById('cloth_size').value;
+		if(cloth_size.length>2){
+			alert('사이즈를 선택하세요.');
+			return;
+		}
 		let query = {
 			cloth_id: document.getElementById('cloth_id').value,
 			quantity: document.getElementById('quantity').value,
@@ -9,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			cloth_name: document.getElementById('cloth_name').value,
 			cloth_gender: document.getElementById('cloth_gender').value,
 			cloth_price: document.getElementById('cloth_price').value,
-			cloth_size: document.getElementById('cloth_size').value,
+			cloth_size: cloth_size,
 			cloth_category: document.getElementById('cloth_category').value,
 			discount_rate: document.getElementById('discount_rate').value,
 			cloth_brand: document.getElementById('cloth_brand').value,
@@ -106,4 +111,18 @@ function del(delBtn) {
 		.join('&');
 
 	xhr.send(queryString);
+}
+//수량 증가 버튼 클릭
+function plus (){
+	let quantity = document.getElementById('quantity').value;
+	document.getElementById('quantity').value = Number(quantity) + 1;
+}
+//수량 감소 버튼 클릭
+function minus (){
+	let quantity = document.getElementById('quantity').value;
+	if(quantity==='1'){
+		alert('최소 구매 수량은 1개 입니다.');
+		return;
+	}
+	document.getElementById('quantity').value = Number(quantity) - 1;
 }

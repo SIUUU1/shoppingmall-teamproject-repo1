@@ -9,29 +9,37 @@ pageEncoding="UTF-8"%>
 <div id="showCloth">
         <img src="<%=request.getContextPath()%>/clothImage/${cloth.getCloth_image()}" class="contentimage">
      	<div class="cloth-content">
- 		${cloth.getCloth_brand()}<br>
-     	<b>${cloth.getCloth_name()}</b>
+ 		<span class="brand"><i class="fa-solid fa-house"></i> ${cloth.getCloth_brand()} ></span><br><br>
+     	<span class="cloth-name">${cloth.getCloth_name()}</span><br><br>
 	
     <c:set var="price" value="${cloth.getCloth_price()}"/>
     <c:set var="rate" value="${cloth.getDiscount_rate()}"/>
     <span class="ratio">${rate}% </span>
-    <fmt:formatNumber value="${price}" type="number" pattern="#,##0"/>원<br>
     <strong class="bred"><c:set var="rPrice" value="${price*((100.0-rate)/100)}"/>
     <fmt:formatNumber value="${rPrice}" type="number" pattern="#,##0"/>원</strong>
-   	<label for="cloth_size">사이즈선택 :</label>
+    <span class="origin"><fmt:formatNumber value="${price}" type="number" pattern="#,##0"/>원</span>
+    <br><br><br>
+   
     <select id="cloth_size">
+   					<option disabled hidden selected>[사이즈]를 선택하세요.</option>
                     <option value="S">S</option>
                     <option value="M">M</option>
                     <option value="L">L</option>
                     <option value="XL">XL</option>
-    </select>
+    </select><br><br><br>
         <c:if test="${!empty sessionScope.id}">
+        <!-- count -->
         <c:if test="${cloth.getCloth_count()==0}">
-        <p>일시품절
+        <p>일시품절</p>
         </c:if>
         <c:if test="${cloth.getCloth_count()>=1}">
-        수량 : <input type="text" size="5" id="quantity" value="1"> 개
+        <table>
+        <tr><td onclick="minus()"> - </td>
+        <td><input type="text" size="5" id="quantity" value="1"></td>
+        <td onclick="plus()"> + </td></tr>
+        </table><br><br>
         </c:if>
+        
         <input type="hidden" id="cloth_id" value="${cloth_id}">
         <input type="hidden" id="cloth_image" value="${cloth.getCloth_image()}">
         <input type="hidden" id="cloth_name" value="${cloth.getCloth_name()}">
@@ -41,45 +49,49 @@ pageEncoding="UTF-8"%>
         <input type="hidden" id="discount_rate" value="${cloth.getDiscount_rate()}">
         <input type="hidden" id="cloth_brand" value="${cloth.getCloth_brand()}">
         <input type="hidden" id="member_id" value="${sessionScope.id}">
-        <button id="insertCart">장바구니에 담기</button>
+        <button id="insertCart">장바구니 담기</button>
         </c:if>
         <c:if test="${empty sessionScope.id}">
-        <c:if test="${cloth.getCloth_count()==0}"><p>일시품절</c:if>
-        <p>제품을 구매하시려면 로그인 하세요.
+        <c:if test="${cloth.getCloth_count()==0}"><p class="nStock">일시품절</p></c:if>
+   		<br><br>
+        <p>제품을 구매하시려면 로그인 하세요.</p>
         </c:if>
-		${cloth.getCloth_content()}
+        <!--cloth content  -->
+		<%-- ${cloth.getCloth_content()} --%>
 </div>
 </div>
 <!-- qna -->
 <div id="showQna">
 <p class="b">상품 QnA
 <c:if test="${!empty sessionScope.id}">
+ <div id="rightButton">
  <button id="writeQna">상품 QnA 쓰기</button>
+ </div>
 </c:if>
 <c:if test="${empty sessionScope.id}">
  <p>상품 QnA 를 쓰실려면 로그인 하세요.</p>
 </c:if>
 </p>
 <c:if test="${count == 0}">
- <ul>
- <li>등록된 상품 QnA 가 없습니다.
- </ul>
+<div class="qna-content">
+ 등록된 상품 QnA 가 없습니다.
+</div>
 </c:if>
 <c:if test="${count > 0}">
+
  <c:forEach var="qna" items="${qnaLists}">
- <ul>
- <li>
+<div class="qna-contentList">
  <c:set var="writer" value="${qna.getQna_writer()}"/>
  ${fn:substring(writer, 0, 4)}****
- <small class="date">(${qna.getReg_date()})</small>
- <li>${qna.getQna_content()}
- <li>
+ <small class="date">(${qna.getReg_date()})</small><br>
+ ${qna.getQna_content()}
  <c:if test="${sessionScope.id==writer}">
  <button id="edit" name="${qna.getQna_id()},${cloth_category}" onclick="edit(this)">수정</button>
  <button id="delete" name="${qna.getQna_id()},${cloth_id},${cloth_category},${qna.getGroup_id()},${qna.getQora()}" onclick="del(this)">삭제</button>
  </c:if>
- </ul>
+ </div>
  </c:forEach>
+ 
 </c:if>
 </div>
 

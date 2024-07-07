@@ -4,21 +4,15 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-<script src="/ClothsMall/buy/buyList.js"></script>
 
 <c:if test="${empty sessionScope.id}">
 	<script>alert('로그인이 필요한 페이지입니다.');</script>
   	<meta http-equiv="Refresh" content="0;url=/ClothsMall/loginForm.do?member_id=${sessionScope.id}">
 </c:if>
 
-<div id="goShop">
-	<button id="conShopping">쇼핑계속</button>
-	<button id="shopMain">메인으로</button>
-</div>
+<div id="buyList">
 <c:if test="${count == 0}">
-	<ul>
-		<li>구매 목록이 없습니다.</li>
-	</ul>
+<p id="emptyList">구매 목록이 없습니다.</p>
 </c:if>
 
 <c:if test="${count > 0}">
@@ -33,7 +27,7 @@
 			<c:set var="nowId" value="${buyLists.get(i+1).receipt_id}" />
 		</c:if>
 		<hr>
-		<P>주문 상품</p>
+		<p>주문 상품</p>
 		<div class="buyList">
 			<table class="buylist">
 				<tr>
@@ -117,5 +111,5 @@
 		</c:if>
 	</c:forEach>
 </c:if>
-<br>
-<br>
+<br><br>
+</div>
