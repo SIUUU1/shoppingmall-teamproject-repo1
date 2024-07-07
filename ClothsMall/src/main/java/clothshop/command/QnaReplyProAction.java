@@ -18,6 +18,7 @@ public class QnaReplyProAction implements CommandAction {
         //상품Qna 답변글 관련내용
         int qna_id =  Integer.parseInt(request.getParameter("qna_id"));
         int cloth_id =  Integer.parseInt(request.getParameter("cloth_id"));
+        int group_id =  Integer.parseInt(request.getParameter("group_id"));
         String qna_writer =  request.getParameter("qna_writer");
 		String cloth_name =  request.getParameter("cloth_name");
 		String qna_content = ">>[답변]: "+request.getParameter("qna_content");
@@ -31,7 +32,7 @@ public class QnaReplyProAction implements CommandAction {
 		qna.setCloth_name(cloth_name);
 		qna.setQna_content(qna_content);
         qna.setQna_writer(qna_writer);
-        qna.setGroup_id(qna_id);
+        qna.setGroup_id(group_id);
         qna.setReply(reply);
         qna.setReg_date(new Timestamp(System.currentTimeMillis()));
 		qna.setQora(qora);

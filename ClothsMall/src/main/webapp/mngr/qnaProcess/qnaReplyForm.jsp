@@ -11,6 +11,7 @@
 <input type="hidden" id="qna_writer" value="manager">
 <input type="hidden" id="qna_id" value="${qna_id}">
 <input type="hidden" id="cloth_id" value="${cloth_id}">
+<input type="hidden" id="group_id" value="${group_id}">
 <input type="hidden" id="cloth_name" value="${cloth_name}">
 <input type="hidden" id="qora" value="${qora}">
 

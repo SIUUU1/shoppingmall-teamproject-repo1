@@ -20,12 +20,15 @@ public class QnaReplyFormAction implements CommandAction {
 		
 		//QnA답변에 필요한 정보를 얻어냄
 		int cloth_id = qna.getCloth_id();
+		int group_id = qna.getGroup_id();
+		System.out.println("group_id:"+group_id);
 		String cloth_name = qna.getCloth_name();
 		String qna_content = qna.getQna_content();
 		byte qora = 2;//답변글
 		
 		request.setAttribute("qna_id", qna_id);
 		request.setAttribute("cloth_id", cloth_id);
+		request.setAttribute("group_id", group_id);
 		request.setAttribute("cloth_name", cloth_name);
 		request.setAttribute("qna_content", qna_content);
 		request.setAttribute("qora", qora);
