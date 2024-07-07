@@ -55,11 +55,11 @@ document.addEventListener('DOMContentLoaded', function() {
 		};
 		xhr.send(formData);
 	});
-	// [관리자 메인으로] 버튼 클릭
+/*	// [관리자 메인으로] 버튼 클릭
 	let clothMainButton = document.getElementById('clothMain');
 	clothMainButton.addEventListener('click', function() {
 		window.location.href = "/ClothsMall/mg/managerMain.do";
-	});
+	});*/
 	// [목록으로] 버튼 클릭
 	let clothListButton = document.getElementById('clothList');
 	clothListButton.addEventListener('click', function() {

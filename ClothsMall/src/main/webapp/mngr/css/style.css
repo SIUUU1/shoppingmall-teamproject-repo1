@@ -7,131 +7,101 @@ body {
 
 button {
 	cursor: pointer;
-	background-color: #eeeeee;
-	border-radius: 10px;
-	border: none;
+}
+
+td {
 	padding: 5px;
+	border-bottom: 1px dotted grey;
+}
+/* 1. type = 0 : mLoginForm */
+header {
+	padding: 50px;
+	background-color: grey;
+}
+
+header h1 {
+	margin: 0 auto;
+	text-align: center;
 }
 
 #status {
-	margin: 50px auto;
-	width: 600px;
+	background-color:lightgrey;
 	display: flex;
-	flex-direction: column;
-	gap: 10px;
-	align-items: center;
+	justify-content: flex-end;
+	vertical-align: center;
+	padding: 10px 30px;
 }
 
-#status input {
-	width: 300px;
+#loginForm {
 	height: 30px;
-	outline: none;
-	border: none;
-	border-bottom: 1px dotted black;
-	font-size: 16px
-}
-
-#status button {
-	width: 100px;
-}
-
-#status span {
-	color: lightgreen;
-	font-weight: 900;
-}
-
-#status p {
-	text-align: center;
-}
-
-#listHeader {
-	width: 600px;
-	margin: 0 auto;
+	align-items: baseline;
 	display: flex;
-	justify-content: space-between;
 }
 
-#memlistHeader {
-	width: 1000px;
-	margin: 10px auto;
-	text-align: right;
+#loginForm>input {
+	font-size: 1em;
+	margin-right: 5px;
 }
 
-#memlistFooter {
-	width: 1000px;
-	margin: 20px auto;
+#loginForm>div {
+	font-size: 1em;
+	padding-right: 5px;
+}
+
+#loginForm>button {
+	border: 1px solid white;
+	border-radius: 5px;
+	font-size: 1em;
+	background-color: lightgreen;
+	font-size: 1em;
+}
+
+/* 2. managerMain.jsp */
+#mList {
+	font-size: 1.5em;
+	margin: 0 auto;
+	margin-top: 10px;
 	text-align: center;
 }
 
-#listHeader p {
-	margin: 0 auto;
-	margin-bottom: 20px;
+#mList>button {
+	background-color: lightgrey;
+	border: none;
+	border-radius: 20px;
+	margin: 10px;
+	padding: 10px;
+	font-size: 0.8em;
+	border: none;
 }
 
+#mList>button:hover {
+	background-color: lightgreen;
+}
+
+/* 3.상품 등록 : clothRegisterForm.jsp */
 #upForm1 {
 	width: 600px;
 	margin: 0 auto;
 }
 
-#memberList {
-	width: 1000px;
-	margin: 0 auto;
-}
-
-#mList {
-	width: 600px;
-	margin: 30px auto;
-	display: flex;
-	justify-content: space-between;
-	text-align: center;
-}
-
-#mList p {
-	margin: 0 auto;
-}
-
-#mList span {
-	color: lightgreen;
-	font-weight: 900;
-}
-
-#cloths table {
-	border: 1px solid #eeeeee;
-	border-collapse: collapse;
+#listHeader {
 	margin: 10px auto;
 	text-align: center;
 }
 
-#cloths tr, td {
-	border: 1px solid #eeeeee;
+#listHeader button {
+	font-size: 1em;
+	width: 600px;
+	border: 1px solid grey;
+	border-radius: 10px;
 	padding: 10px 0;
 }
 
-#updateCloth, #registCloth {
-	cursor: pointer;
-	background-color: #eeeeee;
-	border-radius: 10px;
-	border: none;
-	padding: 5px;
-}
-
-#updateBDiv, #registBDiv {
-	text-align: center;
-}
-
-#cloth_image::file-selector-button {
-	border: none;
-	cursor: pointer;
-	background-color: #eeeeee;
-	border-radius: 10px;
-	border: none;
-	padding: 5px;
-	outline: none;
-}
-
-#clothUpdateForm table {
-	width: 600px;
-	margin: 10px 0;
+#clothRegistForm {
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 #clothRegistForm table {
@@ -139,47 +109,133 @@ button {
 	margin: 10px 0;
 }
 
-#clothUpdateForm tr, td {
-	padding: 5px 3px;
+#clothRegistForm td select {
+	width: 100px;
+	font-size: 1em;
+	border-radius: 10px;
 }
 
-#clothRegistForm tr, td {
-	padding: 5px 3px;
+#clothRegistForm td input {
+	font-size: 1em;
 }
-/* qna */
-#qnaHeader, #writeForm, #editForm {
-	width: 600px;
+
+#clothRegistForm #registCloth {
+	font-size: 1em;
+	padding: 5px 10px;
+	border: 1px solid grey;
+	border-radius: 10px;
+}
+
+/* 4. 옷 목록 : clothList.jsp*/
+#cloths {
+	margin: 20px auto;
+	display: flex;
+	justify-content: center;
+}
+
+#cloths td {
+	text-align: center;
+}
+/* 5. 옷 수정 :  */
+#clothUpdateForm {
 	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#clothUpdateForm table {
+	width: 600px;
+	margin: 10px 0;
+}
+
+#clothUpdateForm td select {
+	width: 100px;
+	font-size: 1em;
+	border-radius: 10px;
+}
+
+#clothUpdateForm td input {
+	font-size: 1em;
+}
+
+#clothUpdateForm #updateCloth {
+	font-size: 1em;
+	padding: 5px 10px;
+	border: 1px solid grey;
+	border-radius: 10px;
+}
+/* 6. 멤버리스트 : memberList.jsp*/
+#memberList {
+	margin: 20px auto;
+	display: flex;
+	justify-content: center;
+}
+
+#memberList td {
+	padding: 5px;
+	text-align: center;
+}
+
+#memlistFooter {
+	margin-top: 20px;
 	text-align: right;
 }
 
+#memlistFooter button {
+	font-size: 1em;
+	padding: 5px 10px;
+	border: 1px solid grey;
+	border-radius: 10px;
+}
+/* 7. QnA : qnaReplyUpdsteForm.jsp */
 #qnaList {
-	width: 600px;
-	margin: 30px auto;
-	border-top: 1px solid rgb(172, 170, 170);
-}
-
-#writeForm table {
-	width: 100%;
-}
-
-#replyBDiv, #editBDiv {
-	width: 600px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	margin-top: 20px;
-}
-
-#editForm table {
-	width: 100%;
-}
-
-#memberList form {
-	width: 100%;
-}
-
-#memberList table {
-	width: 100%;
+	margin: 0 auto;
 	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#editForm {
+	padding-top: 20px;
+	margin: 0 auto;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#editBDiv {
+	padding-top: 30px;
+}
+
+#editBDiv button {
+	font-size: 1em;
+	padding: 5px 10px;
+	border: 1px solid grey;
+	border-radius: 10px;
+}
+
+#writeForm {
+	padding-top: 20px;
+	margin: 0 auto;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#replyBDiv {
+	padding-top: 30px;
+}
+
+#replyBDiv button {
+	font-size: 1em;
+	padding: 5px 10px;
+	border: 1px solid grey;
+	border-radius: 10px;
 }

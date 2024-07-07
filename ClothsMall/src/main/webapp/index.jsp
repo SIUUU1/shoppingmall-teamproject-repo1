@@ -1,14 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-<link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css" />
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/css/style.css" />
 <div id="header">
 	<div id="auth" class="box">
 		<c:if test="${type == 0}">
-			<jsp:include page="mngr/logon/mLoginForm.jsp" />
-		</c:if>
+				<jsp:include page="mngr/logon/mLoginForm.jsp" /></c:if>
 		<c:if test="${type == 1}">
-		    <jsp:include page="member/loginForm.jsp" />
+			<jsp:include page="member/loginForm.jsp" />
 		</c:if>
 	</div>
 </div>

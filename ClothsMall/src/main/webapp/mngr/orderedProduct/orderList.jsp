@@ -11,9 +11,9 @@
 </c:if>
 <form name="orderForm" method="post" action="/ClothsMall/mg/orderStateUpdatePro.do">
 <div id="listHeader">
-	<p>
+	<!-- <p> -->
 		주문 목록(전체 주문:${count})
-		<button type="button" id="clothMain">관리자 메인으로</button>
+		<!-- <button type="button" id="clothMain">관리자 메인으로</button> -->
 		<button id="updateStatus">배송 상태 수정</button>
 </div>
 <c:if test="${count == 0}">
@@ -33,7 +33,7 @@
 		<c:if test="${i+1 <= buyLists.size()-1 }">
 			<c:set var="nowId" value="${buyLists.get(i+1).receipt_id}" />
 		</c:if>
-		<hr>
+		<!-- <hr> -->
 		<P>주문 상품</p>
 		<div class="buyList">
 			<table class="buyList">
