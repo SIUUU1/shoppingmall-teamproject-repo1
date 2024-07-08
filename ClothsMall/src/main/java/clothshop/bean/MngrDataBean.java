@@ -7,7 +7,6 @@ public class MngrDataBean {
 	private String cloth_category; // 옷 종류
 	private String cloth_gender; // 옷 성별
 	private String cloth_name; // 옷 이름
-	private String cloth_size; // 옷 사이즈
 	private int cloth_price; // 옷 가격
 	private int cloth_count; // 옷 재고 수량
 	private String cloth_brand; // 판매 브랜드
@@ -46,14 +45,6 @@ public class MngrDataBean {
 
 	public void setCloth_name(String cloth_name) {
 		this.cloth_name = cloth_name;
-	}
-
-	public String getCloth_size() {
-		return cloth_size;
-	}
-
-	public void setCloth_size(String cloth_size) {
-		this.cloth_size = cloth_size;
 	}
 
 	public int getCloth_price() {

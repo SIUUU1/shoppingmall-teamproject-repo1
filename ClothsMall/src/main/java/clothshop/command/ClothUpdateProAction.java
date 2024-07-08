@@ -47,7 +47,6 @@ public class ClothUpdateProAction implements CommandAction {
 		String cloth_category = imageUp.getParameter("cloth_category");
 		String cloth_gender = imageUp.getParameter("cloth_gender");
 		String cloth_name = imageUp.getParameter("cloth_name");
-		String cloth_size = imageUp.getParameter("cloth_size");
 		String cloth_price = imageUp.getParameter("cloth_price");
 		String cloth_count = imageUp.getParameter("cloth_count");
 		String cloth_brand = imageUp.getParameter("cloth_brand");
@@ -57,7 +56,6 @@ public class ClothUpdateProAction implements CommandAction {
 		cloth.setCloth_category(cloth_category);
 		cloth.setCloth_gender(cloth_gender);
 		cloth.setCloth_name(cloth_name);
-		cloth.setCloth_size(cloth_size);
 		cloth.setCloth_price(Integer.parseInt(cloth_price));
 		cloth.setCloth_count(Integer.parseInt(cloth_count));
 		cloth.setCloth_brand(cloth_brand);

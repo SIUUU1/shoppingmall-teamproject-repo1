@@ -41,17 +41,6 @@
 			</td>
 			</tr>
 			<tr>
-			<td><label for="cloth_size">사이즈선택</label> </td>
-			<td>
-			<select id="cloth_size" name="cloth_size">
-					<option value="S" <c:if test="${cloth_size == 'S'}">selected</c:if>>S</option>
-					<option value="M" <c:if test="${cloth_size == 'M'}">selected</c:if>>M</option>
-					<option value="L" <c:if test="${cloth_size == 'L'}">selected</c:if>>L</option>
-					<option value="XL" <c:if test="${cloth_size == 'XL'}">selected</c:if>>XL</option>
-			</select>
-			</td>
-			</tr>
-			<tr>
 			<td><label for="cloth_name">옷이름</label> </td>
 			<td><input id="cloth_name" name="cloth_name" type="text" size="50" placeholder="옷이름"	maxlength="50" 
 			value="${cloth.cloth_name}"></td>
