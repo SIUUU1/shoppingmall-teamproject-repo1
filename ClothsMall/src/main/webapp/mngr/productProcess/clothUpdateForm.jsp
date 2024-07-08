@@ -75,7 +75,7 @@
 			</tr>
 		</table>
 		<div id="updateBDiv">
-			<input type="submit" id="updateCloth" value="옷수정">
+			<input type="button" id="updateCloth" value="옷수정">
 		</div>
 	</div>
 </form>
