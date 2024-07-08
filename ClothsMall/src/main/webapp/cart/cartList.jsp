@@ -29,47 +29,39 @@
 					<div class="cartItem">
 						<div class="clothBrand">
 						<b>${cart.getCloth_brand()}</b>
-							<i class="fa-solid fa-x" id="deleteList" name="${cart.getCart_id()}" onclick="delList(this)"></i>
+							<button id="deleteList" name="${cart.getCart_id()}" onclick="delList(this)"><i class="fa-solid fa-x"></i></button>
 						</div>
 						<div class="cartItem-content">
-							<img src="<%=request.getContextPath()%>/clothImage/${cart.getCloth_image()}" class="cartimage">
+							<img src="${pageContext.request.contextPath}/clothImage/${cart.getCloth_image()}" class="cartimage">
 							<div class="cartItem-content-info">
-								${cart.getCloth_name()}<br> ${cart.getCloth_size()}
+								<span class="clothName">${cart.getCloth_name()}</span><br> <br>
+								사이즈: ${cart.getCloth_size()}<br><br>
 								<c:set var="price" value="${cart.getCloth_price()}" />
 								<c:set var="rate" value="${cart.getDiscount_rate()}" />
 								<fmt:parseNumber var="rPrice" value="${price*(100.0-rate)/100}" />
 								<c:choose>
-									<c:when test="${rate>0}">정가&nbsp;
-											<fmt:formatNumber value="${price}" type="number" pattern="#,##0" />원
-										
-										<br>
-										<span style="color: red">${rate}%</span>
-										<br>
-										<b>판매가&nbsp;<fmt:formatNumber value="${rPrice}"
-												type="number" pattern="#,##0" />원
-										</b>
+									<c:when test="${rate>0}">
+									<span style="color: red">${rate}%</span>
+									<b><fmt:formatNumber value="${rPrice}" type="number" pattern="#,##0" />원</b>
+									<span class="origin"><fmt:formatNumber value="${price}" type="number" pattern="#,##0" />원</span>
 									</c:when>
 									<c:otherwise>
-									<fmt:formatNumber value="${price}" type="number" pattern="#,##0" />원<br>
-										<b><fmt:formatNumber value="${rPrice}" type="number" pattern="#,##0" />원</b>
+									<b><fmt:formatNumber value="${price}" type="number" pattern="#,##0" />원</b>
 									</c:otherwise>
 								</c:choose>
 								<!-- count 수정 -->
-								<form action="<%=request.getContextPath()%>/cartUpdatePro.do">
-									<input type="hidden" name="cart_id"
-										value="${cart.getCart_id()}"> <input type="hidden"
-										name="cart_id" value="${cart.getCart_id()}"> <i
-										class="fa-regular fa-square-minus" onclick="minus()"></i> <input
-										type="text" name="quantity" size="5"
-										value="${cart.getQuantity()}"> <i
-										class="fa-regular fa-square-plus" onclick="plus()"></i>
-									<button type="submit">수정</button>
-								</form>
+								<input type="hidden" id="cart_id" value="${cart.getCart_id()}"> 
+								<input type="hidden" id="member_id" value="${sessionScope.id}"> 
+								<br><br>
+								<table>
+						        <tr><td onclick="minus()"> - </td>
+						        <td><input type="text" id="quantity" size="5" value="${cart.getQuantity()}"></td>
+						        <td onclick="plus()"> + </td></tr>
+						        </table>
+						        
 								<c:set var="amount" value="${cart.getQuantity()*rPrice}" />
 								<c:set var="total" value="${total+amount}" />
-								
 							</div>
-							
 						</div>
 					<div class="amountT">
 						상품&nbsp;<fmt:formatNumber value="${amount}" type="number" pattern="#,##0" />원
@@ -77,7 +69,7 @@
 					</div>
 			</c:forEach>
 				<div id="cartInteract">
-					<button name="${sessionScope.id}">총 &nbsp;<fmt:formatNumber value="${total}" type="number" pattern="#,##0" />원 구매하기</button>
+					<button name="${sessionScope.id}" onclick="cartBuy(this)">총 &nbsp;<fmt:formatNumber value="${total}" type="number" pattern="#,##0" />원 구매하기</button>
 				</div>
 			</c:if>
 		</div>

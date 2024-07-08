@@ -12,7 +12,8 @@
 	<meta http-equiv="Refresh" content="0;url=/ClothsMall/index.do">
 </c:if>
 
-<div>
+<div id=buyForm>
+<h3 id="title">결제창</h3>
 	<form name="buyForm" method="post" action="/ClothsMall/buyPro.do">
 		<div id="cartArea">
 			<table class="buylist">
@@ -30,22 +31,20 @@
 					<fmt:parseNumber var="rPrice" value="${price*(100.0-rate)/100}" />
 
 					<tr>
-						<td><img
-							src="/ClothsMall/clothImage/${cart.getCloth_image()}"
-							class="cartimage" width="80px" height="120px"></td>
+						<td><img src="/ClothsMall/clothImage/${cart.getCloth_image()}" class="cartimage" width="80px" height="120px"></td>
 						<td width="300">${cart.getCloth_name()}</td>
-						<td width="100" class="cen"><fmt:formatNumber
-								value="${rPrice}" type="number" pattern="#,##0" />원</td>
+						<td width="100" class="cen">
+						<fmt:formatNumber value="${rPrice}" type="number" pattern="#,##0" />원</td>
 						<td width="50" class="cen">${cart.getQuantity()}</td>
-						<td width="100" class="cen"><c:set var="amount"
-								value="${cart.getQuantity()*rPrice}" /> <c:set var="total"
-								value="${total+amount}" /> <fmt:formatNumber value="${amount}"
-								type="number" pattern="#,##0" />원</td>
+						<td width="100" class="cen">
+						<c:set var="amount" value="${cart.getQuantity()*rPrice}" /> 
+						<c:set var="total" value="${total+amount}" /> 
+						<fmt:formatNumber value="${amount}" type="number" pattern="#,##0" />원</td>
 					</tr>
 				</c:forEach>
 				<tr>
-					<td colspan="5" align="right" class="b">총 금액 : <fmt:formatNumber
-							value="${total}" type="number" pattern="#,##0" />원
+					<td colspan="5" align="right">총 금액 : 
+					<fmt:formatNumber value="${total}" type="number" pattern="#,##0" />원
 					</td>
 				</tr>
 			</table>
@@ -120,8 +119,7 @@
 					<th>사용할 마일리지</th>
 					<td>
 						<div class="mileage">
-							<input type="number" name="useMileage" id="useMileage"
-								onchange="useMileageCheck()" value="0"> 
+							<input type="number" name="useMileage" id="useMileage" onchange="useMileageCheck()" value="0"> 
 								<span class="info" id="mileageInfo" style="color: red;"></span>
 						</div>
 					</td>
@@ -179,20 +177,15 @@
 				<button onclick="allCheck(event)">결제 하기</button>
 			</div>
 
-			<input type="hidden" id="member_name_h"
-				value="${member.getMember_name()}"> <input type="hidden"
-				id="member_tel_h" value="${member.getMember_tel()}"> <input
-				type="hidden" id="member_postal_code_h"
-				value="${member.getMember_postal_code()}"> <input
-				type="hidden" id="member_address_h"
-				value="${member.getMember_address()}"> <input type="hidden"
-				id="member_detailed_address_h"
-				value="${member.getMember_detailed_address()}"> <input
-				type="hidden" id="point_h" value="${member.getPoint()}"> <input
-				type="hidden" id="mileage_h" value="${member.getMileage()}">
+			<input type="hidden" id="member_name_h" value="${member.getMember_name()}"> 
+			<input type="hidden" id="member_tel_h" value="${member.getMember_tel()}"> 
+			<input type="hidden" id="member_postal_code_h" value="${member.getMember_postal_code()}"> 
+			<input type="hidden" id="member_address_h" value="${member.getMember_address()}"> 
+			<input type="hidden" id="member_detailed_address_h" value="${member.getMember_detailed_address()}"> 
+			<input type="hidden" id="point_h" value="${member.getPoint()}"> 
+			<input type="hidden" id="mileage_h" value="${member.getMileage()}">
 			<input type="hidden" id="gradeDiscount_h" value="${discount}">
-			<input type="hidden" id="total_h"
-				value="${Math.floor(total-total*discount)}">
+			<input type="hidden" id="total_h" value="${Math.floor(total-total*discount)}">
 			</div>
 			
 	</form>

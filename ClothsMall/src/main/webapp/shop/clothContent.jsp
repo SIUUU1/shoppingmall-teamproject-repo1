@@ -4,10 +4,10 @@ pageEncoding="UTF-8"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<script src="<%=request.getContextPath()%>/shop/clothContent.js"></script>
+<script src="${pageContext.request.contextPath}/shop/clothContent.js"></script>
 
 <div id="showCloth">
-        <img src="<%=request.getContextPath()%>/clothImage/${cloth.getCloth_image()}" class="contentimage">
+        <img src="${pageContext.request.contextPath}/clothImage/${cloth.getCloth_image()}" class="contentimage">
      	<div class="cloth-content">
  		<span class="brand"><i class="fa-solid fa-house"></i> ${cloth.getCloth_brand()} ></span><br><br>
      	<span class="cloth-name">${cloth.getCloth_name()}</span><br><br>
