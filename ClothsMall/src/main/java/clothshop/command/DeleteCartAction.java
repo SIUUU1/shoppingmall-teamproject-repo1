@@ -10,21 +10,14 @@ public class DeleteCartAction implements CommandAction {
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		request.setCharacterEncoding("utf-8");
-		String list = request.getParameter("list");
 		String msg = "";
+		String member_id = request.getParameter("member_id");
 		CartDBBean clothProcess = CartDBBean.getInstance();
 
-		// all 장바구니 비우기
-		if (list.equals("all")) {
-			String member_id = request.getParameter("member_id");
-			clothProcess.deleteAll(member_id);
-			msg = "장바구니가 모두 비워졌습니다.";
-			
-		// cart 삭제
-		} else {
-			clothProcess.deleteList(Integer.parseInt(list));
-			msg = "선택하신 상품 장바구니가 삭제되었습니다.";
-		}
+		// 장바구니 비우기
+		clothProcess.deleteAll(member_id);
+		msg = "장바구니가 모두 비워졌습니다.";
+
 		request.setAttribute("msg", msg);
 		request.setAttribute("type", Integer.valueOf(1));
 		return "/cart/deleteCart.jsp";
