@@ -1,13 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
 	// 0. 버튼
-	let mainBtn = document.getElementById('mainBtn');
-	let eraseBtn = document.getElementById('eraseBtn');
-	// 1 메인
-	mainBtn.addEventListener('click', () => {
-		window.location.href = "/ClothsMall/index.do";
-	});
-	// 2. 지우기
-	eraseBtn.addEventListener('click', () => {
+	let erase = document.getElementById('erase');
+	// 1. 지우기
+	erase.addEventListener('click', () => {
 		let searchInput = document.getElementById('searchInput');
 		searchInput.value = '';
 	})
