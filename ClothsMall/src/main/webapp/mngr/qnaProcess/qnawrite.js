@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			qna_writer: document.getElementById('qna_writer').value,
 			cloth_name: document.getElementById('cloth_name').value,
 			cloth_id: document.getElementById('cloth_id').value,
+			group_id: document.getElementById('group_id').value,
 			qna_id: document.getElementById('cloth_id').value,
 			qora: document.getElementById('qora').value
 		};

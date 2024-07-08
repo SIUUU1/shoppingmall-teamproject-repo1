@@ -11,7 +11,7 @@
 </c:if>
 
 <div id="listheader">
-	<button id="clothMain">관리자 메인으로</button>
+	<!-- <button id="clothMain">관리자 메인으로</button> -->
 	<button id="clothList">목록으로</button>
 </div>
 <form id="upForm1" action="<%=request.getContextPath()%>/mg/clothUpdatePro.do" method="post" enctype="multipart/form-data">
@@ -77,7 +77,7 @@
 			</tr>
 			<tr>
 			<td><label for="cloth_content">내용</label></td>
-			<td><textarea id="cloth_content" name="cloth_content" rows="13" cols="50">${cloth.cloth_content}</textarea></td>
+			<td><textarea id="cloth_content" name="cloth_content" rows="13" cols="60">${cloth.cloth_content}</textarea></td>
 			</tr>
 			<tr>
 			<td><label for="discount_rate">할인율</label> </td>
