@@ -45,7 +45,7 @@
 	<!--middle-->
 	<div id="mypageBox">
 	<div>
-	 <a href="${pageContext.request.contextPath}/modify.do?member_id=${sessionScope.id}"><i class="fa-solid fa-user"></i><br><span>내정보수정/로그아웃</span></a>
+	 <a href="${pageContext.request.contextPath}/modify.do?member_id=${sessionScope.id}"><i class="fa-solid fa-user"></i><br><span>내 정보수정</span></a>
 	</div>
 	<div>
 	 <a href="${pageContext.request.contextPath}/cartList.do?member_id=${sessionScope.id}"><i class="fa-solid fa-cart-shopping"></i><br><span>장바구니</span></a>

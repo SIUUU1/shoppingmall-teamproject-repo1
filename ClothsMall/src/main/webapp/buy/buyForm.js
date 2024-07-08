@@ -12,7 +12,10 @@ function useMileageCheck() {
 	let useMileageInput = parseInt(document.getElementById("useMileage").value);
 	let mileageInfo = document.getElementById("mileageInfo");
 	let ms = "";
-
+	if(isNaN(useMileageInput)){
+		ms ='숫자를 입력하세요.';
+		document.getElementById("useMileage").value = 0;
+	}
 	if (useMileageInput > mileage) {
 		ms = "사용할 마일리지가 보유 마일리지보다 많습니다.";
 		document.getElementById("useMileage").value = mileage;

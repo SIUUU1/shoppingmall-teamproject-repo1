@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -56,7 +57,7 @@
 			<a href="${pageContext.request.contextPath}/loginForm.do?member_id=${sessionScope.id}"><li>MY INFO</li></a>
 			
 			<c:if test="${!empty sessionScope.id}">
-			<a href="${pageContext.request.contextPath}/logout.do"><li>LOGOUT</li></a>
+			<a href="#" onclick="uLogout(event)"><li>LOGOUT</li></a>
 			</c:if>
 			
 			</ul>

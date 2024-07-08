@@ -61,18 +61,3 @@ document.addEventListener('DOMContentLoaded', function() {
 		 "&member_passwd="+encodeURIComponent(query.passwd));
 	});
 });
-	
-
-// [로그아웃] 버튼 클릭
-function uLogout(){
-		alert("로그아웃");
-		fetch('/ClothsMall/logout.do', {
-			method: 'POST'
-		}).then(function(response) {
-			return response.text();
-		}).then(function(data) {
-			window.location.href = '/ClothsMall/index.do';
-		}).catch(function(error) {
-			console.error('Error:', error);
-		});
-}

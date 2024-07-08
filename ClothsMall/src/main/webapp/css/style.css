@@ -731,10 +731,12 @@ button, input[type="button"], input[type="submit"] {
 table.buy, table.buylist {
 	width: 80%;
 	margin: 0 auto;
-	border: 1px solid black;
+	border: 1px solid rgb(218, 217, 217);
 	border-collapse: collapse;
+	border-radius: 8px;
 	padding: 5px;
 	text-align: center;
+	padding: 5px;
 }
 
 table.buy, .button {
@@ -742,8 +744,7 @@ table.buy, .button {
 }
 
 table.buy td, table.buy th, table.buylist td, table.buylist th {
-	border: 1px solid black;
-	border-collapse: collapse;
+	border: 1px solid rgb(218, 217, 217);
 }
 
 table.buy td {
@@ -754,11 +755,17 @@ table.buy td {
 	font-size: 28px;
 	text-align: center;
 	margin: 10px auto;
-} 
+}
+
 table.buy input {
 	width: 100%;
 	border: 0px;
 	text-align: right;
+	font-size: 20px;
+}
+
+#cartArea th {
+	padding: 15px 0;
 	font-size: 20px;
 }
 
@@ -769,4 +776,39 @@ table.buy input {
 #cartArea .button, #buyArea .button {
 	margin: 0 auto 6px auto;
 	text-align: right;
+}
+/*increasePointForm*/
+#coinForm {
+	min-height: 400px;
+}
+
+#coinForm #title {
+	margin-top: 50px;
+	font-size: 30px;
+	font-weight: 500;
+	text-align: center;
+	font-size: 30px;
+}
+
+#coinForm input, #coinForm select {
+	height: 38px;
+	text-align: center;
+	font-size: 18px;
+}
+#coinForm input:nth-child(1){
+	width: 100px;
+}
+#coinForm input:nth-child(2){
+	width: 300px;
+}
+#coinForm select {
+	width: 400px;
+}
+#increaseBtn {
+	width: 400px;
+	height: 45px;
+	background-color: #1e1e1e;
+	color: white;
+	font-size: 18px;
+	border-radius: 20px;
 }

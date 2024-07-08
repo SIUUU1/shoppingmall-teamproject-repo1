@@ -23,5 +23,4 @@
             <input id="member_passwd" name="member_passwd" type="password" size="20" maxlength="16" placeholder=" 패스워드 입력">
             <button type="submit" id="modify">정보수정</button>  
    </form>
-   <button id="uLogout" onclick="uLogout()">로그아웃</button>
 </div>

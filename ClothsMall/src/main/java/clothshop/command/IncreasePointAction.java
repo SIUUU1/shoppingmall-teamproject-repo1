@@ -18,6 +18,7 @@ public class IncreasePointAction implements CommandAction{
 			int point =dbPro2.getMember(member_id).getPoint();
 			request.setAttribute("point", Integer.valueOf(point));
 			request.setAttribute("type", Integer.valueOf(1));
+			request.setAttribute("footer", 1);
 		}
         return "/point/increasePointForm.jsp";
         

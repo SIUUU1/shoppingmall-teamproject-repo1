@@ -119,7 +119,7 @@
 					<th>사용할 마일리지</th>
 					<td>
 						<div class="mileage">
-							<input type="number" name="useMileage" id="useMileage" onchange="useMileageCheck()" value="0"> 
+							<input type="text" name="useMileage" id="useMileage" onchange="useMileageCheck()" value="0"> 
 								<span class="info" id="mileageInfo" style="color: red;"></span>
 						</div>
 					</td>

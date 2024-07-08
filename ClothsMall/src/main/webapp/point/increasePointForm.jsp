@@ -11,9 +11,10 @@
   	<meta http-equiv="Refresh" content="0;url=/ClothsMall/loginForm.do?member_id=${sessionScope.id}">
 </c:if>
 
+<div id="coinForm">
+<h3 id="title">포인트 충전</h3>
 <form name="buyForm" method="post" action="/ClothsMall/increasePointPro.do">
 <input type="hidden" name="member_id" value="${sessionScope.id}">
-	<p>쇼핑 포인트 충전결제</p>
 	<table>
 		<tr>
 			<th>보유 포인트</th>
@@ -32,15 +33,13 @@
 		</tr>
 		<tr>
 			<th>충전 계좌</th>
-			<td><input placeholder="은행 명" id="bank" name="bank" onchange="accountCheck()"/></td>
-			<td><input placeholder="계좌번호 (-기호 제외)" id="account" name="account" onchange="accountCheck()"/></td>
-			<td>
-				<button onclick="allCheck()">충전</button>
-			</td>
+			<td><input placeholder="은행 명" id="bank" name="bank" onchange="accountCheck()"/>
+			<input placeholder="계좌번호 (-기호 제외)" id="account" name="account" onchange="accountCheck()"/></td>
 		</tr>
 		<tr height="30px">
-			<td colspan="3"><span id="accountInfo"></span></td>
+			<td colspan="2"><span id="accountInfo"></span></td>
 		</tr>
 	</table>
+		<button id="increaseBtn" onclick="allCheck()">충전</button>
 </form>
-
+</div>
