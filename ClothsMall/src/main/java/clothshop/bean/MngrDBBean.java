@@ -1,13 +1,15 @@
 package clothshop.bean;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Timestamp;
+import java.sql.Types;
 import java.util.ArrayList;
 import java.util.List;
 
 import dbcon.DBUtil;
+import oracle.jdbc.OracleTypes;
 import work.crypt.BCrypt;
 import work.crypt.SHA256;
 
@@ -171,28 +173,20 @@ public class MngrDBBean {
 	// 검색결과 옷의 수를 얻어내는 메소드
 	public int getSearchCount(String search) throws Exception {
 		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		int x = 0;
+		CallableStatement cstmt = null;
+		int x =-1;
 		try {
 			conn = DBUtil.getConnection();
-			
-			String sql = "SELECT * FROM cloth where CLOTH_CATEGORY like ? or ";
-			sql += "CLOTH_NAME like ? or CLOTH_BRAND like ? or CLOTH_CONTENT like ?";
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, "%"+search+"%");
-			pstmt.setString(2, "%"+search+"%");
-			pstmt.setString(3, "%"+search+"%");
-			pstmt.setString(4, "%"+search+"%");
-			System.out.println(search+"search");
-			rs = pstmt.executeQuery();
-			if (rs.next())
-				x = rs.getInt(1);
+			cstmt = conn.prepareCall("{CALL SELECT_COUNT_PROC(?,?)}");
+			cstmt.setString(1, search);
+			cstmt.registerOutParameter(2, Types.INTEGER);
+			cstmt.executeUpdate();
+			x = cstmt.getInt(2);
 			System.out.println(x+"옷의 수");
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		} finally {
-			DBUtil.dbReleaseClose(rs, pstmt, conn);
+			DBUtil.dbReleaseClose(cstmt, conn);
 		}
 		return x;
 	}
@@ -307,21 +301,18 @@ public class MngrDBBean {
 	// 검색어 관련된 옷의 정보를 얻어내는 메소드
 	public List<MngrDataBean> getSearchCloth(String search) throws Exception {
 		Connection conn = null;
-		PreparedStatement pstmt = null;
+		CallableStatement cstmt = null;
 		ResultSet rs = null;
 		List<MngrDataBean> clothList = null;
 		try {
 			conn = DBUtil.getConnection();
 			
-			String sql = "SELECT * FROM cloth where CLOTH_CATEGORY like ? or ";
-			sql += "CLOTH_NAME like ? or CLOTH_BRAND like ? or CLOTH_CONTENT like ?";
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, "%"+search+"%");
-			pstmt.setString(2, "%"+search+"%");
-			pstmt.setString(3, "%"+search+"%");
-			pstmt.setString(4, "%"+search+"%");
-
-			rs = pstmt.executeQuery();
+			cstmt = conn.prepareCall("{CALL SELECT_PROC(?,?)}");
+			cstmt.setString(1, search);
+			cstmt.registerOutParameter(2, OracleTypes.CURSOR);
+			cstmt.executeQuery();
+			rs = (ResultSet) cstmt.getObject(2);
+			
 			if (rs.next()) {
 				clothList = new ArrayList<MngrDataBean>();
 				do {
@@ -344,7 +335,7 @@ public class MngrDBBean {
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		} finally {
-			DBUtil.dbReleaseClose(rs, pstmt, conn);
+			DBUtil.dbReleaseClose(rs, cstmt, conn);
 		}
 		System.out.println(clothList.isEmpty());
 		return clothList;
