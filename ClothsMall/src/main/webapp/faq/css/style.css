@@ -16,14 +16,23 @@ header {
 
 #search {
 	width: 400px;
-	height: 30px;
+	height: 20px;
 	display: flex;
 	justify-content: space-evenly;
-	padding: 20px;
+	padding: 5px 10px;
+	border: 1.5px solid black;
+	border-radius: 4px;
+	margin: 0 10px
 }
+
 
 #search input {
 	flex: 1;
+}
+
+#searchInput {
+	border: none;
+	outline: 0px;
 }
 
 section {
@@ -34,14 +43,21 @@ section {
 
 section table {
 	width: 1000px;
-	margin: 0 auto;
+	margin: 0 auto 50px auto;
 	border: 1px solid black;
+	border-collapse: collapse;
 }
 
+section th {
+	background-color: #464648;
+	color:white;
+	padding: 10px;
+}
 section td {
 	text-align: center;
 	border: none;
-	border-bottom: 1px dotted grey;
+	border-bottom: 1px solid grey;
+	padding: 5px;
 }
 
 #col td {
@@ -63,8 +79,10 @@ section button {
 
 section .faq_content {
 	display: none;
-	width: 100%;
+	width: 95%;
 	margin: 10px auto;
-	background-color: lightgrey;
+	border-top:1.8px solid #999999;
 	text-align: center;
+	padding: 8px 5px 12px 5px;
+	background-color: #fcfcfc;
 }

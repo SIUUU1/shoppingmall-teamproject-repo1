@@ -60,19 +60,18 @@ public class MngrDBBean {
 		PreparedStatement pstmt = null;
 		try {
 			conn = DBUtil.getConnection();
-			String sql = "insert into cloth values(cloth_seq.nextval,?,?,?,?,?,?,?,?,?,?,?)";
+			String sql = "insert into cloth values(cloth_seq.nextval,?,?,?,?,?,?,?,?,?,?)";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, cloth.getCloth_category());
 			pstmt.setString(2, cloth.getCloth_gender());
 			pstmt.setString(3, cloth.getCloth_name());
-			pstmt.setString(4, cloth.getCloth_size());
-			pstmt.setInt(5, cloth.getCloth_price());
-			pstmt.setInt(6, cloth.getCloth_count());
-			pstmt.setString(7, cloth.getCloth_brand());
-			pstmt.setTimestamp(8, cloth.getReg_date());
-			pstmt.setString(9, cloth.getCloth_image());
-			pstmt.setString(10, cloth.getCloth_content());
-			pstmt.setInt(11, cloth.getDiscount_rate());
+			pstmt.setInt(4, cloth.getCloth_price());
+			pstmt.setInt(5, cloth.getCloth_count());
+			pstmt.setString(6, cloth.getCloth_brand());
+			pstmt.setTimestamp(7, cloth.getReg_date());
+			pstmt.setString(8, cloth.getCloth_image());
+			pstmt.setString(9, cloth.getCloth_content());
+			pstmt.setInt(10, cloth.getDiscount_rate());
 			pstmt.executeUpdate();
 		} catch (Exception ex) {
 			ex.printStackTrace();
@@ -236,7 +235,6 @@ public class MngrDBBean {
 					cloth.setCloth_category(rs.getString("cloth_category"));
 					cloth.setCloth_gender(rs.getString("cloth_gender"));
 					cloth.setCloth_name(rs.getString("cloth_name"));
-					cloth.setCloth_size(rs.getString("cloth_size"));
 					cloth.setCloth_price(rs.getInt("cloth_price"));
 					cloth.setCloth_count(rs.getInt("cloth_count"));
 					cloth.setCloth_brand(rs.getString("cloth_brand"));
@@ -278,7 +276,6 @@ public class MngrDBBean {
 					cloth.setCloth_category(rs.getString("cloth_category"));
 					cloth.setCloth_gender(rs.getString("cloth_gender"));
 					cloth.setCloth_name(rs.getString("cloth_name"));
-					cloth.setCloth_size(rs.getString("cloth_size"));
 					cloth.setCloth_price(rs.getInt("cloth_price"));
 					cloth.setCloth_count(rs.getInt("cloth_count"));
 					cloth.setCloth_brand(rs.getString("cloth_brand"));
@@ -358,7 +355,6 @@ public class MngrDBBean {
 				cloth.setCloth_category(rs.getString("cloth_category"));
 				cloth.setCloth_gender(rs.getString("cloth_gender"));
 				cloth.setCloth_name(rs.getString("cloth_name"));
-				cloth.setCloth_size(rs.getString("cloth_size"));
 				cloth.setCloth_price(rs.getInt("cloth_price"));
 				cloth.setCloth_count(rs.getInt("cloth_count"));
 				cloth.setCloth_brand(rs.getString("cloth_brand"));
@@ -381,22 +377,21 @@ public class MngrDBBean {
 		try {
 			conn = DBUtil.getConnection();
 			String sql = "update cloth set cloth_category=?, cloth_gender=?, cloth_name=?";
-			sql += ", cloth_size=?, cloth_price=?, cloth_count=?, cloth_brand=?";
+			sql += ", cloth_price=?, cloth_count=?, cloth_brand=?";
 			sql += ", cloth_image=?, cloth_content=?, discount_rate=?, reg_date=?";
 			sql += " where cloth_id=?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, cloth.getCloth_category());
 			pstmt.setString(2, cloth.getCloth_gender());
 			pstmt.setString(3, cloth.getCloth_name());
-			pstmt.setString(4, cloth.getCloth_size());
-			pstmt.setInt(5, cloth.getCloth_price());
-			pstmt.setInt(6, cloth.getCloth_count());
-			pstmt.setString(7, cloth.getCloth_brand());
-			pstmt.setString(8, cloth.getCloth_image());
-			pstmt.setString(9, cloth.getCloth_content());
-			pstmt.setInt(10, cloth.getDiscount_rate());
-			pstmt.setTimestamp(11, cloth.getReg_date());
-			pstmt.setInt(12, cloth_id);
+			pstmt.setInt(4, cloth.getCloth_price());
+			pstmt.setInt(5, cloth.getCloth_count());
+			pstmt.setString(6, cloth.getCloth_brand());
+			pstmt.setString(7, cloth.getCloth_image());
+			pstmt.setString(8, cloth.getCloth_content());
+			pstmt.setInt(9, cloth.getDiscount_rate());
+			pstmt.setTimestamp(10, cloth.getReg_date());
+			pstmt.setInt(11, cloth_id);
 			pstmt.executeUpdate();
 		} catch (Exception ex) {
 			ex.printStackTrace();

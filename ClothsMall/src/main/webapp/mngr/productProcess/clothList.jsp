@@ -33,7 +33,6 @@
 				<th align="center" width="30">번호</th>
 				<th align="center" width="80">카테고리</th>
 				<th align="center" width="40">성별</th>
-				<th align="center" width="50">사이즈</th>
 				<th align="center" width="200">옷이름</th>
 				<th align="center" width="80">가격</th>
 				<th align="center" width="80">수량</th>
@@ -51,7 +50,6 @@
 							value="${number+1}" /> <c:out value="${number}" /></td>
 					<td width="30">${cloth.getCloth_category()}</td>
 					<td width="30">${cloth.getCloth_gender()}</td>
-					<td width="30">${cloth.getCloth_size()}</td>
 					<td width="100" align="left">${cloth.getCloth_name()}</td>
 					<td width="50" align="right">${cloth.getCloth_price()}</td>
 					<td width="50" align="right"><c:if
@@ -66,7 +64,7 @@
 					<td width="30">${cloth.getDiscount_rate()}</td>
 					<td width="50">
 						<button id="edit"
-							name="${cloth.getCloth_id()},${cloth.getCloth_category()},${cloth.getCloth_gender()},${cloth.getCloth_size()}"
+							name="${cloth.getCloth_id()},${cloth.getCloth_category()},${cloth.getCloth_gender()}"
 							onclick="edit(this)">수정</button>
 					</td>
 					<td width="50">

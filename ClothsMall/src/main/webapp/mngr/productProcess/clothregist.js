@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', function() {
 	// [옷등록] 버튼 클릭
 	// 이미지를 포함한 상품등록
 	let form = document.getElementById('upForm1');
-	form.addEventListener('submit', function(event) {
-
+	let registCloth = document.getElementById('registCloth');
+	registCloth.addEventListener('click', function() {
 		//보내기 전에 입력내용 점검
 		if (document.getElementById('cloth_name').value === '') {
 			alert('옷이름을 입력하세요.');
@@ -40,7 +40,6 @@ document.addEventListener('DOMContentLoaded', function() {
 			return;
 		}
 
-		event.preventDefault();
 		let formData = new FormData(form);
 		let xhr = new XMLHttpRequest();
 		xhr.open('POST', form.action, true);

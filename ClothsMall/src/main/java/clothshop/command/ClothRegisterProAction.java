@@ -56,7 +56,6 @@ public class ClothRegisterProAction implements CommandAction {
 		cloth.setCloth_category(cloth_category);
 		cloth.setCloth_gender(cloth_gender);
 		cloth.setCloth_name(cloth_name);
-		cloth.setCloth_size(cloth_size);
 		cloth.setCloth_price(Integer.parseInt(cloth_price));
 		cloth.setCloth_count(Integer.parseInt(cloth_count));
 		cloth.setCloth_brand(cloth_brand);

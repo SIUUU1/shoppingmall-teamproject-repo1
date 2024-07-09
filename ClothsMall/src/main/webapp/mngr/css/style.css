@@ -22,7 +22,7 @@ td {
 	border-bottom: 1.8px solid #999999;
 }
 /* 1. type = 0 : mLoginForm */
-header {
+#managerHeader {
 	padding: 50px;
 	background-color: #222224;
 }

@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
 	// [옷수정] 버튼 클릭
 	let form = document.getElementById('upForm1');
-	form.addEventListener('submit', function(event) {
+	let updateCloth = document.getElementById('updateCloth');
+	updateCloth.addEventListener('click', function() {
 		
 		//보내기 전에 입력내용 점검
 		if (document.getElementById('cloth_name').value === '') {
@@ -39,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			return;
 		}
 		
-		event.preventDefault();
+
 		let formData = new FormData(form);
 		let xhr = new XMLHttpRequest();
 		xhr.open('POST', form.action, true);

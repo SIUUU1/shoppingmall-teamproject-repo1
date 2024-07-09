@@ -40,15 +40,6 @@
 					</select></td>
 			</tr>
 			<tr>
-				<td><label for="cloth_size">사이즈선택</label></td>
-				<td><select id="cloth_size" name="cloth_size">
-						<option value="S">S</option>
-						<option value="M">M</option>
-						<option value="L">L</option>
-						<option value="XL">XL</option>
-					</select></td>
-			</tr>
-			<tr>
 				<td><label for="cloth_name">옷이름</label></td>
 				<td><input id="cloth_name" name="cloth_name" type="text"
 					size="50" placeholder="옷이름" maxlength="50"></td>
@@ -84,7 +75,7 @@
 			</tr>
 		</table>
 		<div id="registBDiv">
-			<input type="submit" id="registCloth" value="옷등록">
+			<input type="button" id="registCloth" value="옷등록">
 		</div>
 	</div>
 </form>
