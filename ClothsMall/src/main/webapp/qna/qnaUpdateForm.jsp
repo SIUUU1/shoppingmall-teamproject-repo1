@@ -11,7 +11,7 @@
 
 <input type="hidden" id="qna_id" value="${qna_id}">
 <input type="hidden" id="cloth_category" value="${cloth_category}">
-<input type="hidden" id="cloth_id" value="${qna.getCloth_id}">
+<input type="hidden" id="cloth_id" value="${qna.getCloth_id()}">
 
 <div id="editForm" class="box">
 	<table>

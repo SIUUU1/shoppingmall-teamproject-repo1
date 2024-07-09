@@ -16,7 +16,7 @@
   <a href="${pageContext.request.contextPath}/index.do"><h1 class="title">Cruella</h1></a>
   <div class="userIcon">
   <div class="search">
-   <!--검색기능 넣기-->
+   <!--search-box-->
   <form id="search_form" action="${pageContext.request.contextPath}/list.do" method="post">
   <input type="text" name="search" id="search" size="40" maxlength="40" />
 	<div id="button-search">

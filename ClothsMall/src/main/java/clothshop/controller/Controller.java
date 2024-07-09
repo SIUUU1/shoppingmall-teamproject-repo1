@@ -47,7 +47,7 @@ public class Controller extends HttpServlet {
 		//웹어플리케이션 루트 경로
 		ServletContext context = config.getServletContext();
 		//realFolder를 웹어플리케이션 시스템상의 절대경로로 변경
-		String realPath = context.getRealPath(realFolder) +"/"+props;
+		String realPath = context.getRealPath(realFolder) +"\\"+props;
 							    
 		//명령어와 처리클래스의 매핑정보를 저장할 Properties객체 생성
 		Properties pr = new Properties();

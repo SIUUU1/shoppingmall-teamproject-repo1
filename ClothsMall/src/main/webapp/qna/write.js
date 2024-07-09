@@ -31,12 +31,12 @@ document.addEventListener('DOMContentLoaded', function() {
 				let len = str1.length;
 				let check = data.substr(loc + len, 1);
 				if (check == '1') {
-					alert('QnA has been registered.');
+					alert('QnA가 성공적으로 등록하였습니다.');
 					let query = '/ClothsMall/clothContent.do?cloth_id=' + cloth_id;
 					query += '&cloth_category=' + cloth_category;
 					window.location.href = query;
 				} else {
-					alert('QnA registration failed.');
+					alert('QnA 등록 실패하였습니다.');
 				}
 			} else if (xhr.readyState !== 4) {
 				console.error('Error:', xhr.statusText);

@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
 
         let xhr = new XMLHttpRequest();
-        xhr.open('POST', '/ClothsMall/qnaReplyUpdatePro.do', true);
+        xhr.open('POST', '/ClothsMall/qnaUpdatePro.do', true);
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
         xhr.onreadystatechange = function() {
@@ -28,12 +28,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 let len = str1.length;
                 let check = data.substr(loc + len, 1);
                 if (check == '1') {
-                    alert('QnA has been updated.');
+                    alert('QnA가 성공적으로 수정하였습니다.');
                     let query = '/ClothsMall/clothContent.do?cloth_id=' + cloth_id;
                     query += '&cloth_category=' + cloth_category;
                     window.location.href = query;
                 } else {
-                    alert('QnA update failed.');
+                    alert('QnA 수정 실패하였습니다.');
                 }
             } else if (xhr.readyState !== 4) {
                 console.error('Error:', xhr.statusText);

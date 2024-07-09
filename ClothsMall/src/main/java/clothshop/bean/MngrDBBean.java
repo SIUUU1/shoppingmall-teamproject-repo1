@@ -318,7 +318,6 @@ public class MngrDBBean {
 					cloth.setCloth_category(rs.getString("cloth_category"));
 					cloth.setCloth_gender(rs.getString("cloth_gender"));
 					cloth.setCloth_name(rs.getString("cloth_name"));
-					cloth.setCloth_size(rs.getString("cloth_size"));
 					cloth.setCloth_price(rs.getInt("cloth_price"));
 					cloth.setCloth_count(rs.getInt("cloth_count"));
 					cloth.setCloth_brand(rs.getString("cloth_brand"));

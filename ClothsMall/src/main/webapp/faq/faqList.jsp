@@ -7,12 +7,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0" />
 <title>FAQ</title>
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/faq/css/style.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css"/>
 <script src="<%=request.getContextPath()%>/faq/faqList.js"></script>
 </head>
 <body>
-	<h2>FAQ</h2>
+	<h2 id="faqTitle">FAQ</h2>
 	<div id="menu">
 		<select onchange="sortFaq(this)">
 			<option value="all">전체</option>
@@ -20,12 +19,12 @@
 			<option value="200">상품</option>
 			<option value="300">배송</option>
 		</select>
-		<div id="search">
+		<div id="select">
 			<input type="text" id="searchInput" placeholder="검색어를 입력하세요..."
 				onkeyup="enterFunc();"> <i id="erase"
 				class="fa-solid fa-xmark"></i>
 		</div>
-		<button id="searchBtn" onclick="searchFunc()">검색</button>
+		<button id="selectBtn" onclick="searchFunc()">검색</button>
 	</div>
 	<section>
 		<table>

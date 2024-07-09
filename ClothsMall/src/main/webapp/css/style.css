@@ -199,6 +199,7 @@ div.top, div.userIcon {
 	flex-flow: wrap;
 	min-height: 500px;
 }
+
 .shop-display p {
 	margin: 100px auto;
 }
@@ -327,17 +328,25 @@ div.top, div.userIcon {
 	padding: 0 40px;
 }
 /* qnaForm */
-#writeForm textarea {
+#writeForm textarea, #editForm textarea {
 	border: 1px solid rgb(218, 217, 217);
 	border-radius: 8px;
 	outline: none;
 }
 
-#writeForm #writeBDiv {
+#writeForm #writeBDiv, #editForm #editBDiv {
 	margin: 20px auto;
 	text-align: center;
 }
 
+#writeForm #regist, #editForm #update {
+	width: 150px;
+	height: 45px;
+	background-color: #1e1e1e;
+	color: white;
+	font-size: 18px;
+	border-radius: 20px;
+}
 /* slide show */
 div.sildshow {
 	height: 600px;
@@ -897,4 +906,98 @@ table.buy input {
 	color: white;
 	font-size: 18px;
 	border-radius: 20px;
+}
+/* faqList */
+#faqTitle {
+	margin: 0 atuo;
+	text-align: center;
+	font-size: 35px;
+}
+
+#menu {
+	display: flex;
+	justify-content: center;
+}
+
+#menu select {
+	width: 100px;
+	height: 42px;
+	text-align: center;
+	border-radius: 4px;
+}
+
+#select {
+	width: 400px;
+	height: 30px;
+	display: flex;
+	justify-content: space-evenly;
+	padding: 5px 10px;
+	border: 1.5px solid black;
+	border-radius: 4px;
+	margin: 0 10px
+}
+
+#select input {
+	flex: 1;
+	border: none;
+	outline: 0px;
+}
+
+section {
+	margin: 0 auto;
+	margin-top: 30px;
+	text-align: center;
+}
+
+section table {
+	width: 1000px;
+	margin: 0 auto 50px auto;
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+section th {
+	background-color: #464648;
+	color: white;
+	padding: 10px;
+}
+
+section td {
+	text-align: center;
+	border: none;
+	border-bottom: 1px solid grey;
+	padding: 5px;
+}
+
+#col td {
+	background-color: lightgrey;
+	padding: 5px;
+	border-bottom: 1px solid black;
+}
+
+section button {
+	font-size: 1em;
+	width: 600px;
+	padding: 5px;
+	margin: 0;
+	background-color: inherit;
+	border: none;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+section .faq_content {
+	display: none;
+	width: 95%;
+	margin: 10px auto;
+	border-top: 1.8px solid #999999;
+	text-align: center;
+	padding: 8px 5px 12px 5px;
+	background-color: #fcfcfc;
+}
+
+#selectBtn {
+	width: 100px;
+	height: 40px;
+	border-radius: 4px;
 }
