@@ -48,23 +48,21 @@
 				</tr>
 				<tr>
 					<td width="150">${buylist.receipt_id}</td>
-					<td width="150"><img
-						src="/ClothsMall/clothImage/${buylist.cloth_image}"
-						class="cartimage" width="120px" height="200px"></td>
+					<td width="150">
+					<img src="/ClothsMall/clothImage/${buylist.cloth_image}" class="cartimage" width="120px" height="200px"></td>
 						<td>${buylist.cloth_name}</td>
-					<td width="200"><c:set var="price"
-							value="${buylist.cloth_price}" /> <c:set var="rate"
-							value="${buylist.discount_rate}" /> <fmt:parseNumber
-							var="rPrice" value="${price*(100.0-rate)/100}" /> <!-- ㄴ real Price 판매가 number 값 표시 -->
-						정가&nbsp; <fmt:formatNumber value="${price}" type="currency" /> <br>
-						<span style="color: red">-${rate}%</span> <br> <b>판매가&nbsp;<fmt:formatNumber
-								value="${rPrice}" type="currency" /></b> <!-- ㄴ view Price 판매가 원화 표시 -->
+					<td width="200"><c:set var="price" value="${buylist.cloth_price}" /> 
+							<c:set var="rate" value="${buylist.discount_rate}" /> 
+							<fmt:parseNumber var="rPrice" value="${price*(100.0-rate)/100}" /> <!-- ㄴ real Price 판매가 number 값 표시 -->
+						정가&nbsp; <fmt:formatNumber value="${price}" type="number" pattern="#,##0" />원 <br>
+						<span style="color: red">-${rate}%</span> <br> <b>
+						판매가&nbsp;<fmt:formatNumber	value="${rPrice}" type="number" pattern="#,##0" />원</b> <!-- ㄴ view Price 판매가 원화 표시 -->
 					<td width="50">${buylist.cloth_size}</td>
 					<td width="50">${buylist.quantity}</td>
-					<td width="100"><c:set var="amount"
-							value="${buylist.quantity * rPrice}" /> <c:set var="total"
-							value="${total+amount}" /> <fmt:formatNumber value="${amount}"
-							type="number" pattern="#,##0" />원</td>
+					<td width="100">
+					<c:set var="amount" value="${buylist.quantity * rPrice}" /> 
+					<c:set var="total" value="${total+amount}" /> 
+					<fmt:formatNumber value="${amount}" type="number" pattern="#,##0" />원</td>
 				</tr>
 			</table>
 		</div>
@@ -102,8 +100,7 @@
 										<option value="배송완료"
 											<c:if test="${receiptList.state == '배송완료'}">selected</c:if>>배송완료</option>
 								</select></td>
-								<td width="50"><input type="checkbox" name="receiptIds"
-						value="${thisId}" /></td>
+								<td width="50"><input type="checkbox" name="receiptIds" value="${thisId}" /></td>
 							</tr>
 						</table>
 					</div>

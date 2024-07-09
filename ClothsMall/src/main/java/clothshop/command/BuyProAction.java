@@ -55,8 +55,9 @@ public class BuyProAction implements CommandAction {
 		String usePointstr = request.getParameter("usePoint");
 		int usePoint = 0;
 		if (usePointstr.length() > 1) {
-			usePoint = Integer.parseInt(usePointstr);
+			usePoint = (int)Double.parseDouble(usePointstr);
 		}
+		System.out.println("action"+usePoint);
 		pointPro.decreasePoint(usePoint, member_id);
 
 		BuyDBBean buyProcess = BuyDBBean.getInstance();

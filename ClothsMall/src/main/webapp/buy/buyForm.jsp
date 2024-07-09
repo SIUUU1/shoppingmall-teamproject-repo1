@@ -147,7 +147,7 @@
 
 			</table>
 			<input type="hidden" name="price" id="price" value="${total}">
-			<input type="hidden" name="usePoint" id="usePoint" value="">
+			<input type="hidden" name="usePoint" id="usePoint" value="${Math.floor(total-total*discount)}">
 			<input type="hidden" name="gadeDiscount" id="gadeDiscount"
 				value="${total *discount}"> <input type="hidden"
 				name="totalPrice" id="totalPrice"
