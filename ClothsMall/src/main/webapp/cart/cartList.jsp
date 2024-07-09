@@ -56,7 +56,7 @@
 								<br><br>
 								<table>
 						        <tr><td onclick="minus()"> - </td>
-						        <td><input type="text" id="quantity" size="5" value="${cart.getQuantity()}"></td>
+						        <td><input type="text" id="quantity" size="5" value="${cart.getQuantity()}" onblur="insertQuantity()"></td>
 						        <td onclick="plus()"> + </td></tr>
 						        </table>
 						        
