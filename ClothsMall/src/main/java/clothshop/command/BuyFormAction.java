@@ -38,7 +38,8 @@ public class BuyFormAction implements CommandAction {
 		//회원 등급에 따른 할인율 알아냄
 		discount = memberProcess.getDiscount(member_id);
 		request.setAttribute("discount", discount);
-
+		
+		request.setAttribute("footer", 1);
 		request.setAttribute("type", Integer.valueOf(1));
 		return "/buy/buyForm.jsp";
 	}

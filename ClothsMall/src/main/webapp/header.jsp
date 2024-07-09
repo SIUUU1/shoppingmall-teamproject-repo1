@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css"/>
 </head>
 <body>
 <!-- header -->
@@ -16,9 +16,13 @@
   <a href="${pageContext.request.contextPath}/index.do"><h1 class="title">Cruella</h1></a>
   <div class="userIcon">
   <div class="search">
-  <input type="text">
-  <!--검색기능 넣기-->
-  <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+   <!--검색기능 넣기-->
+  <form id="search_form" action="${pageContext.request.contextPath}/list.do" method="post">
+  <input type="text" name="search" id="search" size="40" maxlength="40" />
+	<div id="button-search">
+	        <button id="searchBtn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+	 </div>
+  </form>  
   </div>
   <a href="${pageContext.request.contextPath}/cartList.do?member_id=${sessionScope.id}"><i class="fa-solid fa-cart-shopping"></i></a>
   <a href="${pageContext.request.contextPath}/buyList.do?member_id=${sessionScope.id}"><i class="fa-solid fa-truck"></i></a>

@@ -3,7 +3,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css"/>
     <div id="shop" class="shop-display">
+    	<c:if test="${count == 0}">
+				<p id="emptyList">검색결과에 해당하는 상품이 없습니다.</p>
+		</c:if>
+			
         <c:if test="${cloth_category=='1000'}">
             <c:set var="cloth_categoryName" value="상의" />
         </c:if>
@@ -23,7 +28,11 @@
             <c:set var="cloth_categoryName" value="전체" />
             <c:set var="display" value="전체" />
         </c:if>
-        <c:if test="${cloth_category!='all'}">
+         <c:if test="${cloth_category=='search'}">
+            <c:set var="cloth_categoryName" value="검색결과" />
+            <c:set var="display" value="검색결과" />
+        </c:if>
+        <c:if test="${cloth_category!='all' || cloth_category!='search'}">
             <c:set var="display" value="${cloth_categoryName}" />
         </c:if>
         

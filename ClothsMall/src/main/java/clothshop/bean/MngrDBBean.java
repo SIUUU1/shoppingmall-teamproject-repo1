@@ -168,6 +168,35 @@ public class MngrDBBean {
 		return x;
 	}
 
+	// 검색결과 옷의 수를 얻어내는 메소드
+	public int getSearchCount(String search) throws Exception {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		int x = 0;
+		try {
+			conn = DBUtil.getConnection();
+			
+			String sql = "SELECT * FROM cloth where CLOTH_CATEGORY like ? or ";
+			sql += "CLOTH_NAME like ? or CLOTH_BRAND like ? or CLOTH_CONTENT like ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, "%"+search+"%");
+			pstmt.setString(2, "%"+search+"%");
+			pstmt.setString(3, "%"+search+"%");
+			pstmt.setString(4, "%"+search+"%");
+			System.out.println(search+"search");
+			rs = pstmt.executeQuery();
+			if (rs.next())
+				x = rs.getInt(1);
+			System.out.println(x+"옷의 수");
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		} finally {
+			DBUtil.dbReleaseClose(rs, pstmt, conn);
+		}
+		return x;
+	}
+
 	// 옷이름 얻어냄
 	public String getClothName(int cloth_id) {
 		Connection conn = null;
@@ -272,6 +301,52 @@ public class MngrDBBean {
 		} finally {
 			DBUtil.dbReleaseClose(rs, pstmt, conn);
 		}
+		return clothList;
+	}
+
+	// 검색어 관련된 옷의 정보를 얻어내는 메소드
+	public List<MngrDataBean> getSearchCloth(String search) throws Exception {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		List<MngrDataBean> clothList = null;
+		try {
+			conn = DBUtil.getConnection();
+			
+			String sql = "SELECT * FROM cloth where CLOTH_CATEGORY like ? or ";
+			sql += "CLOTH_NAME like ? or CLOTH_BRAND like ? or CLOTH_CONTENT like ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, "%"+search+"%");
+			pstmt.setString(2, "%"+search+"%");
+			pstmt.setString(3, "%"+search+"%");
+			pstmt.setString(4, "%"+search+"%");
+
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				clothList = new ArrayList<MngrDataBean>();
+				do {
+					MngrDataBean cloth = new MngrDataBean();
+					cloth.setCloth_id(rs.getInt("cloth_id"));
+					cloth.setCloth_category(rs.getString("cloth_category"));
+					cloth.setCloth_gender(rs.getString("cloth_gender"));
+					cloth.setCloth_name(rs.getString("cloth_name"));
+					cloth.setCloth_size(rs.getString("cloth_size"));
+					cloth.setCloth_price(rs.getInt("cloth_price"));
+					cloth.setCloth_count(rs.getInt("cloth_count"));
+					cloth.setCloth_brand(rs.getString("cloth_brand"));
+					cloth.setReg_date(rs.getTimestamp("reg_date"));
+					cloth.setCloth_image(rs.getString("cloth_image"));
+					cloth.setCloth_content(rs.getString("cloth_content"));
+					cloth.setDiscount_rate(rs.getInt("discount_rate"));
+					clothList.add(cloth);
+				} while (rs.next());
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		} finally {
+			DBUtil.dbReleaseClose(rs, pstmt, conn);
+		}
+		System.out.println(clothList.isEmpty());
 		return clothList;
 	}
 

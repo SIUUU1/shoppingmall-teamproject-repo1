@@ -1,7 +1,7 @@
 // cart 삭제 버튼
 function delList(delBtn) {
 	let rStr = delBtn.name;
-	let query = "/ClothsMall/deleteCart.do?list=" + rStr;
+	let query = "/ClothsMall/deleteCart.do?cloth_id=" + rStr;
 	window.location.href = query;
 }
 // cart 전체 삭제 버튼

@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <script src="/ClothsMall/qna/write.js"></script>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css"/>
 
 <c:if test="${empty sessionScope.id}">
   <meta http-equiv="Refresh" content="0;url=/ClothsMall/index.do">

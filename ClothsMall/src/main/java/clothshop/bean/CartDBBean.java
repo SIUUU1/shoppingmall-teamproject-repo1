@@ -157,14 +157,14 @@ public class CartDBBean {
 	}
 
 	// 6. 구매자 일치 카트 일괄 삭제 (장바구니 비우기)
-	public void deleteAll(String id) throws Exception {
+	public void deleteAll(String member_id) throws Exception {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 
 		try {
 			conn = DBUtil.getConnection();
 			pstmt = conn.prepareStatement("delete from cart where member_id = ?");
-			pstmt.setString(1, id);
+			pstmt.setString(1, member_id);
 
 			pstmt.executeUpdate();
 		} catch (Exception ex) {
@@ -174,7 +174,25 @@ public class CartDBBean {
 		}
 	}
 
-	// 7. 일치 카트 조회
+	// 7. 구매자 일치 카트 항목 삭제
+	public void deleteItem(String cloth_id) throws Exception {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+
+		try {
+			conn = DBUtil.getConnection();
+			pstmt = conn.prepareStatement("delete from cart where cloth_id = ?");
+			pstmt.setString(1, cloth_id);
+
+			pstmt.executeUpdate();
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		} finally {
+			DBUtil.dbReleaseClose(pstmt, conn);
+		}
+	}
+
+	// 8. 일치 카트 조회
 	public String checkCart(CartDataBean cart) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;

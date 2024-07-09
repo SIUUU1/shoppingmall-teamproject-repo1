@@ -1,4 +1,5 @@
 package clothshop.command;
+import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.List;
 
@@ -37,7 +38,8 @@ public class BuyListAction implements CommandAction {
 			ReceiptDBBean receiptPro =ReceiptDBBean.getInstance();
 			receiptLists=receiptPro.getReceiptList(member_id);
 			request.setAttribute("receiptLists",receiptLists);
-					
+			SimpleDateFormat formatter = new SimpleDateFormat("yy.MM.dd");	
+			request.setAttribute("formatter",formatter);
 		}
 		
 		request.setAttribute("footer", 1);

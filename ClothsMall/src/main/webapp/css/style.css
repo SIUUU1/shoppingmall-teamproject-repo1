@@ -66,13 +66,21 @@ div.top, div.userIcon {
 
 .search input {
 	border: none;
-	width: 200px;
+	width: 250px;
+	font-size: 18px;
+	font-weight: 400;
 }
 
 .search {
 	border: none;
 	border-bottom: 2px solid black;
 	margin-right: 40px;
+}
+
+#search_form {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .userIcon a {
@@ -83,6 +91,12 @@ div.top, div.userIcon {
 	font-size: 25px;
 }
 
+#searchBtn {
+	border: 0;
+	background-color: transparent;
+	width: 30px;
+	font-size: 23px;
+}
 /* main-menu */
 #categoryGridContent {
 	width: 100%;
@@ -183,6 +197,10 @@ div.top, div.userIcon {
 
 .shop-display .vhcenter {
 	flex-flow: wrap;
+	min-height: 500px;
+}
+.shop-display p {
+	margin: 100px auto;
 }
 /* clothContent */
 #showCloth {
@@ -274,6 +292,9 @@ div.top, div.userIcon {
 
 #showQna {
 	margin: 50px auto;
+	border-top: 1px solid rgb(218, 217, 217);
+	width: 90%;
+	padding-top: 30px;
 }
 
 #showQna .qna-content {
@@ -282,7 +303,7 @@ div.top, div.userIcon {
 }
 
 #showQna .qna-contentList {
-	margin-left: 60px;
+	margin-left: 40px;
 	font-size: 20px;
 }
 
@@ -291,10 +312,19 @@ div.top, div.userIcon {
 	margin-left: 5px;
 }
 
+#writeQna {
+	width: 150px;
+	height: 45px;
+	background-color: #1e1e1e;
+	color: white;
+	font-size: 18px;
+	border-radius: 20px;
+}
+
 #rightButton {
 	margin: 0 auto;
 	text-align: right;
-	padding: 0 50px;
+	padding: 0 40px;
 }
 /* qnaForm */
 #writeForm textarea {
@@ -458,11 +488,11 @@ button, input[type="button"], input[type="submit"] {
 
 /* mypage */
 #mypage {
-	height: 430px;
+	min-height: 500px;
 }
 
 #mypage #title {
-	margin: 40px 30px 20px 30px;
+	margin: 60px 60px 50px 60px;
 }
 
 #mypage h3, table {
@@ -476,7 +506,7 @@ button, input[type="button"], input[type="submit"] {
 	margin-bottom: 15px;
 }
 
-#mypage tr, td {
+#mypage tr, #mypage td {
 	padding: 15px 50px;
 	text-align: center;
 	font-size: 20px;
@@ -484,7 +514,7 @@ button, input[type="button"], input[type="submit"] {
 
 #mypageBox {
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 	align-items: center;
 	margin: 30px auto;
 	padding: 30px;
@@ -502,7 +532,7 @@ button, input[type="button"], input[type="submit"] {
 }
 /*modify*/
 #mStatus {
-	height: 350px;
+	min-height: 420px;
 }
 
 #mStatus h3, p, form {
@@ -511,9 +541,11 @@ button, input[type="button"], input[type="submit"] {
 }
 
 #mStatus h3 {
-	margin: 40px auto;
+	margin-top: 140px;
+	margin-bottom: 30px;
 	font-size: 27px;
 	font-weight: 500;
+	font-size: 27px;
 }
 
 #mStatus span {
@@ -601,7 +633,7 @@ button, input[type="button"], input[type="submit"] {
 /*cartList*/
 #cartList {
 	margin: 50px auto;
-	min-height: 300px;
+	min-height: 500px;
 }
 
 .clear-box {
@@ -629,7 +661,7 @@ button, input[type="button"], input[type="submit"] {
 	border: 1px solid rgb(218, 217, 217);
 	border-radius: 15px;
 	width: 80%;
-	margin: 0 auto;
+	margin: 10px auto;
 }
 
 #cartList #title {
@@ -725,7 +757,13 @@ button, input[type="button"], input[type="submit"] {
 /*buyList*/
 #buyList {
 	margin: 50px auto;
-	min-height: 300px;
+	min-height: 500px;
+}
+
+.buyItem {
+	width: 90%;
+	border-top: 1px solid gray;
+	margin: 30px auto;
 }
 
 table.buy, table.buylist {
@@ -734,9 +772,8 @@ table.buy, table.buylist {
 	border: 1px solid rgb(218, 217, 217);
 	border-collapse: collapse;
 	border-radius: 8px;
-	padding: 5px;
+	padding: 10px 5px;
 	text-align: center;
-	padding: 5px;
 }
 
 table.buy, .button {
@@ -745,6 +782,14 @@ table.buy, .button {
 
 table.buy td, table.buy th, table.buylist td, table.buylist th {
 	border: 1px solid rgb(218, 217, 217);
+}
+
+table.buy th, table.buylist th {
+	height: 50px;
+}
+
+.address td, #receipt td {
+	height: 40px;
 }
 
 table.buy td {
@@ -777,17 +822,54 @@ table.buy input {
 	margin: 0 auto 6px auto;
 	text-align: right;
 }
+
+#buyForm .buyBtn {
+	margin: 30px auto;
+	display: flex;
+	justify-content: space-between;
+	width: 50%;
+	align-items: center;
+}
+
+#myInfo {
+	width: 130px;
+}
+
+#payButton, #cancle {
+	width: 150px;
+	height: 45px;
+	background-color: #1e1e1e;
+	color: white;
+	font-size: 18px;
+	border-radius: 20px;
+}
+
+#cancle {
+	color: black;
+	background-color: #eeeeee;
+}
+
+#buyList .buyTitle {
+	font-size: 25px;
+	font-weight: 500px;
+	margin: 25px 0 15px 0;
+}
 /*increasePointForm*/
 #coinForm {
-	min-height: 400px;
+	min-height: 450px;
 }
 
 #coinForm #title {
-	margin-top: 50px;
+	margin-top: 80px;
 	font-size: 30px;
 	font-weight: 500;
 	text-align: center;
 	font-size: 30px;
+}
+
+#coinForm th, #coinForm  td {
+	padding: 5px;
+	font-size: 20px;
 }
 
 #coinForm input, #coinForm select {
@@ -795,15 +877,19 @@ table.buy input {
 	text-align: center;
 	font-size: 18px;
 }
-#coinForm input:nth-child(1){
+
+#coinForm input:nth-child(1) {
 	width: 100px;
 }
-#coinForm input:nth-child(2){
+
+#coinForm input:nth-child(2) {
 	width: 300px;
 }
+
 #coinForm select {
 	width: 400px;
 }
+
 #increaseBtn {
 	width: 400px;
 	height: 45px;

@@ -9,6 +9,7 @@
   <title>Cruella</title>
   <script src="${pageContext.request.contextPath}/shop/clothContent.js"></script>
   <script src="https://kit.fontawesome.com/3842b33e0f.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css"/>
 </head>
 <body onload="call_js()">
 <!-- sildshow -->

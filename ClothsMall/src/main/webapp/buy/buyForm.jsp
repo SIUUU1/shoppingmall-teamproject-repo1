@@ -5,8 +5,8 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <meta name="viewport" content="width=device-width,initial-scale=1.0" />
 <script src="/ClothsMall/buy/buyForm.js?ver=32"></script>
-<script
-	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css"/>
 
 <c:if test="${empty sessionScope.id}">
 	<meta http-equiv="Refresh" content="0;url=/ClothsMall/index.do">
@@ -51,7 +51,7 @@
 			<br> <br>
 			<p>배송지</p>
 			<div class="button">
-				<input type="button" value="회원정보와 동일" onclick="addressDefault()">
+				<input id="myInfo" type="button" value="회원정보와 동일" onclick="addressDefault()">
 			</div>
 			<table class="adress buy">
 				<tr>
@@ -172,9 +172,9 @@
 				<p id="calPointInfo"></p>
 			</div>
 
-			<div class="button">
-				<input type="button" id="cancle" value="취소">
-				<button onclick="allCheck(event)">결제 하기</button>
+			<div class="buyBtn">
+				<button type="button" id="cancle">취소</button>
+				<button id="payButton" onclick="allCheck(event)">결제 하기</button>
 			</div>
 
 			<input type="hidden" id="member_name_h" value="${member.getMember_name()}"> 

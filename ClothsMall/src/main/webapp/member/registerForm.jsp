@@ -4,6 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <script src="/ClothsMall/member/register.js?ver=2"></script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css"/>
 
 <div id="regForm" class="box">
 <h3>회원가입</h3>

@@ -5,6 +5,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <meta name="viewport" content="width=device-width,initial-scale=1.0" />
 <script src="/ClothsMall/point/increasePoint.js"></script>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css"/>
 
 <c:if test="${empty sessionScope.id}">
 	<script>alert('로그인이 필요한 페이지입니다.');</script>

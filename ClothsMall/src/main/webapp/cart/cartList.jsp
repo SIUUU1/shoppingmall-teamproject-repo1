@@ -5,6 +5,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <meta name="viewport" content="width=device-width,initial-scale=1.0" />
 <script src="${pageContext.request.contextPath}/cart/cartList.js"></script>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css"/>
 	
 	<c:if test="${empty sessionScope.id}">
 		<script>
@@ -29,7 +30,7 @@
 					<div class="cartItem">
 						<div class="clothBrand">
 						<b>${cart.getCloth_brand()}</b>
-							<button id="deleteList" name="${cart.getCart_id()}" onclick="delList(this)"><i class="fa-solid fa-x"></i></button>
+							<button id="deleteList" name="${cart.getCloth_id()}" onclick="delList(this)"><i class="fa-solid fa-x"></i></button>
 						</div>
 						<div class="cartItem-content">
 							<img src="${pageContext.request.contextPath}/clothImage/${cart.getCloth_image()}" class="cartimage">

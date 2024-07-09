@@ -4,17 +4,6 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 
 <c:if test="${empty sessionScope.id}">
-  <meta http-equiv="Refresh" content="0;url=/index.do">
+  <meta http-equiv="Refresh" content="0;url=${pageContext.request.contextPath}/index.do">
 </c:if>
-
-<div id="orderResult">
-  <p>${orderStus}
-</div>
-
-<div id="buyProcess">
-  <form id="buyPro" method="post" action="/ClothsMall/buyList.do">
-     <input type="hidden" name="member_id" value="${sessionScope.id}">
-	 <input type="submit" value="주문확인" >  
-  </form>
-</div>
-
+<meta http-equiv="Refresh" content="0;url=${pageContext.request.contextPath}/buyList.do?member_id=${sessionScope.id}" />

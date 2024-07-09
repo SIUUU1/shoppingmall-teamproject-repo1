@@ -49,7 +49,6 @@ window.onload = function() {
 	calculatePoint();
 };
 
-
 function calculatePoint() {
 	const calPointElement = document.getElementById('calPoint');
 	const calPointInfoElement = document.getElementById('calPointInfo');
@@ -77,7 +76,7 @@ function calculatePoint() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-	var cancleButton = document.getElementById('cancle');
+	let cancleButton = document.getElementById('cancle');
 
 	// [취소] 버튼 클릭
 	cancleButton.addEventListener('click', function(event) {
@@ -86,7 +85,6 @@ document.addEventListener('DOMContentLoaded', function() {
 		window.location.href = "/ClothsMall/index.do";
 	});
 });
-
 
 function member_name_Check() {
 	const member_name = document.querySelector("#member_name");
@@ -103,6 +101,7 @@ function member_name_Check() {
 		return true;
 	}
 }
+
 function member_postal_code_Check() {
 	const member_postal_code = document.querySelector("#member_postal_code");
 	const member_postal_code_Info = document.querySelector("#member_postal_code_Info");
@@ -114,6 +113,7 @@ function member_postal_code_Check() {
 		return true;
 	}
 }
+
 function member_address_Check() {
 	const member_address = document.querySelector("#member_address");
 	const member_detailed_address = document.querySelector("#member_detailed_address");
@@ -126,6 +126,7 @@ function member_address_Check() {
 		return true;
 	}
 }
+
 function member_tel_Check() {
 	const member_tel = document.querySelector("#member_tel");
 	const member_tel_Info = document.querySelector("#member_tel_Info");
@@ -153,8 +154,6 @@ function searchNum() {
 		}
 	}).open();
 }
-
-
 
 function allCheck(event) {
 	if (calculatePoint()&&member_tel_Check()&&member_address_Check()&&member_postal_code_Check()&&member_name_Check()) {

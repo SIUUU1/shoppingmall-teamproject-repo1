@@ -4,6 +4,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <meta name="viewport" content="width=device-width,initial-scale=1.0" />
 <script src="/ClothsMall/member/login.js?ver=5"></script>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css"/>
 
 <c:if test="${empty sessionScope.id}">
 	<div id="login-box-back">
