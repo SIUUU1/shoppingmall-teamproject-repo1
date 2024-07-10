@@ -17,7 +17,7 @@ public class FaqDBBean {
 
 	public static FaqDBBean getInstance() {
 		if (instance == null) {
-			synchronized (CartDBBean.class) {
+			synchronized (FaqDBBean.class) {
 				instance = new FaqDBBean();
 			}
 		}
